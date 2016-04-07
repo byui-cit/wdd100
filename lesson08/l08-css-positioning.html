@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <title>W08.03 CSS Positioning Activity - Instructions</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="../css/course.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/solarized-light.css">
+</head>
+
+<body>
+    <div id="main">
+        <header id="header"><img alt="Course Banner" src="../images/smallBanner.jpg" /></header>
+        <main id="article">
+            <h1>CSS Positioning Activity</h1>
+            <hr />
+            <h2>Activity&nbsp;Instructions</h2>
+            <h3>Step 01</h3>
+            <p>Copy the html below and paste it into a new file in your editor. Name it <em>positioning.html</em>. Copy the CSS into another file called <em>positionstyles.css</em>.</p>
+            <h3>Step 02</h3>
+            <p>Modify the css to make the boxes in the html match the patterns in the images for each activity.</p>
+            <h3>Step 03</h3>
+            <p>Open your positioning.html website&nbsp;in your browser to make sure the web page displays correctly. Pay special attention to whether your styles&nbsp;are all displaying. Once verified, go to the next page to access "W08.03 CSS Positioning Activity" and click "Upload" to submit the URL to your page.</p>
+            <div class="callout">
+                <p>Your URL will be a little longer this time around. You will start with your normal URL, but this time we don't want the index.html file...we want positioning.html, so you URL should reflect that. For example if I normally submitted http://thompsonw16.handcraft.com as my URL, for this assignment I would submit http://thompsonw16.handcraft.com/<strong>positioning.html</strong></p>
+            </div>
+            <h3>Grading</h3>
+            <p>This activity will be graded using the following rubric:</p>
+            <ul>
+                <li>Students completed the assignment as outlined above. (12 points)</li>
+            </ul>
+            <div class="callout">
+                <h3>Tips</h3>
+                <ol>
+                    <li>Don't overuse <kbd>position</kbd>. At first it might seem to be the answer to your positioning prayers, but it can quickly become a nightmare if overused. Try to solve layout problems with other methods first...and fallback to position only if they don't work.</li>
+                    <li>Remember that <kbd>margin</kbd> is a great way to shift things around short distances. (and <kbd>margin-top: -50px;</kbd> would move an element <strong>up</strong> by 50px)</li>
+                    <li>When using <kbd>float</kbd> remember that the element that you are floating must come before the other elements in the HTML. Also remember to <kbd>clear</kbd> your floats when you want things to stop floating.</li>
+                    <li>You should be able to solve all of these positioning problems <strong>without</strong> modifying the HTML. If you find yourself tempted to tweak the HTML you are probably working too hard :)</li>
+                    <li>If you are struggling with an activity, start by simply making the boxes the right size and shape. It will often help you to see where to go next.</li>
+                    <li>...and did I mention that you <strong>should not</strong> modify the HTML?  I was pretty serious about that :)</li>
+                </ol>
+            </div>
+            <pre><code class="html">
+&lt;!-- HTML - Name: "positioning.html" --&gt;
+&lt;!doctype html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Style test&lt;/title&gt;
+        &lt;link rel="stylesheet" type="text/css" href="positionstyles.css" /&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div class="activity"&gt;
+        &lt;h2&gt;WDD 100 positioning exercises&lt;/h2&gt;
+        For each activity match make the boxes match the image by modifying the stylesheet.&lt;/div&gt;
+        &lt;div class="activity"&gt;
+            &lt;h2&gt;Activity 1&lt;/h2&gt;
+            Make the squares move left across the screen horizontally like in &lt;a href="https://byui-cit.github.io/wdd100/images/Example1.png" target="_blank"&gt;this&lt;/a&gt; image.
+            &lt;div class="red1" &gt;&lt;/div&gt;
+            &lt;div class="green1" &gt;&lt;/div&gt;
+            &lt;div class="yellow1"&gt;&lt;/div&gt;
+            &lt;div class="blue1"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="activity"&gt;
+            &lt;h2&gt;Activity 2&lt;/h2&gt; Overlap and stagger the squares like in &lt;a href="https://byui-cit.github.io/wdd100/images/Example2.png" target="_blank"&gt;this&lt;/a&gt; image.
+            &lt;div class="red2" &gt;&lt;/div&gt;
+            &lt;div class="green2" &gt;&lt;/div&gt;
+            &lt;div class="yellow2"&gt;&lt;/div&gt;
+            &lt;div class="blue2"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="activity"&gt;
+            &lt;h2&gt;Activity 3&lt;/h2&gt;
+            Duplicate the positioning in &lt;a href="https://byui-cit.github.io/wdd100/images/Example3.png" target="_blank"&gt;this&lt;/a&gt; image.
+            &lt;div class="red3" &gt;&lt;/div&gt;
+            &lt;div class="green3" &gt;&lt;/div&gt;
+            &lt;div class="yellow3"&gt;&lt;/div&gt;
+            &lt;div class="blue3"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="activity"&gt;
+            &lt;h2&gt;Activity 4&lt;/h2&gt;
+            Create the 2 column layout like in &lt;a href="https://byui-cit.github.io/wdd100/images/Example4.png" target="_blank"&gt;this&lt;/a&gt; image.
+            &lt;div class="red4" &gt;&lt;/div&gt;
+            &lt;div class="green4" &gt;&lt;/div&gt;
+            &lt;div class="yellow4"&gt;&lt;/div&gt;
+            &lt;div class="blue4"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="activity"&gt;
+            &lt;h2&gt;Activity 5&lt;/h2&gt;
+            Create an overlapping 2 column layout like in &lt;a href="https://byui-cit.github.io/wdd100/images/Example5.png" target="_blank"&gt;this&lt;/a&gt; image.
+            &lt;div class="red5" &gt;&lt;/div&gt;
+            &lt;div class="green5" &gt;&lt;/div&gt;
+            &lt;div class="yellow5"&gt;&lt;/div&gt;
+            &lt;div class="blue5"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="activity"&gt;
+            &lt;h2&gt;Activity 6&lt;/h2&gt;
+            Wrap the text around the square like in &lt;a href="https://byui-cit.github.io/wdd100/images/Example6.png" target="_blank"&gt;this&lt;/a&gt; image.
+            &lt;div class="red6" &gt;&lt;/div&gt;
+            &lt;div class="green6" &gt;&lt;/div&gt;
+            &lt;div class="yellow6"&gt;Step 01: Continue creating the main page for your chosen web site by modifying the CSS file you created in week 9's Adding Classes and IDs to Your Website assignment. This week, you will position all of the content on your main page using the CSS positioning techniques taught in CodeAcademy. When you are done, your webpage layout should reflect what you outlined in the wireframe you designed in the assignment Your Own Site Diagram and Wireframe in week 3. &lt;br /&gt;
+            If you have changed your mind on how you want the content of your main page laid out, take an opportunity to update your wireframe before completing this assignment (it is much easier to experiment with different layouts in a wireframe than it is to do so by modifying the CSS). Also, if you find that you are having trouble with using CSS positioning, feel free to review the concepts at the learn layout site: http://learnlayout.com/. You should be able to apply these principles to your site. For futher help, refer back to the Max Design site used in the beginning of the course for an example of how to implement your site design.&lt;/div&gt;
+            &lt;div class="blue6"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+                
+                </code></pre>
+            <pre><code class="css">
+        
+/* CSS - Name: "positionstyles.css" */
+/* Activity 1 styles */
+    .red1 { 
+    width: 100px; 
+    height: 100px; 
+    background-color: red; 
+    } 
+    .green1 {
+    width: 100px; 
+    height: 100px; 
+    background-color: green; 
+    } 
+    .yellow1 {
+    width: 100px; 
+    height: 100px; 
+    background-color: gold; 
+    } 
+    .blue1 {
+    width: 100px; 
+    height: 100px; 
+    background-color: blue; 
+    } 
+     /* Activity 2 styles */ 
+    .red2 {
+    width: 100px; 
+    height: 100px; 
+    background-color: red; 
+    } 
+    .green2 { 
+    width: 100px; 
+    height: 100px; 
+    background-color: green; 
+     } 
+    .yellow2 {
+    width: 100px; 
+    height: 100px; 
+    background-color: gold; 
+    } 
+    .blue2 {
+    width: 100px; 
+    height: 100px; 
+    background-color: blue; 
+    } 
+     /* Activity 3 styles */ 
+    .red3 {
+    width: 100px; 
+    height: 100px; 
+    background-color: red; 
+     } 
+    .green3 {
+    width: 100px; 
+    height: 100px; 
+    background-color: green;
+     } 
+    .yellow3 {
+    width: 100px; 
+    height: 100px; 
+    background-color: gold; 
+     } 
+    .blue3 {
+    width: 100px;
+    height: 100px; 
+    background-color: blue; 
+     } 
+     /* Activity 4 styles */ 
+    .red4 {
+    width: 100px; 
+    height: 100px; 
+    background-color: red; 
+     } 
+    .green4 {
+    width: 100px; 
+    height: 100px; 
+    background-color: green; 
+    } 
+    .yellow4 {
+    width: 100px; 
+    height: 100px; 
+    background-color: gold; 
+     } 
+    .blue4 {
+    width: 100px; 
+    height: 100px; 
+    background-color: blue; 
+     } 
+     /* Activity 5 styles */ 
+    .red5 { 
+    width: 100px; 
+    height: 100px; 
+    background-color: red; 
+     } 
+    .green5 { 
+    width: 100px; 
+    height: 100px; 
+    background-color: 
+    green; 
+
+     } 
+    .yellow5 {
+    width: 100px; 
+    height: 100px; 
+    background-color: gold; 
+
+    } 
+    .blue5 {
+    width: 100px; 
+    height: 100px; 
+    background-color: blue; 
+     } 
+     /* Activity 6 styles */ 
+    .red6 {
+    width: 100px; 
+    height: 100px; 
+    background-color: red; 
+    } 
+    .green6 {
+    width: 100px; 
+    height: 100px; 
+    background-color: green; 
+     } 
+    .yellow6 {
+    width: 100px; 
+    height: 100px; 
+    background-color: gold; 
+    } 
+    .blue6 {
+    width: 100px; 
+    height: 100px; 
+    background-color: blue; 
+    } 
+     .activity {
+    width: 600px; 
+    margin: 20px auto; 
+    font-family: Arial, sans-serif; 
+    border: 1px solid black; 
+    padding: 10px; 
+    clear:both; 
+    overflow: auto;
+    } </code></pre>
+            
+        </main>
+        <!-- end #article -->
+    </div>
+    <script src="../js/course.js"></script>
+    <script src="../js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+
+</html>

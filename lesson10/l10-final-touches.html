@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <title>W10.02 Finishing Touches - Instructions</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="../css/course.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="main">
+        <div id="header"><img alt="Course Banner" src="../images/smallBanner.jpg" /></div>
+        <div id="article">
+            <h1>Finishing Touches</h1>
+            <hr />
+            <h2>Activity&nbsp;Instructions</h2>
+            <p>Estimated Time: 45 minutes</p>
+            <div class="callout">
+                <p>We've done a lot of work on our site over the last few weeks and it's looking pretty close to that wireframe now. The final portion that needs our attention is the header. I have to admit I'll be really happy when we get that fixed up!</p>
+                <p>The code that I am basing this activity on looks like this: (you may want to adjust yours if it is not similar)</p>
+                <div class="fig-block"><figure><img alt="Header-Code"  src="../images/header-code.jpg" title="Header-Code" /></figure></div>
+                <p>The top of my page looks like this:</p>
+                <div class="fig-block"><figure><img alt="Example Header Code" width="50%" src="../images/header-start.jpg" style="display: block; margin-left: auto; margin-right: auto;" title="Example Header Code" /></figure></div>
+            </div>
+            <h3>Step 01</h3>
+            <p>Let's make our links flow across the page horizontally first. It's important to remind ourselves why they currently look the way they do...list items are block elements. So one way to make them flow horiontally would be to change them to inline-block elements instead. Write a CSS rule using a selector to only affect list items that are inside of a <kbd>nav</kbd> element to do that now.</p>
+            <div class="callout">
+                <p>We learned about several new ways to <a href="http://www.w3schools.com/cssref/css_selectors.asp" target="_blank">select</a> elements with CSS this week in Khan Academy. One of them allows us to combine multiple selectors together. For step 1 above we could use simple li as our selector, but that would change all list items on the page, and we may not want that. It would be better to get <strong>only</strong> the list items that are inside of a nav. We can do that by using "<kbd>nav li</kbd>" as our selector instead of just <kbd>li</kbd>. Many of the steps of this activity will require similar selectors.</p>
+            </div>
+            <p style="text-align: center;"><img alt="Header-Step2" width="78%" src="../images/header-step2.jpg" title="Header-Step2" /></p>
+            <p style="text-align: center;">Page after Step 1</p>
+            <h3>Step 02</h3>
+            <p>The links are moving in the right direction now...but they don't stand out very well. It would be good to increase the size of both the font, and the box that the links are in to make them stand out. Increase the size of the links by adding to a rule selecting your <kbd>nav</kbd>, and adjust the height as well.</p>
+            <div class="callout">
+                <p>For my example site I wanted the navigation font to be a bit larger than normal...so I added <kbd>font-size: 1.2em;</kbd> to my <kbd>nav</kbd> rule.</p>
+                <p>Increasing the height is a little trickier. If you add something like <kbd>height: 3em;</kbd>, it will make the nav box 3X the size of the text...but it looks like this:</p>
+                <p><img alt="Header step 2.2" width="78%" src="../images/header-step2.2.jpg" style="display: block; margin-left: auto; margin-right: auto;" title="Header step 2.2" /></p>
+                <p>It increased the size of the box, but the font is top-aligned...not good. Luckily it is easy to fix. If we use the <kbd>line-height</kbd> property instead of <kbd>height</kbd>, the text will automatically center itself vertically in the space.</p>
+            </div>
+            <p style="text-align: center;"><img alt="Header-Step 2.3" width="78%" src="../images/header-step2.3.jpg" title="Header-Step 2.3" /></p>
+            <p style="text-align: center;">Page after Step 2</p>
+            <h3>Step 03</h3>
+            <p>The next thing we need to do is move the whole navigation bar up...so it is under the logo. While there are several ways to do this, the simplest would be to adjust the <kbd>margin-top</kbd>. Again this is affecting the whole navigation bar so we should apply that to the <kbd>nav</kbd> rule. You'll notice that as soon as we do this your Home link sits under the logo! Lets use <kbd>padding-left</kbd> to move it out.</p>
+            <div class="callout">
+                <p>You may notice that there is a small gap between the navigation bar and the image below it. This is because we placed our links in an unordered list and the default styling of lists is to have some margin on the top and bottom to space it out from things around it. In this case we don't want it...if you see it you can remove it by adding the following CSS: <kbd>nav ul { margin: 0; }</kbd> (Read that selector as "Find any unordered lists which are inside of nav elements and set their margin to 0)</p>
+            </div>
+            <p style="text-align: center;"><img alt="Header step 3" width="78%" src="../images/header-step3.jpg" title="Header step 3" /></p>
+            <p style="text-align: center;">Page after Step 3</p>
+            <div class="callout">
+                <p>We are getting closer, but we still have some issues with that logo. The image I provided has what is known as a transparent background...it lets colors underneath it show through. It's not working very well for us now. Notice above that I placed the image inside of a div. We can change the background color of that div to fix part of our issue.</p>
+                <p>You might also notice that the logo is slightly underneath the banner image below it. One way we could get that back on top would be to set <kbd>position:relative</kbd>. This pulls the element slightly out of the flow and lets us control how things layer.</p>
+            </div>
+            <h3>Step 04</h3>
+            <p>Make a new rule for the logo div (#logo) and set the background to white. Then add another line to that rule to change it's position to relative.</p>
+            <div class="callout">
+                <p>As soon as you changed the position to relative of that logo div you are probably wondering what happened to your nav bar. My page currently looks like this:</p>
+                <p><img alt="Header Step 4" width="78%" src="../images/header-step4.jpg" style="display: block; margin-left: auto; margin-right: auto;" title="Header Step 4" /></p>
+                <p>The div that we place the image in is a block element, and so it is taking the whole line up. We didn't notice it before because it was below the navbar. But when we brought it to the top it caused problems. We need to set a width on it to keep it from taking 100%</p>
+            </div>
+            <h3>Step 05</h3>
+            <p>Get your navbar back by setting a width on the logo. (If you are using my logo 110px will work well.) Lets finish our logo off by adding a border to keep it from blending into the white background above it.</p>
+            <div class="callout">
+                <p>Our page is looking great! Only a couple of last tasks left. First is to address a usability issue. You should never make a user guess about what elements are links and what aren't. We should give them plenty of visual hints.</p>
+                <p>One thing we can take advantage of is <a href="http://www.w3schools.com/css/css_pseudo_classes.asp" target="_blank">pseudo-classes</a>. Pseudo classes let us target specific states of elements, such as link. Links have 4 states: link (normal, nothing has happened), visited (link has been clicked on), active (link is currently being clicked), and hover (mouse is on link, but not clicking)</p>
+                <p>The way we would change a link on hover is to add a rule like this: <kbd>a:hover { color: green; }</kbd>. This would change the color of all links to green on hover.</p>
+            </div>
+            <h3>Step 06</h3>
+            <p>Lets set up some hover events to let our visitors know without a doubt that our navbar is indeed a navbar with clickable things. First lets increase the area of the link that will react to a hover, by default it is only the size of the words, I want a bigger box to hit. An easy way to do this is to add some padding to the links in our navbar (Hint: selector should be something like <kbd>nav a</kbd>). This will also have the affect of spreading out our links...they are currently a bit squished together. If you made your line-height 3em like I did above then I would try something like: <kbd>padding: 1em .6em</kbd></p>
+            <p style="text-align: center;"><img alt="Header Step 5" width="78%" src="../images/header-step5.jpg" title="Header Step 5" /></p>
+            <p style="text-align: center;">Page after Step 6</p>
+            <h3>Step 07</h3>
+            <p>Now lets add those hover events. Add another rule to your CSS that looks like <kbd>nav a:hover{ }</kbd>. This will only be active when the mouse is on the links in our navbar. Change something about your link in that rule.</p>
+            <div class="callout">
+                <p>There are a couple of common things that can happen when you mouse over a link. You could do something very simple and just add (or remove) an underline on hover (text-decoration: none). You could also change the color of the link text, or change the color of link and background. For mine I think I will change both foreground and background color...in fact I think I will swap them. Try a few different effects, just remember the purpose: to make sure the visitor knows what are links and what aren't.</p>
+            </div>
+            <h3>Step 08</h3>
+            <p>Enter the view URL to your site into a browser to make sure the webpage displays correctly. Once verified, go to the next page to access "W10.02 Finishing Touches" and click "Upload" to submit the URL for this assignment. Then remember to backup your Handcraft files (Projects-&gt;Gear icon-&gt;Export as .zip)</p>
+            <h3>Grading</h3>
+            <p>This activity will be graded using the following rubric:</p>
+            <ul>
+                <li>Navigation and logo look similar to the wireframe. (5 pts)</li>
+                <li>Navigation links are interactive (change on hover) (5 pt)</li>
+                <li>The HTML is well formed and without errors and the page is visually appealing. (10 pt)</li>
+            </ul>
+            
+        </div>
+        <!-- <end></end> #article -->
+    </div>
+    <script src="../js/course.js"></script>
+</body>
+
+</html>

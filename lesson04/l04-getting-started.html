@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+	<title>W04.03 Getting Started: Create the Home Page in HTML - Instructions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../css/solarized-light.css" />	
+<link rel="stylesheet" href="../css/course.css" />
+</head>
+<body>
+<div id="main">
+<div id="header"><img src="../images/smallBanner.jpg" alt="Course Banner" /></div>
+<div id="article">
+<h1><span style="font-family: georgia, serif;">Getting Started: Create the Home Page in HTML</span></h1>
+<hr />
+<div class="activityContent">
+<h2>Activity Directions</h2>
+<p><span class="highlight">Estimated Time</span>:&nbsp;45 minutes</p>
+<h3><span class="highlight">Step 01</span></h3>
+<p>If you completed the Software setup activity you should already have an html file ready called index.html. It should look something like this:</p>
+<pre><code class="html">
+&lt;!-- HTML - File Name: "index.html" --&gt;
+&lt;!doctype html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+          &lt;title&gt;My first website&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        Hello World!
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>If you don't have that, go follow the Hosting Setup: Handcraft instructions and come back when you are done.</p>
+<div class="callout">
+<h3>Naming files for the web</h3>
+<p>There are a few things to keep in mind as you come up with names for the files and folders that will make up your website.</p>
+<ul>
+<li>Always name the first page of your site&nbsp;<kbd>index.html</kbd></li>
+    <li>Most web hosts are&nbsp;<i>case-sensitive</i>&nbsp;which means there is a difference between&nbsp;<kbd><span class="highlight">I</span>ndex.html</kbd>&nbsp;and&nbsp;<kbd>index.html</kbd></li>
+<li>So...Make your filenames all lowercase to avoid problems with case sensitivity.</li>
+<li>Avoid spaces and other special characters in your filenames (a-z, 0-9, -, and _ are all safe to use)</li>
+</ul>
+</div>
+<h3><span class="highlight">Step 02</span></h3>
+<p>From the Khan Academy lesson we learned about&nbsp;<kbd>&lt;meta charset="utf-8"&gt;</kbd>. Meta tags give the browser information to help it build the web page. They are always found in the&nbsp;<kbd>&lt;head&gt;</kbd>&nbsp;with the other information that is for the browser only. Launch your editor on your computer and make sure the index.html file is opened and then lets add that meta line to our page...right above the title.</p>
+<h3><span class="highlight">Step 03</span></h3>
+<p>Let's go ahead and change that title right now as well. The &lt;title&gt; of the page shows at the top of the browser window or on the tab of a browser window, and in the search listing for a site. Lets pick something that will make sure people know what the site is, and what page they are currently on. Something like "Whitewater Rafting Vacations | Dry Oar Boating | Home".</p>
+<div class="callout">
+<p>We know from the&nbsp;<a href="../images/wireframe-new.jpg" target="_blank">wireframe</a>&nbsp;for the home page for the Dry Oar site that there will be a combination of images, headlines, and text on the page. The Khan academy lesson for this week taught you how to add all of those things to a page with HTML. You will need to refer back to your wireframe and site plan document throughout this activity to make sure you don't forget anything on the home page.</p>
+    <p>As you look at the wireframe you will notice a few things.  First a box with an X through it indicates an image will go there. A shaded box around something indicates that it should be colored. The numbers that are in the corners of some of the boxes indicate sizes. </p>
+    <p>The Wireframe also indicates where out headlines and paragraphs will be, and should show approximately how much space the text should take up, and the relative sizes of the headlines and paragraph text.</p>
+    </div>
+    <div class="callout">
+    <p><strong>Note!</strong>: We will not be adding colors and other styles this week.  Our only goal is to get all of the content onto the page that is shown on the wireframe.  Our Page will <strong>not</strong> look like the wireframe when we finish this week. Each week will get us closer, but our page will not look exactly like the wireframe until Week 10, so patience will be required :)</p>
+    </div>
+<h3><span class="highlight">Step 04</span></h3>
+<p>Let's work on the top section first. I have provided a page with&nbsp;<a href="http://brothert.net/dryoar/dryoarimages.html" target="_blank">some images</a>&nbsp;on it that you can use for this assignment (or you can find some of your own). Pull that site up and find the logo image. Add the an&nbsp;<kbd>&lt;img&gt;</kbd>&nbsp;tag to your page inside the&nbsp;<kbd>&lt;body&gt;</kbd>. You can replace the "Hello World" we put there. Remember that the&nbsp;<kbd>&lt;img&gt;</kbd>&nbsp;tag has 2 required attributes.&nbsp;<kbd>alt</kbd>&nbsp;and&nbsp;<kbd>src</kbd>.&nbsp;<kbd>alt=""</kbd>&nbsp;should contain a short description about the image and is used primarily for the screen readers that the visually impaired use to browse the web.</p>
+<p class="callout">This image is already the right size and is on a web server, so we just need to figure out what it's URL is to add it to our page. Your browser makes it really easy to do that. If you click with the right mouse button on any image in the browser your computer will offer you several actions you can take. The one we are interested in right now is "Copy Image Address".</p>
+<p>Copy the address for the logo image and paste the result into the src attribute in our image. the final tag should look something like this:</p>
+<pre><code class="html">&lt;img src="http://brothert.net/dryoar/images/dryoarlogo.png" alt="Dry Oar boating logo"&gt;</code></pre>
+<h3><span class="highlight">Step 05</span></h3>
+<p>Now it's time to add the list of subpages that will eventually become links and provide our site's navigation.</p>
+<p class="callout">Notice that I said 'list' there. One thing most people don't realize is that most navigation bars on most websites are made with an unordered list...the same one you learned how to use in this week's Khan Academy lesson. They are well disguised, but they really are lists.</p>
+<p>Take the list of pages from the wireframe and create an unordered list&nbsp;<kbd>&lt;ul&gt;</kbd>&nbsp;with each page becoming it's own list item&nbsp;<kbd>&lt;li&gt;</kbd>&nbsp;right below the logo that we added.</p>
+<h3><span class="highlight">Step 06</span></h3>
+<img class="right" width="15%" src="/content/enforced/61378-Online.Reference.WDD100/Course Files/Images/2015-11-11_1525.png" alt="Tiny Partial Circle" title="Tiny Partial Circle" />
+<p>Next is a wide banner image. Look through the images provided and choose one to add to your page. Remember you can see what your site is looking like anytime by hitting the view at the top of the page.</p>
+<p class="clearfix">If your page does not update, click the refresh button (The tiny partial circle by the address line) &nbsp;on the Chrome&nbsp;browser.&nbsp;</p>
+<h3><span class="highlight">Step 07</span></h3>
+<p>Now we have 2 sections that have a headline, a paragraph, and an image (Make sure to refer&nbsp;to&nbsp;the wireframe). Using the&nbsp;<kbd>&lt;h1&gt;</kbd>or&nbsp;<kbd>&lt;h2&gt;</kbd>&nbsp;tag add the first headline to the page. then use a&nbsp;<kbd>&lt;p&gt;</kbd>&nbsp;tag to add the following text: (or something similar...feel free to edit this :) )</p>
+<kbd>We believe that there is nothing like a river trip for relaxing. That is why we subscribe to the dry oar philosophy of boating. Keeping your oars dry for us means taking time to look around and notice the beauty that surrounds the rivers we love.</kbd></div>
+<div class="activityContent"></div>
+<div class="activityContent">
+<p>Finally choose another picture from those provided and add it after the paragraph</p>
+<h3><span class="highlight">Step 08</span></h3>
+<p>The next section is very similar...notice that the order of the elements is slightly different. This time you will add image, then headline, and then paragraph. Here is the text for this section:</p>
+<kbd>That doesn't mean we don't also like rapids. Opposites in all things after all. We believe that that tenseness that comes when you are looking down the tongue of a big string of waves makes you appreciate the calm beautiful water that always follows even more.</kbd></div>
+<div class="activityContent">
+<h3><span class="highlight">Step 09</span></h3>
+<p>The next section shouldn't be a problem at this point. One more headline and another paragraph. Here is the text:</p>
+<kbd>We invite you to come relax with us on one of the amazing rivers we visit. Check out our trips and let us know which one best suits you. We're waiting to hear from you!</kbd>
+<h3><span class="highlight">Step 10</span></h3>
+<p>Finally lets add that copyright in our footer. You can just put it into another paragraph. To make the copyright symbol we use a special code, there are many of these but we will just learn this one today: &amp;copy; Place that right before the 2015 so it will look like this:</p>
+<pre><code class="html">&lt;p&gt;&amp;copy; 2015 Dry Oar&lt;p&gt;</code></pre>
+<p>We will add the icons for the social media links later.</p>
+<h3><span class="highlight">Step 11</span></h3>
+<p>View your web page to make sure your changes are correct. Once verified, submit the URL from your browser that you use to view your page to iLearn.</p>
+<div class="callout">
+    <p>Do <strong>not</strong> turn in the URL of the page where you edit your page.  The instructor will not be able to see that one to grade your work. The View URL should look something like this (you would replace 'thompsonw16' with whatever your Handcraft project is called):</p>
+    <pre><code class="html">http://thompsonw16.handcraft.com/index.html</code></pre>
+</div>
+<p>Go to the next page to access &ldquo;W04.03 Getting Started: Create the Home Page in HTML&rdquo; and click &ldquo;Upload.&rdquo;</p>
+</div>
+</div>
+<!-- end #article --></div>
+<script src="../js/course.js"></script>
+<script src="../js/highlight.pack.js"></script>
+<script>// <![CDATA[
+hljs.initHighlightingOnLoad();
+// ]]></script>
+</body>
+</html>

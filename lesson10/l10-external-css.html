@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <title>W10.01 External CSS - Instructions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/course.css" />
+    <link rel="stylesheet" href="../css/solarized-light.css">
+</head>
+
+<body>
+    <div id="main">
+        <header id="header"><img src="../images/smallBanner.jpg" alt="Course Banner" /></header>
+        <main id="article">
+            <h1>External CSS</h1>
+            <hr />
+            <h2>Activity&nbsp;Instructions</h2>
+            <p>Estimated Time: 15 minutes</p>
+            <div class="callout">
+                <p>Up until now we have been using an internal stylesheet. This is what Khan Academy teaches, and it is a good place to start learning. Eventually you can start running into some limitations of internal CSS...namely that when you want to add more than one page to your site keeping your styling in sync between all your pages becomes quite a chore as every page will have a copy of the styles in the <kbd>&lt;head&gt;</kbd>!</p>
+                <p>External style sheets solve this problem by removing the CSS from the page and into a separate file of type <kbd>.css</kbd> After removing the css you then have to <kbd>&lt;link&gt;</kbd> your html to the css so it can find the styles.</p>
+            </div>
+            <h3>Step 01</h3>
+            <p>Make your CSS external by first creating a new file in your editor and saving it as <kbd>main.css</kbd>.</p>
+            <h3>Step 02</h3>
+            <p>Next copy your CSS out of your <kbd>index.html</kbd> file (it will be everything in the <kbd>&lt;style&gt;</kbd> block, but <strong>not</strong> the <kbd>&lt;style&gt;</kbd> tags themselves) and pasting the CSS into your new <kbd>main.css</kbd> file.</p>
+            <div class="callout fig-block">
+               <figure><img alt="CSS Example"  src="../images/css-file.jpg" title="CSS Example" />
+                <figcaption>Example CSS file</figcaption></figure>
+            </div>
+            <h3>Step 03</h3>
+            <p>Now link your css to your html page by adding a <kbd>&lt;link&gt;</kbd> tag. First remove the <kbd>&lt;style&gt;</kbd> block from the <kbd>&lt;head&gt;</kbd> of your document. The link will go in the place of it. A link tag has 3 required attributes: <kbd>rel, type</kbd>, and <kbd>href</kbd>. Two of the attributes will always be the same for CSS, the third you will have to provide. In this case the line should look like this (assuming you named your file main.css):</p>
+            <pre><code class="html">&lt;link rel="stylesheet" type="text/css" href="main.css" &gt;</code> </pre>
+            
+            <div class="callout fig-block">
+               <figure><img alt="Head-with-Style"  src="../images/head-with-style.jpg" title="Head-with-Style" />
+                <figcaption>HTML file with internal CSS (before we add the link)</figcaption></figure>
+            <figure><img alt="Head-with-Link" src="../images/head-with-link.jpg" title="Head-with-Link" />
+                <figcaption>HTML file with link to external CSS (after we add the link)</figcaption></figure>
+            </div>
+            <h3>Step 04</h3>
+            <p>Enter the URL to your site into a browser to make sure the webpage displays correctly. Once verified, go to the next page to access "W10.01 External CSS" and click "Upload" to submit the URL for this assignment.</p>
+            <p class="callout">If you have not done so recently make sure to backup your site! (In Handcraft goto Projects, then click on the gear icon on your project for the class, then "Export as .zip"</p>
+            <h3>Grading</h3>
+            <p>This activity will be graded using the following rubric:</p>
+            <ul>
+                <li>All CSS has been removed from the HTML file and placed into an external CSS file (7 pts)</li>
+                <li>CSS is linked to the html file and styles still show. (3 pt)</li>
+            </ul>
+            
+        </main>
+        <!-- end #article -->
+    </div>
+    <script src="../js/course.js"></script>
+    <script src="../js/highlight.pack.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+	<title>Troubleshooting</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../css/course.css" />
+</head>
+<body>
+<div id="main">
+<div id="header"><img src="../images/smallBanner.jpg" alt="Course Banner" /></div>
+<div id="article">
+<h1>Troubleshooting</h1>
+<h2>IT'S NOT WORKING!!!!</h2>
+<p>Not sure if you can relate to the headline above...but what should you do if nothing you try seems to work? I have a list of suggestions for you:</p>
+<ol>
+<li>Make sure that you don't have any red lines in Handcraft (except for the first one...for some reason it treats the <kbd>&lt;!doctype html &gt;</kbd> as invalid). If you do have any it means you have errors in your html somewhere. Look for malformed tags, quotes that aren't closed, mis-nested elements, etc.</li>
+<li>Validate your HTML! Because HTML is a standard, programs can be written to check for errors or poorly written code. Whenever things aren't working the way the activity says they should, and especially if you have red lines in Handcraft that you can't find the reason for...you should validate.
+<p class="callout">Validating is easy. Goto <a href="https://validator.w3.org/" target="_blank">https://validator.w3.org/</a>, then enter in the same url that you would submit in iLearn for your site. It will check for any HTML errors and tell you where they are. Don't panic if it comes back with some really high number. One error can often cascade and create many others. I recommend fixing the first, then re-validating until all are gone.</p>
+</li>
+<li>Validate your CSS! There is also a CSS standard, so you can validate that as well to check for errors. The process is similar, you just need to goto a different site. The CSS validator can be found at: <a href="https://jigsaw.w3.org/css-validator/" target="_blank">https://jigsaw.w3.org/css-validator/</a>. Follow the same steps...fix the first error then re-validate until clean.</li>
+<li>Communicate with the instructor. If you are spending multiple hours on any activity you are spending too long. Get in touch with the instructor and have them look at your code.</li>
+</ol>
+<!-- end #article --></div>
+<script src="../js/course.js"></script>
+</div>
+</body>
+</html>

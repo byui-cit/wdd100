@@ -1,0 +1,186 @@
+/******************************************************** The purpose of course.css is to house only the css specific to an individual course. The online.css houses all the default template formatting. ********************************************************/
+
+
+/* DO NOT DELETE OR MODIFY THIS IMPORT */
+
+@import url("https://content.byui.edu/integ/gen/599082e0-3e89-4fd9-ac69-2615865d63c7/0/online.css");
+
+/* Add Course Specific css Below */
+
+html {
+    background: -webkit-radial-gradient(ellipse, #87c6e0 0%, #00273a 100%) fixed;
+    background: radial-gradient(ellipse, #87c6e0 0%, #00273a 100%) fixed;
+}
+img { 
+    max-width: 100%;
+}
+h1 {
+    color: #0d1e28;
+}
+
+h2 {
+    color: #10808e;
+}
+
+h3 {
+    color: #383838;
+}
+
+h4 {
+    color: #10808e;
+}
+
+h5 {
+    color: #383838;
+}
+
+a {
+    color: #2d5d94;
+    border-bottom: 2px solid #2d5d94;
+}
+
+a:hover {
+    color: #14304f;
+    border-bottom: 2px solid #14304f;
+}
+
+a:visited {
+    color: #14304f;
+    border-bottom: 2px solid #14304f;
+}
+
+#footer {
+    color: #e2e2e2;
+    background-color: #14304f;
+}
+
+
+/******************************************** SPLASH PAGE STYLING *********************************************/
+
+.splash #article {
+    color: #eaeaea;
+    background-color: #0e4c5f;
+}
+
+.splash h1 {
+    color: #fafafa;
+}
+
+.splash h2 {
+    color: #bbd8e4;
+}
+
+.splash h3 {
+    color: #e3e3e3;
+}
+
+.splash h4 {
+    color: #bbd8e4;
+}
+
+.splash h5 {
+    color: #e3e3e3;
+}
+
+.splash a {
+    color: #a1d7ff;
+    border-bottom: 2px solid #a1d7ff;
+}
+
+.splash a:hover {
+    color: #e59f55;
+    border-bottom: 2px solid #e59f55;
+}
+
+.splash a:visited {
+    color: #e59f55;
+    border-bottom: 2px solid #e59f55;
+}
+
+.splash #footer {
+    color: #e2e2e2;
+    background-color: #4487a3;
+}
+
+
+/******************************************** FEATURES STYLING *********************************************/
+
+
+/* Callout box */
+
+.callout {
+    color: #292929;
+    background: antiquewhite;
+}
+
+
+/* Drop downs */
+
+.drop-down {
+    background: #1c5571;
+}
+
+.drop-down:hover {
+    background: #053349;
+}
+
+
+/* Rubric table */
+
+
+/* Column headings */
+
+.rubric tr:first-child th {
+    background-color: #1c5571;
+}
+
+
+/* Row headings */
+
+.rubric th {
+    background-color: #1e698d;
+}
+
+
+/* Mouseover popups */
+
+#main .popup {
+    border-bottom: dotted 2px #00273a;
+}
+
+#main .popup span {
+    background: #00273a;
+}
+
+#main .popup:after {
+    border-color: #00273a transparent transparent transparent;
+}
+
+.fig-block {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 1em auto;
+}
+
+.fig-block > * {
+    max-width: 100%;
+    flex: 1 0 auto;
+}
+
+.fig-block figure {
+    text-align: center;
+    
+}
+.fig-block figure > a {
+    text-decoration: none;
+    border-bottom: none;
+}
+.right {
+    float: right;
+    padding: 0 20px 20px 20px;
+}
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
