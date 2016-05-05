@@ -48,7 +48,7 @@
     <p>Not great. It would be better if the 2 elements that make up our row wrapped and streched back out to full width at a certain point.</p>
     </div>
 <h3>Step 03</h3>
-    <p>Fix our small screen view by adding a <kbd>flex-flow: row wrap;</kbd> line just below the line that setup our flex container (<kbd>display:flex;</kbd>). This will allow our flex items to wrap, but it won't <em>make</em> them wrap.  Flex items by nature are allowed to shrink and grow with the space they have available.  This is controlled with the <a href="http://www.w3schools.com/cssref/css3_pr_flex.asp" target="_blank"><kbd>flex</kbd></a> property. </p>
+    <p>Begin fixing our small screen view by adding a <kbd>flex-flow: row wrap;</kbd> line just below the line that setup our flex container (<kbd>display:flex;</kbd>). This will <em>allow</em> our flex items to wrap, but it won't <em>make</em> them wrap.  Flex items by nature are allowed to shrink and grow with the space they have available.  This is controlled with the <a href="http://www.w3schools.com/cssref/css3_pr_flex.asp" target="_blank"><kbd>flex</kbd></a> property. </p>
     <p>Add <kbd>flex: 1;</kbd> to both the left and right divs in your section row. (In my case it would be .leftcol and .rightcol).  This will let each of them take up 1 share of the space...so they will be the same size.  Try changing one of them to 2.  Now it should take up twice as much space as the other.</p>
     <div class="callout">
         <p>If your images are not resizing to fit in the box you have them in make sure you have the following rule in your css: </p>
