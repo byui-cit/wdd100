@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>W09.02 Layout the Home Page - Instructions</title>
     <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link rel="stylesheet" href="../css/solarized-light.css" />
     <link href="../css/course.css" rel="stylesheet">
 </head>
 <body>
@@ -27,30 +28,114 @@
 <img alt="Code Example" width="90%" src="../images/codeexample.jpg" title="Code Example" />
 <p>Notice how each section has a <kbd>leftcol</kbd> and <kbd>rightcol</kbd> div. Last week you should have set a width on them as well to about 48%. Now all we need to do is get them to line up horizontally.</p>
     </div>
-<p>Use <kbd>float: left;</kbd> and <kbd>float: right;</kbd> on the leftcol and rightcol to make the 2 columns form a row like in the wireframe.</p>
+<p>Let's try flexbox to do this.  Flexbox is good when we have several elements that we need aligned as a row or column.  In fact it makes it really easy to switch from column to row and back. Flexbox relies on setting up a flex container or parent first.  In our case the containers will be our rows which are made in the HTML with <kdb>&lt;section&gt;</kdb>s.</p>
+<p>Add <kbd>display: flex;</kbd> to the first 2 sections on your page (in my case I would use <kdb>#section1, #section2</kdb> as the selector) to turn them into flex containers. Now all of the immediate children will become flex-items or children. (Again in my case with the code above the flex-items would be the 2 divs, .rightcol and .leftcol)</p>
 <div class="callout">
-<p>Once you apply the floats to the left and right columns you may end up with something that looks like this:</p>
-<img alt="Float Example" width="85%" src="../images/float-jumble.jpg" title="Float Example" />
-<p>What's going on here...it's all jumbled up! We need to remember that once we float an element, everything after that gets floated until we tell them to stop floating. In our case we want the <kbd>leftcol</kbd> to float left of the rightcol that is in the same section as it <strong>and nothing else!</strong></p>
-<p>We use <kbd>clear: both;</kbd> to stop things from floating. The question is where should we use it? All of the floating is confined to our sections...nothing outside of that containing box gets floated. If we put a <kbd>clear</kbd> in between each section it should clear up our jumble.</p>
+<p>You should see an immediate change once you make your first section flex.  You should end up with something that looks like this:</p>
+<div class="fig-block">
+  <figure>
+   <img alt="flex 1 example"  src="../images/layout-flex01.jpg" title="flex example 1" />
+    </figure>
+    </div>
+    <p>Not bad for one line of css right? It automatically reformatted into a row.  This is due to the default values for flex.  They are set to <kbd>row</kbd> and <kbd>nowrap</kbd>.  The row is perfect for what we are trying to do, but the <kbd>nowrap</kbd> could cause us problems.</p>
+    <p>Those defaults are set with the <a href="http://www.w3schools.com/cssref/css3_pr_flex-flow.asp" target="_blank">flex-flow</a> property. Take a moment to review the values it can have. </p>
+<p>The problem that <kbd>nowrap</kbd> will cause is best shown by shrinking the browser window as small as it will go. (Like if you were on a phone) The page ends up looking something like this:</p>
+   <div class="fig-block">
+  <figure>
+   <img alt="flex 2 example"  src="../images/layout-flex02.jpg" title="flex example 2" />
+    </figure>
+    </div>
+    <p>Not great. It would be better if the 2 elements that make up our row wrapped and streched back out to full width at a certain point.</p>
     </div>
 <h3>Step 03</h3>
-<p>Fix our floating by adding <kbd>clear:both;</kbd> to your rule that modifies your sections (In my case with code as above I would add it to my <kbd>section</kbd> rule).</p>
-<div class="callout">
-<p>Notice that because we are using the same classes for the next section which is styled similarly it has also moved into position. There is a problem however. The colored box that we put around those elements has collapsed!</p>
-<img alt="Float Collapse" width="85%" src="../images/float-collapse.jpg" title="Float Collapse" />
-<p>This is a quirk of floats. When everything inside an element is floated the browser thinks the element is empty and so it collapses. Luckily there is an easy fix.</p>
+    <p>Fix our small screen view by adding a <kbd>flex-flow: row wrap;</kbd> line just below the line that setup our flex container (<kbd>display:flex;</kbd>). This will allow our flex items to wrap, but it won't <em>make</em> them wrap.  Flex items by nature are allowed to shrink and grow with the space they have available.  This is controlled with the <a href="http://www.w3schools.com/cssref/css3_pr_flex.asp" target="_blank"><kbd>flex</kbd></a> property. </p>
+    <p>Add <kbd>flex: 1;</kbd> to both the left and right divs in your section row. (In my case it would be .leftcol and .rightcol).  This will let each of them take up 1 share of the space...so they will be the same size.  Try changing one of them to 2.  Now it should take up twice as much space as the other.</p>
+    <div class="callout">
+        <p>If your images are not resizing to fit in the box you have them in make sure you have the following rule in your css: </p>
+        <pre><code class="css">
+img {
+    max-width: 100%;
+}      
+        </code> </pre>
+         <p>This will make sure that none of your images can ever be larger than the box they are in.</p>
     </div>
+    <p>We need one last bit of css to fix our small screen view.  Lets set a limit on how small the right and left columns can become.  Add a <kbd>min-width: 15em;</kbd> to your css to do that. My css (for the html above) Is looking like this:</p>
+    <pre><code class="css">
+ #section1, #section2 {
+    display:flex;
+   flex-flow: row wrap;
+}
+.leftcol {
+  width: 48%;
+    min-width: 15em;
+   flex: 1;
+ }
+.rightcol {
+ width: 48%;
+    min-width: 15em;
+    flex: 1;
+}       
+    </code> </pre>
+    <div class="callout">
+        <p>This should have fixed our small view.  If you shrink your browser window again you should see something like this:</p>
+        <div class="fig-block">
+  <figure>
+   <img alt="flex 3 example"  src="../images/layout-flex03.jpg" title="flex example 3" />
+    </figure>
+    </div>
+    <p>Much better!</p>
+    </div>
+
 <h3>Step 04</h3>
-<p>Fix section 2 by adding <kbd>overflow: auto;</kbd> to a rule that modifies that section. (If your html is similar to mine you would add it to a CSS rule with a selector of <kbd>section</kbd>)</p>
+<p>Looking good! One thing is bugging me though. The headline and paragraph in the first section is aligned at the top of that space...it would look much better closer to the center. This is another thing that flex excels at.</p>
+<div class="callout">
+    <p>Alignment in flexbox is governed by two properties. <a href="http://www.w3schools.com/cssref/css3_pr_align-items.asp" target="_blank"> <kbd>align-items</kbd></a> and <a href="http://www.w3schools.com/cssref/css3_pr_justify-content.asp" target="_blank"><kbd>justify-content</kbd></a>.</p>
+    <p>When we set the <kbd>flex-flow</kbd> to row we were actually setting up the primary axis direction: row (or horizontal).  This is significant because alignment along the primary axis is controlled with <kbd>justify-content</kbd>, alignment along the cross-axis is governed by <kbd>align-items</kbd></p>
+</div>
+<p>Since our primary axis is row (horizontal), we change the cross-axis (vertical) alignment  with <kbd>align-items</kbd>. Add the following to your css for the flex container: <kbd>align-items: center;</kbd>.  Just like that our paragraphs will always be centered vertically...no matter how the width of the page changes!</p>
 <h3>Step 05</h3>
-<p>Looking good! One thing is bugging me though. The headline and paragraph in the first section is aligned at the top of that space...it would look much better closer to the center. We learned how to do this last week. Move those elements down so they are closer to the center vertically. (Hint: think padding :) ) Then do the same for the paragraph in the second section.</p>
+<p>One last thing and our rows will be done.  Sometimes the paragraphs and images are smushed together.  Add some margin around them to make sure this doesn't happen. </p>
+<div class="callout">
+    <p>I started with separate classes for my left and right columns (.leftcol and .rightcol).  But as my css came together the properties and values I had under each ended up exactly the same.</p>
+ <pre><code class="css">
+.leftcol {
+    width: 48%;
+    min-width: 15em;
+    flex: 1;
+    margin:.5em;
+}
+.rightcol {
+     width: 48%;
+     min-width: 15em;
+     flex: 1;
+     margin:.5em;
+}
+</code></pre>   
+    <p>It's good practice to review your css from time to time to watch for things like that.  Since they are the same I could combine them like this: </p>
+    <pre><code class="css">
+.leftcol, .rightcol {
+    width: 48%;
+    min-width: 15em;
+    flex: 1;
+    margin:.5em;
+}
+
+</code></pre>
+    
+    <p>Also watch for css rules that have the exact same selector.  Those should be combined as well.</p>
+</div>
 <h3>Step 06</h3>
-<p>The bottom section should look pretty good by now. One thing though, it looks a bit squished. I think it would look better if it were closer in size to the other sections. Use margins, height, or padding to make it so.</p>
+<p>We worked on the bottom (3rd) section a week or two ago to get it to center, and it should look pretty good by now. One thing though, it looks a bit squished. I think it would look better if it were closer in size to the other sections. Use margins, height, or padding to make it so.</p>
+<div class="callout">
+<p>Third section? you may ask...what happened to the second section?  Well with mine since I used the same class names for the different parts of my rows (leftcol, rightcol) the second section just took care of itself! Anytime you have sections of your page that are styled or laid out similarly you should re-use your classes to avoid having to do the same things over and over.</p>
+
+    </div>
 <h3>Step 07</h3>
-<p>The last thing to do now is to finish the footer. According to the wireframe the copyright should be on the left, the social media icons on the right, the whole footer should be 55px high, and there should be space around the icons. This is similar to what we have done before. You should be able to figure it out. Review the tips on last weeks positioning activity if you get stuck. (Hint: you will probably need to use at least <kbd>float, padding, width</kbd> on the different elements in the footer. If you use float remember that the floated element <strong>must</strong> come before the other stuff in the html.)</p>
+<p>The last thing to do now is to finish the footer. According to the wireframe the copyright should be on the left, the social media icons on the right, the whole footer should be 55px high, and there should be space around the icons. This is similar to what we have done before. You should be able to figure it out. Review the tips on last weeks positioning activity if you get stuck. (Hint: there are several ways to do this, you could use float, display:inline-block, or display: flex to do the major movement, then you will probably need to add some <kbd>padding, margin, or width</kbd> on the different elements in the footer to finish it off. If you use float remember that the floated element <strong>must</strong> come before the other stuff in the html.)</p>
 <h3>Step 08</h3>
 <p>Enter the View URL to your site into a browser to make sure the webpage displays correctly. Once verified, submit the URL for this assignment in ILearn. Then remember to backup your Handcraft files (Projects-&gt;Gear icon-&gt;Export as .zip)</p>
+
+
 <h3>Grading</h3>
 <p>This activity will be graded using the following rubric:</p>
 <ul>
@@ -64,5 +149,11 @@
 <script src="../js/course.js">// <![CDATA[
 
 // ]]></script>
+ <script src="../js/highlight.pack.js"></script>
+    <script>
+        // <![CDATA[
+        hljs.initHighlightingOnLoad();
+        // ]]>
+    </script>
 </body>
 </html>
