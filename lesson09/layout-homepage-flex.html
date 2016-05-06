@@ -28,8 +28,14 @@
 <img alt="Code Example" width="90%" src="../images/codeexample.jpg" title="Code Example" />
 <p>Notice how each section has a <kbd>leftcol</kbd> and <kbd>rightcol</kbd> div. Last week you should have set a width on them as well to about 48%. Now all we need to do is get them to line up horizontally.</p>
     </div>
-<p>Let's try flexbox to do this.  Flexbox is good when we have several elements that we need aligned as a row or column.  In fact it makes it really easy to switch from column to row and back. Flexbox relies on setting up a flex container or parent first.  In our case the containers will be our rows which are made in the HTML with <kdb>&lt;section&gt;</kdb>s.</p>
-<p>Add <kbd>display: flex;</kbd> to the first 2 sections on your page (in my case I would use <kdb>#section1, #section2</kdb> as the selector) to turn them into flex containers. Now all of the immediate children will become flex-items or children. (Again in my case with the code above the flex-items would be the 2 divs, .rightcol and .leftcol)</p>
+<p>Let's try css flexbox to do this.  Flexbox is good when we have several elements that we need aligned as a row or column.  In fact it makes it really easy to switch from column to row and back. Flexbox relies on setting up a flex container or parent first.  In our case the containers will be our rows which are made in the HTML with <kdb>&lt;section&gt;</kdb>s.</p>
+<p>Add the following property to a rule in your css to modify the first 2 sections on your page (in my case I would use <kdb>#section1, #section2</kdb> as the selector) to turn them into flex containers.</p>
+<pre><code class="css">
+#section1, #section2 {
+    display: flex;
+}    
+</code> </pre>
+<p> Now all of the immediate children will become flex-items or children. (Again in my case with the code above the flex-items would be the 2 divs, .rightcol and .leftcol)</p>
 <div class="callout">
 <p>You should see an immediate change once you make your first section flex.  You should end up with something that looks like this:</p>
 <div class="fig-block">
