@@ -175,6 +175,10 @@ a:visited {
     text-decoration: none;
     border-bottom: none;
 }
+figcaption {
+    font-size: .8em;
+    text-align: center;
+}
 .right {
     float: right;
     padding: 0 20px 20px 20px;

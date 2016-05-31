@@ -51,17 +51,36 @@
 <h3>Step 03</h3>
 <p>Use <kbd>padding</kbd> to space out the content on your page from any edges or borders where it is needed.</p>
 <h3>Step 04</h3>
-<p>Proximity is a design principle that we rely on to help to know which elements on our page are related to each other by their distance from each other. Let's make sure that visitors to our site know that the headlines and paragraphs are related to each other by bringing them a little closer together. (The default spacing has them just a little far apart.) Adjust the&nbsp;<kbd>line-height</kbd>&nbsp;of your headlines to bring them closer to the paragraphs they belong to. You could even play with the line-height of your paragraphs to see how it affects readability as well.</p>
+<p>Proximity is a design principle that we rely on to help to know which elements on our page are related to each other by their distance from each other. Let's make sure that visitors to our site know that the headlines and paragraphs are related to each other by bringing them a little closer together. (The default spacing has them just a little far apart.) Adjust the&nbsp;<kbd>line-height</kbd>&nbsp; and <kbd>margin</kbd>s of your headlines to bring them closer to the paragraphs they belong to. You could even play with the line-height of your paragraphs to see how it affects readability as well.</p>
+<div class="callout">
+    <p>If you are having a hard time getting your headlines to come closer to your paragraphs try this: right click on one of your headlines and select "Inspect".  An area on your browser should open at either the side or bottom of the screen that shows both the html and the styles for that element.  This is a powerful tool.</p>
+    <p>When I did this I saw the following:</p>
+    <div class="fig-block">
+                    <figure><img src="../images/inspect.jpg" alt="inspect element example"  />
+                    </figure>
+                    
+     </div>
+     <ol>
+         <li>Notice that browser is showing me the size of the element in pixels.</li>
+         <li>It's also showing me the area it takes up both for size (blue highlight) and margins (brown highlight). If there were any padding it would be green.</li>
+         <li>All the styles are shown.  The third arrow shows styles I defined.</li>
+         <li>The last arrow shows several styles I <strong>did not</strong> define.  Notice it says "user agent stylesheet" That's just another way of saying "browser default styling".</li>
+     </ol><figure class="right"><img src="../images/box-model.jpg" alt="box model example"  /><figcaption>Box Model for the element</figcaption></figure>
+     <p>The highlighted area and the styles are both show in different ways that <kbd>&lt;h2&gt;</kbd> has top and bottom margins defined by default. Those defaults are probably interfering with your desire to move the headline closer to the paragraph.</p>
+     
+     <p>Another way of seeing this can be found if you scroll down in the area showing the styles...you should see something like in the Box model figure.</p>
+</div>
 <div class="callout">
 <p>If you refer back to the wireframe you will notice that the paragraphs in each of the sections only take up about half the screen. Let's make them do that now. We can use the&nbsp;<a href="http://www.w3schools.com/cssref/pr_dim_width.asp" target="_blank">width</a>&nbsp;property again to do this. You should have placed the headline and paragraph together in a box and given it a class to identify it. If you didn't do that now. My code looks like this:</p>
 <p><img src="../images/codeexample.jpg" alt="codeexample" title="codeexample" /></p>
-<p>It might be helpful to review the&nbsp;<a href="../images/wireframe-boxes.jpg" target="_blank">wireframe</a>&nbsp;I am basing my page on. Notice how I have grouped and identified things. I placed the headline, and paragraph in the first section in a &lt;div&gt; with a class of leftcol, then I use that same class for the left column in section2. Then I did the same thing for the content that will be in the right column (once we learn positioning). This was part of last week's assignment.</p>
+<p>It might be helpful to review the&nbsp;<a href="../images/wireframe-boxes.jpg" target="_blank">wireframe</a>&nbsp;I am basing my page on. Notice how I have grouped and identified things. I placed the headline, and paragraph in the first section (top-row) in a &lt;div&gt; with a class of leftcol, then I use that same class for the left column in the second section (middle-row). Then I did the same thing for the content that will be in the right column (once we learn positioning). This was part of last week's assignment.</p>
 <p>If yours doesn't look similar to this you might want to adjust it. Layout will go much easier if your HTML is well structured. Think of a body and skeleton. If the bones in your elbows bent backwards instead of forwards you could scratch your own back easily, but you would have a really hard time eating :) You could get it done, but it's better to have a structure that makes it easy. Poor HTML structure will make positioning and laying out your site&nbsp;<strong>much</strong>&nbsp;more work.</p>
 </div>
 <h3>Step 05</h3>
 <p>Review your wireframe and set widths for elements that need it. In my example I would set a width of 48% on the left and right columns, and bottom section to constrain them to a bit less than half the space they have available.</p>
 <h3>Step 06</h3>
 <p>Open your website&nbsp;into your browser to make sure the web page displays correctly. Pay special attention to whether your images are all displaying. Once verified, submit the URL for your page to iLearn.&nbsp;Then remember to backup your Handcraft files (Projects-&gt;Gear icon-&gt;Export as .zip).</p>
+<p>Make sure to <a href="https://validator.w3.org/" target="_blank">validate</a> your page as well.</p>
 <h2>Grading</h2>
 <p>This activity will be graded using the following rubric:</p>
 <ul>
