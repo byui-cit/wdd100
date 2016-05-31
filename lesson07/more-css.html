@@ -4,6 +4,7 @@
     <meta charset="utf-8">
 	<title>W07.02 More CSS: Fonts and Spacing- Instructions</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/solarized-light.css" />
 	<link rel="stylesheet" href="../css/course.css" />
 </head>
 <body>
@@ -23,20 +24,23 @@
 <p>So for example if I chose Helvetica&nbsp;as my font for body copy I would add something like&nbsp;<kbd>font-family: Helvetica, Arial, sans-serif;</kbd>&nbsp;to a rule modifying the&nbsp;<kbd>body</kbd> of my page.</p>
 <p>If however I wanted to use the font Rock Salt for my headlines, that is not a web safe font and will probably not be on most computers. I have to do an extra step to make it available.</p>
 <p>Google Fonts makes it very easy to add your fonts. Find your font in Google Fonts and click the Quick-use button</p>
-<p><img src="../images/googlefont1.png" alt="googlefont" title="googlefont" /></p>
+<div class="fig-block">
+    <figure><img src="../images/googlefont1.png" alt="googlefont" title="googlefont" /></figure>
+</div>
 <p>Then scroll down to step 3 and click on the @import tab.</p>
-<p><img src="../images/googlefont2.png" alt="googlefont2" title="googlefont2" /></p>
+<div class="fig-block">
+    <figure><img src="../images/googlefont2.png" alt="googlefont2" title="googlefont2" /></figure>
+</div>
 <p>Copy the line below&nbsp;and add it to the top of your &lt;style&gt; block. It should look something like this:</p>
-<table width="493" height="234">
-<tbody>
-<tr>
-<td>
-<h2>HTML - Name: "index.html"</h2>
-<pre>&lt;html&gt;<br />  &lt;head&gt;<br />     &lt;title&gt;My first website&lt;/title&gt;<br />     &lt;style&gt;<br />          @import url(https://fonts.googleapis.com/css?family=Rock+Salt); ...        </pre>
-</td>
-</tr>
-</tbody>
-</table>
+<pre><code class="html">
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;My first website&lt;/title&gt;
+        &lt;style&gt;
+          @import url(https://fonts.googleapis.com/css?family=Rock+Salt);
+           ...            
+</code></pre>
+
 <p>Now you can use that font just like normal, ie:&nbsp;<kbd>font-family: 'Rock Salt', cursive;</kbd></p>
 </div>
 <h3>Step 01</h3>
@@ -66,13 +70,15 @@
          <li>All the styles are shown.  The third arrow shows styles I defined.</li>
          <li>The last arrow shows several styles I <strong>did not</strong> define.  Notice it says "user agent stylesheet" That's just another way of saying "browser default styling".</li>
      </ol><figure class="right"><img src="../images/box-model.jpg" alt="box model example"  /><figcaption>Box Model for the element</figcaption></figure>
-     <p>The highlighted area and the styles are both show in different ways that <kbd>&lt;h2&gt;</kbd> has top and bottom margins defined by default. Those defaults are probably interfering with your desire to move the headline closer to the paragraph.</p>
+     <p>The highlighted area and the styles are both showing in different ways that <kbd>&lt;h2&gt;</kbd> has top and bottom margins defined by default. Those defaults are probably interfering with your desire to move the headline closer to the paragraph.</p>
      
      <p>Another way of seeing this can be found if you scroll down in the area showing the styles...you should see something like in the Box model figure.</p>
 </div>
 <div class="callout">
 <p>If you refer back to the wireframe you will notice that the paragraphs in each of the sections only take up about half the screen. Let's make them do that now. We can use the&nbsp;<a href="http://www.w3schools.com/cssref/pr_dim_width.asp" target="_blank">width</a>&nbsp;property again to do this. You should have placed the headline and paragraph together in a box and given it a class to identify it. If you didn't do that now. My code looks like this:</p>
-<p><img src="../images/codeexample.jpg" alt="codeexample" title="codeexample" /></p>
+<div class="fig-block">
+    <figure><img src="../images/codeexample.jpg" alt="codeexample" title="codeexample" /></figure>
+    </div>
 <p>It might be helpful to review the&nbsp;<a href="../images/wireframe-boxes.jpg" target="_blank">wireframe</a>&nbsp;I am basing my page on. Notice how I have grouped and identified things. I placed the headline, and paragraph in the first section (top-row) in a &lt;div&gt; with a class of leftcol, then I use that same class for the left column in the second section (middle-row). Then I did the same thing for the content that will be in the right column (once we learn positioning). This was part of last week's assignment.</p>
 <p>If yours doesn't look similar to this you might want to adjust it. Layout will go much easier if your HTML is well structured. Think of a body and skeleton. If the bones in your elbows bent backwards instead of forwards you could scratch your own back easily, but you would have a really hard time eating :) You could get it done, but it's better to have a structure that makes it easy. Poor HTML structure will make positioning and laying out your site&nbsp;<strong>much</strong>&nbsp;more work.</p>
 </div>
@@ -80,7 +86,7 @@
 <p>Review your wireframe and set widths for elements that need it. In my example I would set a width of 48% on the left and right columns, and bottom section to constrain them to a bit less than half the space they have available.</p>
 <h3>Step 06</h3>
 <p>Open your website&nbsp;into your browser to make sure the web page displays correctly. Pay special attention to whether your images are all displaying. Once verified, submit the URL for your page to iLearn.&nbsp;Then remember to backup your Handcraft files (Projects-&gt;Gear icon-&gt;Export as .zip).</p>
-<p>Make sure to <a href="https://validator.w3.org/" target="_blank">validate</a> your page as well.</p>
+<p>Make sure to <a href="https://validator.w3.org/" target="_blank">validate</a> your page as well and fix any errors that show.</p>
 <h2>Grading</h2>
 <p>This activity will be graded using the following rubric:</p>
 <ul>
@@ -91,5 +97,11 @@
 </div>
 </div>
 <script src="../js/course.js"></script>
+<script src="../js/highlight.pack.js"></script>
+    <script>
+        // <![CDATA[
+        hljs.initHighlightingOnLoad();
+        // ]]>
+    </script>
 </body>
 </html>
