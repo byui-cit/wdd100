@@ -25,10 +25,13 @@
 <p>Now lets position the first section of headline, paragraph and image.</p>
 <div class="callout">
 <p>You should have grouped elements together in previous weeks...the code for this section should look something like this:</p>
-<img alt="Code Example" width="90%" src="../images/codeexample.jpg" title="Code Example" />
+<div class="fig-block">
+<figure>
+<img alt="Code Example"  src="../images/codeexample.jpg" title="Code Example" />
+    </figure></div>
 <p>Notice how each section has a <kbd>leftcol</kbd> and <kbd>rightcol</kbd> div. Last week you should have set a width on them as well to about 48%. Now all we need to do is get them to line up horizontally.</p>
     </div>
-<p>Let's try css flexbox to do this.  Flexbox is good when we have several elements that we need aligned as a row or column.  In fact it makes it really easy to switch from column to row and back. Flexbox relies on setting up a flex container or parent first.  In our case the containers will be our rows which are made in the HTML with <kdb>&lt;section&gt;</kdb>s.</p>
+<p>Let's try css flexbox to do this.  Flexbox is good when we have several elements that we need aligned as a row or column.  In fact it makes it really easy to switch from column to row and back. Flexbox relies on setting up a flex container or parent first.  In our case the containers will be our rows which are made in the HTML with <code>&lt;section&gt;</code>s.</p>
 <p>Add the following property <kbd>display: flex;</kbd>, to a rule in your css to modify the first 2 sections on your page to turn them into flex containers. In my case that rule would look like the following:</p>
 <pre><code class="css">
 #section1, #section2 {
@@ -65,7 +68,7 @@ img {
         </code> </pre>
          <p>This will make sure that none of your images can ever be larger than the box they are in.</p>
     </div>
-    <p>We need one last bit of css to fix our small screen view.  Lets set a limit on how small the right and left columns can become.  Add a <kbd>min-width: 15em;</kbd> to your css to do that. My css (for the html above) Is looking like this:</p>
+    <p>We need one last bit of css to fix our small screen view.  Lets set a limit on how small the right and left columns can become.  We can use the <code>flex</code> property for this.  Above I showed you the simplest way to use <code>flex</code>.  It can actually take 1, 2, or 3 values. Using 1 like we did above it basically means each flex item should have one share of the space, and let that space grow or shrink evenly as it needs to fill the available container. We could also do something like this <code>flex: 1 0 15em;</code>  This would mean start with the item at 15em width, but let it grow to fill all available space (first 1). Don't let it shrink (middle 0) smaller than 15em though. Add that to your css. My css (for the html above) Is looking like this:</p>
     <pre><code class="css">
  #section1, #section2 {
     display:flex;
@@ -73,13 +76,11 @@ img {
 }
 .leftcol {
   width: 48%;
-    min-width: 15em;
-   flex: 1;
+  flex: 1 0 15em;
  }
 .rightcol {
- width: 48%;
-    min-width: 15em;
-    flex: 1;
+  width: 48%;
+  flex: 1 0 15em;
 }       
     </code> </pre>
     <div class="callout">
@@ -106,26 +107,22 @@ img {
  <pre><code class="css">
 .leftcol {
     width: 48%;
-    min-width: 15em;
-    flex: 1;
-    margin:.5em;
+    flex: 1 0 15em;
+    margin: .5em;
 }
 .rightcol {
-     width: 48%;
-     min-width: 15em;
-     flex: 1;
-     margin:.5em;
+    width: 48%;
+    flex: 1 0 15em;
+    margin: .5em;
 }
 </code></pre>   
     <p>It's good practice to review your css from time to time to watch for things like that.  Since they are the same I could combine them like this: </p>
     <pre><code class="css">
 .leftcol, .rightcol {
     width: 48%;
-    min-width: 15em;
-    flex: 1;
-    margin:.5em;
+    flex: 1 0 15em;
+    margin: .5em;
 }
-
 </code></pre>
     
     <p>Also watch for css rules that have the exact same selector.  Those should be combined as well.</p>
@@ -153,9 +150,7 @@ img {
 </div>
 </div>
 <!-- end #article -->
-<script src="../js/course.js">// <![CDATA[
-
-// ]]></script>
+<script src="../js/course.js"></script>
  <script src="../js/highlight.pack.js"></script>
     <script>
         // <![CDATA[
