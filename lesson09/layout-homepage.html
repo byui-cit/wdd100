@@ -31,7 +31,8 @@
     </figure></div>
 <p>Notice how each section has a <kbd>leftcol</kbd> and <kbd>rightcol</kbd> div. Last week you should have set a width on them as well to about 48%. Now all we need to do is get them to line up horizontally.</p>
     </div>
-<p>Let's try css flexbox to do this.  Flexbox is good when we have several elements that we need aligned as a row or column.  In fact it makes it really easy to switch from column to row and back. Flexbox relies on setting up a flex container or parent first.  In our case the containers will be our rows which are made in the HTML with <code>&lt;section&gt;</code>s.</p>
+    <p>Let's try css flexbox to do this.  <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">Flexbox</a> is good when we have several elements that we need aligned as a row or column.  In fact it makes it really easy to switch from column to row and back. Flexbox relies on setting up a flex container or parent first.  In our case the containers will be our rows which are made in the HTML with <code>&lt;section&gt;</code>s.</p>
+    <p class="callout">The link I provided above is to a great resource about flexbox from CSS-Tricks: <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">A Complete Guide to Flexbox</a>. You really should take a minute to look it over.</p>
 <p>Add the following property <kbd>display: flex;</kbd>, to a rule in your css to modify the first 2 sections on your page to turn them into flex containers. In my case that rule would look like the following:</p>
 <pre><code class="css">
 #section1, #section2 {
