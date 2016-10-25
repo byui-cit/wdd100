@@ -65,6 +65,14 @@
                 <p><span>We have a slight problem here though. If we use the tag as a selector like we did with&nbsp;<kbd>&lt;nav&gt;</kbd>&nbsp;it will change both of our sections, which we don't want. From the Khan Academy lesson you should have learned about 2 other selectors: id selectors and class selectors. Id selectors should be used for elements that have unique styling needs, class selectors for those elements that might share styles with other elements. (I tend to use far more class selectors than id, I like re-using CSS rules)</span></p>
             </div>
             <p><span>In this case let's use an ID. Add an&nbsp;<kbd>id=""</kbd>&nbsp;to the second section so we can apply some styles just to that one. Pick a descriptive name for the id, then add a rule to change the background color of that box to one of your colors. (Remember that when you write the rule you need to add a '#' to your id name so the browser knows it's looking for the&nbsp;<em>id</em>&nbsp;and not the&nbsp;<em>tag</em>)</span></p>
+            <p>Your section should look something like this (you can call your id anything you want...I chose "top-row")</p>
+<pre><code class="html">&lt;section id="top-row"&gt; ...content of section here... &lt;/section&gt;
+</code> </pre>
+           <p>The corresponding css to style that id would look something like this:</p>
+<pre><code class="css">#top-row {
+   ...css here...
+}
+</code> </pre>
             <h3><span><span class="highlight">Step 08</span>&nbsp;</span></h3>
             <p><span>Next let's make our headlines stand out a little more. Lets change the color of all headlines again to one of the colors in your palette. Since we need to make sure everything from&nbsp;<kbd>&lt;h1&gt;</kbd>&nbsp;-&nbsp;<kbd>&lt;h6&gt;</kbd>&nbsp;gets the same styling we will take advantage of the fact that you can apply the same styles to more than one selector, so we can write one rule instead of six to change them all.</span></p>
             <p><span>To have a set of rules apply to more than one selector we separate them with a comma. So the rule to change the color of all headlines would look something like this:</span></p>
