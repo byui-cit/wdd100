@@ -15,7 +15,20 @@
 <hr />
 <div class="activityContent">
 <h2>Activity Directions</h2>
-<p><span class="highlight">Estimated Time</span>:&nbsp;1:30 minutes</p>
+<p><span class="highlight">Estimated Time</span>:&nbsp;45 minutes</p>
+<div class="callout">
+    <p>The first half of the activity will use the following new html concepts or tags (review the links if you do not remember these from Khan academy):</p>
+    <ul>
+        <li><a href="http://www.w3schools.com/html/html_basic.asp" target="_blank">HTML Basics</a> </li>
+        <li><a href="http://www.w3schools.com/html/html_elements.asp" target="_blank">HTML Elements</a> </li>
+        <li><a href="http://www.w3schools.com/html/html_attributes.asp" target="_blank">HTMl Attributes</a> </li>
+        <li><a href="http://www.w3schools.com/html/html_headings.asp" target="_blank">HTML Headings</a> </li>
+        <li><a href="http://www.w3schools.com/html/html_paragraphs.asp" target="_blank">HTML Paragraphs</a> </li>
+        <li><a href="http://www.w3schools.com/html/html_images.asp" target="_blank">HTML Images</a> </li>
+        <li><a href="http://www.w3schools.com/html/html_lists.asp" target="_blank">HTML Lists</a> </li>
+        
+    </ul>
+</div>
 <h3><span class="highlight">Step 01</span></h3>
 <p>If you completed the Software setup activity you should already have an html file ready called index.html. It should look something like this:</p>
 <pre><code class="html">
@@ -122,56 +135,7 @@
 &lt;/footer&gt;
 </code></pre>
 <p>Make sure to use the current year for the copyright! We will add the icons for the social media links later.</p>
-<h2>CSS</h2>
-<div class="callout">
-    <p>Whew!  We got all the content in....but you might of noticed it doesn't look too great. Remember that HTML is responsible to get content on a page, but to style it we use CSS.  Make sure you have completed the Adding Some Style Khan Academy lesson before continuing.</p>
-</div>
 
-<h3><span class="highlight">Step 11</span></h3>
-            <p>Let's add some styles! In the&nbsp;<kbd>&lt;head&gt;</kbd>&nbsp;portion of our page let's add a&nbsp;<kbd>&lt;style&gt;&lt;/style&gt;</kbd>&nbsp;element.</p>
-            <h3><span class="highlight">Step 12</span></h3>
-    <p>The wireframe has a rectangle around the navigation menu. This usually indicates a colored box in that area. Let's add some color to our&nbsp;<kbd>&lt;nav&gt;</kbd>. In the&nbsp;<kbd>&lt;style&gt;</kbd>&nbsp;block we added let's make a CSS rule modifying our&nbsp;<kbd>&lt;nav&gt;</kbd></p>
-            <div class="callout">
-                <p>Every CSS rule is made up of 3 elements. First we always need a selector, in this case we want to modify any&nbsp;<kbd>&lt;nav&gt;</kbd>&nbsp;elements on our page so our selector will be:&nbsp;<kbd>nav</kbd>. Next there are always curly braces { }. Inside those braces we place one or more pairs of 'property to change: value to change it to'</p>
-                <p>So in this example to change the background color of our&nbsp;<kbd>&lt;nav&gt;</kbd>&nbsp;after adding the new rule our style block would look like this: (you should use one of your selected colors, probably not salmon)</p>
-                <pre>        <code class="html">
-&lt;style&gt;
-     nav {
-         background-color: salmon;
-     }    
-&lt;/style&gt;
-        </code>
-        </pre>
-                <p>It's worth taking a moment and talking about what valid options you have to designate color. The 3 main ways are hexadecimal, rgb, and predefined color names. Take a moment to visit&nbsp;<a href="http://www.w3schools.com/cssref/css_colors_legal.asp" target="_blank">W3Schools: CSS colors</a>&nbsp;to get a brief outline about the differences. Also take a look at this&nbsp;<a href="http://www.w3schools.com/colors/colors_names.asp" target="_blank">list of color names</a>&nbsp;that your browser will understand.</p>
-            </div>
-            <h3><span class="highlight">Step 13</span></h3>
-<p>The color you changed the background of the&nbsp;<kbd>&lt;nav&gt;</kbd>&nbsp;to may have made your text hard to read. In the site plan you should have chosen a color for your links. Add another line to your css rule to change the&nbsp;<kbd>color</kbd>&nbsp;for the text in the&nbsp;<kbd>&lt;nav&gt;</kbd>&nbsp;as well. Again you should use a color from your chosen palette. Pick something that looks good with the background color and that is easily readable.</p>
-            <h3><span class="highlight">Step 14</span></h3>
-<p>Our next step is to add the background color to the second&nbsp;<kbd>&lt;section&gt;</kbd>&nbsp;in our page.</p>
-            <div class="callout">
-                <p>We have a slight problem here though. If we use the tag as a selector like we did with&nbsp;<kbd>&lt;nav&gt;</kbd>&nbsp;it will change both of our sections, which we don't want. From the Khan Academy lesson you should have learned about 2 other selectors: id selectors and class selectors. Id selectors should be used for elements that have unique styling needs, class selectors for those elements that might share styles with other elements. (I tend to use far more class selectors than id, I like re-using CSS rules)</p>
-            </div>
-<p>In this case let's use an ID. Add an&nbsp;<kbd>id=""</kbd>&nbsp;to the second section so we can apply some styles just to that one. Pick a descriptive name for the id, then add a rule to change the background color of that box to one of your colors. (Remember that when you write the rule you need to add a '#' to your id name so the browser knows it's looking for the&nbsp;<em>id</em>&nbsp;and not the&nbsp;<em>tag</em>)</p>
-           <p>Your section should look something like this (you can call your id anything you want...I chose "top-row")</p>
-<pre><code class="html">&lt;section id="top-row"&gt; ...content of section here... &lt;/section&gt;
-</code> </pre>
-           <p>The corresponding css to style that id would look something like this:</p>
-<pre><code class="css">#top-row {
-   ...css here...
-}
-</code> </pre>
-            <h3><span class="highlight">Step 15</span></h3>
-<p>Next let's make our headlines stand out a little more. Lets change the color of all headlines again to one of the colors in your palette. Since we need to make sure everything from&nbsp;<kbd>&lt;h1&gt;</kbd>&nbsp;-&nbsp;<kbd>&lt;h6&gt;</kbd>&nbsp;gets the same styling we will take advantage of the fact that you can apply the same styles to more than one selector, so we can write one rule instead of six to change them all.</p>
-<p>To have a set of rules apply to more than one selector we separate them with a comma. So the rule to change the color of all headlines would look something like this:</p>
-            <h2>Multiple selector Example</h2>
-            <pre>        <code class="css">
-h1,h2,h3,h4,h5,h6 {
-     color: #6495ED;
-}    
-        </code>
-        </pre>
-            <h3><span class="highlight">Step 16</span></h3>
-            <p>Changing the color of the second section may have made the text there hard to read. For our final step lets use a class selector to change the color of that text. Add a&nbsp;<kbd>class=""</kbd>&nbsp;to the&nbsp;<kbd>&lt;p&gt;</kbd>&nbsp;inside the second section. Choose a descriptive name for the class, then create a css rule to change the color. Remember that you need to precede your rule with a '.' so that the browser knows it's looking for the&nbsp;<em>class</em>&nbsp;and not a&nbsp;<em>tag</em>. If done correctly it should only change the text of the paragraph we applied the class to.</p>
 
 
 <h3><span class="highlight">Step 17</span></h3>
@@ -184,10 +148,9 @@ h1,h2,h3,h4,h5,h6 {
 <h2>Grading</h2>
 <p>This activity will be graded using the following rubric:</p>
 <ul>
-    <li>All of the content indicated on the wireframe is included. 10pts</li>
-    <li>Semantic, structural html used to organize and group html elements where asked for.  5pts</li>
-    <li>CSS used to change the colors of backgrounds and text. 3pts</li>
-    <li>At least one class or ID used to apply a style. 2pts</li>
+    <li>All of the content indicated on the wireframe is included. 7pts</li>
+    <li>Semantic, structural html used to organize and group html elements where asked for.  3pts</li>
+    
 </ul>
 <!--<p>Go to the next page to access &ldquo;W04.03 Getting Started: Create the Home Page in HTML&rdquo; and click &ldquo;Upload.&rdquo;</p>-->
 

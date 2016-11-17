@@ -49,6 +49,26 @@ a:visited {
     border-bottom: 2px solid #14304f;
 }
 
+header {
+    background-color: #14304f;
+    
+    display: flex;
+    flex-flow: row wrap;
+    padding: .8em;
+}
+
+header h1 {
+    border-left: 1px solid;
+    line-height: 3em;
+    padding-left: .6em;
+    color: white;
+}
+header .logo {
+    margin-right: .6em;
+    
+    align-self: center;
+}
+
 #footer {
     color: #e2e2e2;
     background-color: #14304f;
