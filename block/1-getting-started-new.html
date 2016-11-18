@@ -65,20 +65,21 @@
     <p>The Wireframe also indicates where out headlines and paragraphs will be, and should show approximately how much space the text should take up, and the relative sizes of the headlines and paragraph text. It also helps us to see the organization of the page.  Elements are organized into groups.  It will be important that we include html markup to represent those groups, as well as to get the content on the page.</p>
     </div>
     <div class="callout">
-    <p><strong>Note!</strong>: We will not be adding colors and other styles this week.  Our only goal is to get all of the content onto the page that is shown on the wireframe.  Our Page will <strong>not</strong> look like the wireframe when we finish this week. Each week will get us closer, but our page will not look exactly like the wireframe until Week 10, so patience will be required :)</p>
+    <p><strong>Note!</strong>: We will not be adding colors and other styles this week.  Our only goal is to get all of the content onto the page that is shown on the wireframe.  Our Page will <strong>not</strong> look like the wireframe when we finish this week. Each week will get us closer, but our page will not look exactly like the wireframe for several weeks, so patience will be required :)</p>
     </div>
     <h2>Laying the groundwork.</h2>
     <h3><span class="highlight">Step 04</span></h3>
 <p>Building a website is actually a lot like building a house.  You start with a blueprint (wireframe) and then you build the foundation and frame for the house.  We have already built the foundation.  We did that when we added the <kbd>&lt;html&gt;</kbd>, <kbd>&lt;head&gt;</kbd>, and <kbd>&lt;body&gt;</kbd> elements above.  The framing takes the rooms outlined on the blueprint and creates a real space to put them.  We need to do the same thing for our webpage, except for instead of rooms we are looking at content areas. </p>
-<p>The way we "frame" in our webpage is by looking carefully at our wireframe to see what "rooms" we have. then we use some special HTML tags to define them.</p>
+<p>The way we "frame" in our webpage is by looking carefully at our wireframe to see what "rooms" we have. Then we use some special HTML tags to define them.</p>
 <div class="callout">
        <p>Take a moment to review the <a href="../images/wireframe-boxes-all.jpg" target="_blank">wireframe</a> again to help remember what we are trying to do. Remember that I mentioned above that we are looking right now at content areas...elements on the page that are related and grouped. The wireframe has red boxes to help you to see those relationships. We need to add some markup to create those 'rows' or 'boxes' in our html.</p>
         <p>Html has several tags specifically for this purpose. Some have specific semantic meanings and others don't. We should always try and use the ones with meaning whenever we can. Here is a list of some of the more common of these tags:&nbsp;<kbd>&lt;header&gt;</kbd>,&nbsp;<kbd>&lt;footer&gt;</kbd>,&nbsp;<kbd>&lt;main&gt;</kbd>,&nbsp;<kbd>&lt;section&gt;</kbd>,&nbsp;<kbd>&lt;nav&gt;</kbd>,&nbsp;<kbd>&lt;article&gt;</kbd>, <kbd>&lt;figure&gt;</kbd>,&nbsp;<kbd>&lt;aside&gt;</kbd>,&nbsp;<kbd>&lt;div&gt;</kbd>, and&nbsp;<kbd>&lt;span&gt;</kbd></p>
         <p>All of them behave the same in the browser except for&nbsp;<kbd>&lt;span&gt;</kbd>, but they are used to show different sections of the page. Try to use the more specific ones first, using a generic&nbsp;<kbd>&lt;div&gt;</kbd>&nbsp;only if none of the others seems to apply to the content you are boxing in.</p>
     </div>
     <p>Add markup to your body to start outlining content areas.  The first we need is at the top of the page. Notice that there is a box around the logo and navigation bar.  Those elements are related and form the header of the page. Lucky for us if you look in the list of tags above you will see that there is a <kbd>&lt;header&gt;</kbd> tag! Lets use it. Place an empty header element on the page. </p>
-    <p>Inside of the header you can see a second box around the links for the navigation. Again after reviewing the list above we see a <kbd>&lt;nav&gt;</kbd> tag...perfect! Add a <kbd>&lt;nav&gt;</kbd> <em>inside</em> of the <kbd>&lt;header&gt;</kbd></p>
-    <p>Right below that is a banner image that will stretch all the way across the screen.  Lets add some html to hold that.  In this case a simple <kbd>&lt;div&gt;</kbd> is probably the right answer.</p>
+    <p>Inside of the header you can see a second box around the links for the navigation. Again after reviewing the list above we see a <kbd>&lt;nav&gt;</kbd> tag...perfect! Add a <kbd>&lt;nav&gt;</kbd> <em>inside</em> of the <kbd>&lt;header&gt;</kbd>.</p>
+    <p>Next lets add an area where the main content for this page will go.  On a normal site the header and footer will stay the same across pages...but the central content will change from page to page.  We need a box to hold that.  The <code>&lt;main&gt;</code> tag was built for just this use.  Add a <code>&lt;main&gt;</code> element to your page right below the <code>&lt;/header&gt;</code> </p>
+    <p>The first thing we need inside our new <code>&lt;main&gt;</code> element is a banner image that will stretch all the way across the screen.  Lets add some html to hold that.  In this case a simple <kbd>&lt;div&gt;</kbd> is probably the right answer.</p>
     <p>At this point my <kbd>&lt;body&gt;</kbd> looks like this:</p>
 <pre><code class="html">
 &lt;body&gt;
@@ -88,7 +89,9 @@
             &lt;!-- navigation will go here --&gt; 
         &lt;/nav&gt;
     &lt;/header&gt;
-    &lt;div&gt; &lt;!-- banner image will go here --&gt; &lt;/div&gt;
+    &lt;main&gt;
+        &lt;div&gt; &lt;!-- banner image will go here --&gt; &lt;/div&gt;
+    &lt;/main&gt;
 &lt;/body&gt;
 
 </code></pre>
@@ -96,7 +99,7 @@
     <p>You may have noticed the lines in my code above that are in grey. They are called comments...notes to yourself that the browser will ignore. Comments start with &lt;!-- and end with --&gt; and everything in-between will be ignored. Comments are a great way to remind yourself what you were thinking when you did something in your page. </p>
 </div>
 <h3><span class="highlight">Step 05</span></h3>
-<p>Let's move onto the next section.  It has 3 boxes.  One that essentially forms the "row", and then 2 others inside that that will form "columns". Notice that one of those columns contains a headline and paragraph.  If you did any rading on the tags above you might have noticed the <code><a href="http://www.w3schools.com/tags/tag_section.asp" target="_blank">&lt;section&gt;</a></code> tag. It is specifically for a section of a page that contains a headline, one or more paragraphs, and possibly an image. Lets add one. </p>
+<p>Let's move onto the next section.  It has 3 boxes.  One that essentially forms the "row", and then 2 others inside that that will form "columns". All of these 'rows' should go into the <code>&lt;main&gt;</code> element.  Notice that one of those columns contains a headline and paragraph.  If you did any rading on the tags above you might have noticed the <code><a href="http://www.w3schools.com/tags/tag_section.asp" target="_blank">&lt;section&gt;</a></code> tag. It is specifically for a section of a page that contains a headline, one or more paragraphs, and possibly an image. Lets add one. </p>
 <p>After adding the <kbd>&lt;section&gt;</kbd> element we need to add 2 more elements to represent the left and right columns. In this case again I think a <kbd>&lt;div&gt;</kbd> would be great.</p>
 <p>Your <kbd>&lt;body&gt;</kbd> should look something like this now:</p>
 <pre><code class="html">
@@ -107,25 +110,28 @@
             &lt;!-- navigation will go here --&gt; 
         &lt;/nav&gt;
     &lt;/header&gt;
-    &lt;div&gt; &lt;!-- banner image will go here --&gt; &lt;/div&gt;
-    &lt;section&gt; &lt;!-- this is the first row of content --&gt; 
-        &lt;div&gt; 
-            &lt;!-- left column content here --&gt;
-        &lt;/div&gt;
-        &lt;div&gt; 
-            &lt;!-- right column content here --&gt;
-        &lt;/div&gt;
-    &lt;/section&gt;
+    
+    &lt;main&gt;
+       &lt;div&gt; &lt;!-- banner image will go here --&gt; &lt;/div&gt;
+       &lt;section&gt; &lt;!-- this is the first row of content --&gt; 
+            &lt;div&gt; 
+                &lt;!-- first row left column content here --&gt;
+            &lt;/div&gt;
+            &lt;div&gt; 
+                &lt;!-- first row right column content here --&gt;
+            &lt;/div&gt;
+       &lt;/section&gt;
+    &lt;/main&gt;
 &lt;/body&gt;
 </code></pre>
 <div class="callout">
     <p>You may have noticed something else about my code as well.  Notice how I am indenting my HTML elements to help me clearly see which elements are inside of other elements.  As you page gets larger this becomes more and more important. Take a little time to keep your code in order...you will be happy you did later on.</p>
 </div>
 <h3><span class="highlight">Step 06</span></h3>
-    <p>We have 2 more rows now in the wireframe to define. The Second row of content is actually structured exactly the same as the previous one. So add the elements just as we did in the step above. The third row is more simple. We can probably get away with a single <code>&lt;section&gt;</code> for it. </p>
+    <p>We have 2 more rows now in the wireframe to define. The Second row of content is actually structured exactly the same as the previous one. So add the elements just as we did in the step above. The third row is more simple. We can probably get away with a single <code>&lt;section&gt;</code> for it.  Make sure both of these <code>&lt;section&gt;</code>s go <em>inside</em> of  <code>&lt;main&gt;</code>. </p>
 <h3><span class="highlight">Step 07</span></h3>
     <p>We are now to the bottom of the page. This is usually known as the footer. Lucky for us there is a <code>&lt;footer&gt;</code> tag. Add one below your 3rd row (section). Inside of that I didn't draw any boxes, but hopefully by now you can recognize that there are 2 content areas inside our footer. One for the Copyright and another for some social media icons we will add later.</p>
-<p>Add 2 elements to contain those bits of content.</p>
+<p>Add 2 elements to contain those bits of content. The <code>&lt;footer&gt;</code> should go <em>below</em> the <code>&lt;/main&gt;</code></p>
 <h2>Adding content.</h2>
 <div class="callout">
     <p>With that we should now have all of the "framing" done on our webpage.  We have a place defined now for all the content that needs to be on the page.  With that done we are now ready to actually add it!</p>
@@ -159,6 +165,7 @@
 </code> </pre>
 <h3><span class="highlight">Step 10</span></h3>
 <img class="right"  src="../images/2015-11-11_1525.png" alt="Tiny Partial Circle" title="Tiny Partial Circle" />
+   
     <p>Next is a wide banner image. Look through the images provided and choose one to add to your page in the <code>&lt;div&gt;</code> we added earlier to hold it. Remember you can see what your site is looking like anytime by hitting the view at the top of the page.</p>
 <p class="clearfix">If your page does not update, click the refresh button (The tiny partial circle by the address line) &nbsp;on the Chrome&nbsp;browser.&nbsp;</p>
 <h3><span class="highlight">Step 11</span></h3>
@@ -172,7 +179,7 @@
 <p>Here is an example of how your section should look:</p>
             
             <pre><code class="html">
-&lt;section&gt;
+&lt;section&gt; &lt;!-- this is the first row of content --&gt; 
     &lt;div&gt; 
         &lt;!-- left column content here --&gt;
         &lt;/div&gt;&lt;h2&gt;We run Rivers to relax.&lt;/h2&gt;
@@ -197,7 +204,7 @@
 <pre><code class="html">&lt;p&gt;&amp;copy; 2015 Dry Oar&lt;p&gt;</code></pre>
 <p>Lets go ahead and add your name as part of the footer as well. So the final html for the footer section should look something like this:</p>
 <pre><code class="html">&lt;footer&gt;
-    &lt;div&gt;&amp;copy; 2015 Dry Oar || FirstName LastName &lt;div&gt;
+    &lt;p&gt;&amp;copy; 2015 Dry Oar || FirstName LastName &lt;/p&gt;
     &lt;div&gt; &lt;!-- social media content here --&gt; &lt;/div&gt;
 &lt;/footer&gt;
 </code></pre>
