@@ -172,7 +172,7 @@
 .hint:hover {
     background: #d0d0d0;
 }
-.hint div {
+.hint > div {
     display: none;
 }
 

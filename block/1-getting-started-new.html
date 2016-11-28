@@ -17,7 +17,7 @@
 <h2>Activity Directions</h2>
 <p><span class="highlight">Estimated Time</span>:&nbsp;45 minutes</p>
 <div class="callout">
-    <p>The first half of the activity will use the following new html concepts or tags (review the links if you do not remember these from Khan academy):</p>
+    <p>The activity will use the following html concepts or tags (review the links if you do not remember these from Khan academy):</p>
     <ul>
         <li><a href="http://www.w3schools.com/html/html_basic.asp" target="_blank">HTML Basics</a> </li>
         <li><a href="http://www.w3schools.com/html/html_elements.asp" target="_blank">HTML Elements</a> </li>
@@ -99,7 +99,7 @@
     <p>You may have noticed the lines in my code above that are in grey. They are called comments...notes to yourself that the browser will ignore. Comments start with &lt;!-- and end with --&gt; and everything in-between will be ignored. Comments are a great way to remind yourself what you were thinking when you did something in your page. </p>
 </div>
 <h3><span class="highlight">Step 05</span></h3>
-<p>Let's move onto the next section.  It has 3 boxes.  One that essentially forms the "row", and then 2 others inside that that will form "columns". All of these 'rows' should go into the <code>&lt;main&gt;</code> element.  Notice that one of those columns contains a headline and paragraph.  If you did any rading on the tags above you might have noticed the <code><a href="http://www.w3schools.com/tags/tag_section.asp" target="_blank">&lt;section&gt;</a></code> tag. It is specifically for a section of a page that contains a headline, one or more paragraphs, and possibly an image. Lets add one. </p>
+<p>Let's move onto the next section.  It has 3 boxes.  One that essentially forms the "row", and then 2 others inside that that will form "columns". All of these 'rows' should go into the <code>&lt;main&gt;</code> element.  Notice that one of those columns contains a headline and paragraph.  If you did any reading on the tags above you might have noticed the <code><a href="http://www.w3schools.com/tags/tag_section.asp" target="_blank">&lt;section&gt;</a></code> tag. It is specifically for a section of a page that contains a headline, one or more paragraphs, and possibly an image. Lets add one. </p>
 <p>After adding the <kbd>&lt;section&gt;</kbd> element we need to add 2 more elements to represent the left and right columns. In this case again I think a <kbd>&lt;div&gt;</kbd> would be great.</p>
 <p>Your <kbd>&lt;body&gt;</kbd> should look something like this now:</p>
 <pre><code class="html">
@@ -130,8 +130,8 @@
 <h3><span class="highlight">Step 06</span></h3>
     <p>We have 2 more rows now in the wireframe to define. The Second row of content is actually structured exactly the same as the previous one. So add the elements just as we did in the step above. The third row is more simple. We can probably get away with a single <code>&lt;section&gt;</code> for it.  Make sure both of these <code>&lt;section&gt;</code>s go <em>inside</em> of  <code>&lt;main&gt;</code>. </p>
 <h3><span class="highlight">Step 07</span></h3>
-    <p>We are now to the bottom of the page. This is usually known as the footer. Lucky for us there is a <code>&lt;footer&gt;</code> tag. Add one below your 3rd row (section). Inside of that I didn't draw any boxes, but hopefully by now you can recognize that there are 2 content areas inside our footer. One for the Copyright and another for some social media icons we will add later.</p>
-<p>Add 2 elements to contain those bits of content. The <code>&lt;footer&gt;</code> should go <em>below</em> the <code>&lt;/main&gt;</code></p>
+    <p>We are now to the bottom of the page. This is usually known as the footer. Lucky for us there is a <code>&lt;footer&gt;</code> tag. Add one below your 3rd row (section) and after the <code>&lt;/main&gt;</code>. Inside of that I didn't draw any boxes, but hopefully by now you can recognize that there are 2 content areas inside our footer. One for the Copyright and another for some social media icons we will add later.</p>
+<p>Add 2 elements to contain those bits of content. Remember: the <code>&lt;footer&gt;</code> should go <em>below</em> the <code>&lt;/main&gt;</code></p>
 <h2>Adding content.</h2>
 <div class="callout">
     <p>With that we should now have all of the "framing" done on our webpage.  We have a place defined now for all the content that needs to be on the page.  With that done we are now ready to actually add it!</p>
@@ -182,7 +182,7 @@
 &lt;section&gt; &lt;!-- this is the first row of content --&gt; 
     &lt;div&gt; 
         &lt;!-- left column content here --&gt;
-        &lt;/div&gt;&lt;h2&gt;We run Rivers to relax.&lt;/h2&gt;
+        &lt;h2&gt;We run Rivers to relax.&lt;/h2&gt;
         &lt;p&gt;We believe that there is nothing like a river trip for relaxing...  &lt;/p&gt;
     &lt;/div&gt;
     &lt;div&gt; 
@@ -197,7 +197,7 @@
 <kbd>That doesn't mean we don't also like rapids. Opposites in all things after all. We believe that that tenseness that comes when you are looking down the tongue of a big string of waves makes you appreciate the calm beautiful water that always follows even more.</kbd>
 
 <h3><span class="highlight">Step 13</span></h3>
-<p>The next section shouldn't be a problem at this point. In your last section <kbd>&lt;section&gt;</kbd> add another headline and paragraph. Here is the text:</p>
+<p>The next section shouldn't be a problem at this point. In your last <kbd>&lt;section&gt;</kbd> add another headline and paragraph. Here is the text:</p>
 <kbd>We invite you to come relax with us on one of the amazing rivers we visit. Check out our trips and let us know which one best suits you. We're waiting to hear from you!</kbd>
 <h3><span class="highlight">Step 14</span></h3>
 <p>Finally lets the content to the <kbd>&lt;footer&gt;</kbd>. The copyright comes first. Put it into the first element that you should have added in your <kbd>&lt;footer&gt;</kbd>. To make the copyright symbol we use a special code, there are many of these but we will just learn this one today: &amp;copy; Place that right before the 2015 so it will look like this:</p>

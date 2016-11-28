@@ -1,36 +1,178 @@
 <!DOCTYPE html>
 <html lang="en-us">
-
 <head>
     <meta charset="utf-8">
-    <title>W10.02 Finishing Touches - Instructions</title>
+    <title>Finishing Touches - Instructions</title>
     <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link rel="stylesheet" href="../css/solarized-light.css" />
     <link href="../css/course.css" rel="stylesheet">
 </head>
-
 <body>
-    <div id="main">
-        <div id="header"><img alt="Course Banner" src="../images/smallBanner.jpg" /></div>
-        <div id="article">
-            <h1>Finishing Touches</h1>
-            <hr />
-            <h2>Activity&nbsp;Instructions</h2>
-            <p>Estimated Time: 45 minutes</p>
-            <div class="callout">
+<div id="main">
+<header id="header"><img alt="Course Banner" src="../images/smallBanner.jpg" /></header>
+<div id="article">
+<h1>Layout the Home Page</h1>
+<hr />
+<h2>Activity&nbsp;Instructions</h2>
+<p>Estimated Time: 45 minutes</p>
+<div class="callout">
+    <p>This activity will use the following css concepts or properties (review the links if you do not remember these from Khan academy):</p>
+    <ul>
+        <li><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">Flexbox</a> or <a href="http://www.w3schools.com/css/css3_flexbox.asp" target="_blank">W3Schools Flexbox</a> </li>
+        <li><a href="http://www.w3schools.com/cssref/css3_pr_flex-flow.asp" target="_blank">flex-flow</a> </li>
+        <li><a href="http://www.w3schools.com/cssref/css3_pr_justify-content.asp" target="_blank">justify-content</a> </li>
+        <li><a href="http://www.w3schools.com/cssref/css3_pr_flex.asp" target="_blank">flex</a> </li>
+        <li><a href="http://www.w3schools.com/cssref/pr_margin.asp" target="_blank">margin</a> </li>
+        <li><a href="http://www.w3schools.com/cssref/pr_padding.asp" target="_blank">padding</a> </li>
+        <li><a href="http://www.w3schools.com/css/css_combinators.asp" target="_blank">CSS Descendant Selectors</a> </li>
+        <li><a href="http://www.w3schools.com/cssref/pr_dim_line-height.asp" target="_blank">CSS Line-height</a> </li>
+        <li><a href="http://www.w3schools.com/css/css_pseudo_classes.asp" target="_blank">CSS pseudo classes</a> </li>
+        
+    </ul>
+</div>       
+<p>We have made a lot of improvements to our page over the last few weeks. This week we finally take on the layout. After we finish the layout of our page it should look very similar to the wireframe, and will be close to complete.</p>
+<div class="callout">
+<p>Review again the <a href="../images/wireframe-boxes.jpg" target="_blank">wireframe</a> for the Dry Oar site. We will start from the top and work down to position all of the elements that need it. The header (logo and navigation) will take a bit of extra work, and few concepts that we will not learn until next week...so we are going to skip it for now.</p>
+    </div>
+<h3>Step 01</h3>
+<p>First lets consider the banner. According to the wireframe it should extend all the way across the width of the page. Depending on which image you are using your's may or may not be doing that. Lets set a width of 100% on that image. Make a class for the image called <kbd>fullwidth</kbd> and apply the style with that.</p>
+<h3>Step 02</h3>
+<p>Now lets position the first section of headline, paragraph and image.</p>
+<div class="callout">
+<p>You should have grouped elements together in previous weeks...the code for this section should look something like this:</p>
+<div class="fig-block">
+<figure>
+<img alt="Code Example"  src="../images/codeexample.jpg" title="Code Example" />
+    </figure></div>
+<p>Notice how each section has a <kbd>leftcol</kbd> and <kbd>rightcol</kbd> div. Last week you should have set a width on them as well to about 48%. Now all we need to do is get them to line up horizontally.</p>
+    </div>
+    <p>Let's try css flexbox to do this.  <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">Flexbox</a> is good when we have several elements that we need aligned as a row or column.  In fact it makes it really easy to switch from column to row and back. Flexbox relies on setting up a flex container or parent first.  In our case the containers will be our rows which are made in the HTML with <code>&lt;section&gt;</code>s.</p>
+    <p class="callout">The link I provided above is to a great resource about flexbox from CSS-Tricks: <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">A Complete Guide to Flexbox</a>. You really should take a minute to look it over.</p>
+<p>Add the following property <kbd>display: flex;</kbd>, to a rule in your css to modify the first 2 sections on your page to turn them into flex containers. In my case that rule would look like the following:</p>
+<pre><code class="css">
+#section1, #section2 {
+    display: flex;
+}    
+</code> </pre>
+<p> Now all of the immediate children will become flex-items or children. (Again in my case with the code above the flex-items would be the 2 divs, .rightcol and .leftcol)</p>
+<div class="callout">
+<p>You should see an immediate change once you make your first section flex.  You should end up with something that looks like this:</p>
+<div class="fig-block">
+  <figure>
+   <img alt="flex 1 example"  src="../images/layout-flex01.jpg" title="flex example 1" />
+    </figure>
+    </div>
+    <p>Not bad for one line of css right? It automatically reformatted into a row.  This is due to the default values for flex.  They are set to <kbd>row</kbd> and <kbd>nowrap</kbd>.  The row is perfect for what we are trying to do, but the <kbd>nowrap</kbd> could cause us problems.</p>
+    <p>Those defaults are set with the <a href="http://www.w3schools.com/cssref/css3_pr_flex-flow.asp" target="_blank">flex-flow</a> property. Take a moment to review the values it can have. </p>
+<p>The problem that <kbd>nowrap</kbd> will cause is best shown by shrinking the browser window as small as it will go. (Like if you were on a phone) The page ends up looking something like this:</p>
+   <div class="fig-block">
+  <figure>
+   <img alt="flex 2 example"  src="../images/layout-flex02.jpg" title="flex example 2" />
+    </figure>
+    </div>
+    <p>Not great. It would be better if the 2 elements that make up our row wrapped and stretched back out to full width at a certain point.</p>
+    </div>
+<h3>Step 03</h3>
+    <p>Begin fixing our small screen view by adding a <kbd>flex-flow: row wrap;</kbd> line just below the line that setup our flex container (<kbd>display:flex;</kbd>). This will <em>allow</em> our flex items to wrap, but it won't <em>make</em> them wrap.  Flex items by nature are allowed to shrink and grow with the space they have available.  This is controlled with the <a href="http://www.w3schools.com/cssref/css3_pr_flex.asp" target="_blank"><kbd>flex</kbd></a> property. </p>
+    <p>Add <kbd>flex: 1;</kbd> to both the left and right divs in your section row. (In my case it would be .leftcol and .rightcol).  This will let each of them take up 1 share of the space...so they will be the same size.  Try changing one of them to 2.  Now it should take up twice as much space as the other.</p>
+    <div class="callout">
+        <p>If your images are not resizing to fit in the box you have them in make sure you have the following rule in your css: </p>
+        <pre><code class="css">
+img {
+    max-width: 100%;
+}      
+        </code> </pre>
+         <p>This will make sure that none of your images can ever be larger than the box they are in.</p>
+    </div>
+    <p>We need one last bit of css to fix our small screen view.  Lets set a limit on how small the right and left columns can become.  We can use the <code>flex</code> property for this.  Above I showed you the simplest way to use <code>flex</code>.  It can actually take 1, 2, or 3 values. Using 1 like we did above it basically means each flex item should have one share of the space, and let that space grow or shrink evenly as it needs to fill the available container. We could also do something like this <code>flex: 1 0 15em;</code>  This would mean start with the item at 15em width, but let it grow to fill all available space (first 1). Don't let it shrink (middle 0) smaller than 15em though. Add that to your css. My css (for the html above) Is looking like this:</p>
+    <pre><code class="css">
+ #section1, #section2 {
+    display:flex;
+   flex-flow: row wrap;
+}
+.leftcol {
+  width: 48%;
+  flex: 1 0 15em;
+ }
+.rightcol {
+  width: 48%;
+  flex: 1 0 15em;
+}       
+    </code> </pre>
+    <div class="callout">
+        <p>This should have fixed our small view.  If you shrink your browser window again you should see something like this:</p>
+        <div class="fig-block">
+  <figure>
+   <img alt="flex 3 example"  src="../images/layout-flex03.jpg" title="flex example 3" />
+    </figure>
+    </div>
+    <p>Much better!</p>
+    </div>
+
+<h3>Step 04</h3>
+<p>Looking good! One thing is bugging me though. The headline and paragraph in the first section is aligned at the top of that space...it would look much better closer to the center. This is another thing that flex excels at.</p>
+<div class="callout">
+    <p>Alignment in flexbox is governed by two properties. <a href="http://www.w3schools.com/cssref/css3_pr_align-items.asp" target="_blank"> <kbd>align-items</kbd></a> and <a href="http://www.w3schools.com/cssref/css3_pr_justify-content.asp" target="_blank"><kbd>justify-content</kbd></a>.</p>
+    <p>When we set the <kbd>flex-flow</kbd> to row we were actually setting up the primary axis direction: row (or horizontal).  This is significant because alignment along the primary axis is controlled with <kbd>justify-content</kbd>, alignment along the cross-axis is governed by <kbd>align-items</kbd></p>
+</div>
+<p>Since our primary axis is row (horizontal), we change the cross-axis (vertical) alignment  with <kbd>align-items</kbd>. Add the following to your css for the flex container: <kbd>align-items: center;</kbd>.  Just like that our paragraphs will always be centered vertically...no matter how the width of the page changes!</p>
+<h3>Step 05</h3>
+<p>One last thing and our rows will be done.  Sometimes the paragraphs and images are smushed together.  Add some margin around them to make sure this doesn't happen. </p>
+<div class="callout">
+    <p>I started with separate classes for my left and right columns (.leftcol and .rightcol).  But as my css came together the properties and values I had under each ended up exactly the same.</p>
+ <pre><code class="css">
+.leftcol {
+    width: 48%;
+    flex: 1 0 15em;
+    margin: .5em;
+}
+.rightcol {
+    width: 48%;
+    flex: 1 0 15em;
+    margin: .5em;
+}
+</code></pre>   
+    <p>It's good practice to review your css from time to time to watch for things like that.  Since they are the same I could combine them like this: </p>
+    <pre><code class="css">
+.leftcol, .rightcol {
+    width: 48%;
+    flex: 1 0 15em;
+    margin: .5em;
+}
+</code></pre>
+    
+    <p>Also watch for css rules that have the exact same selector.  Those should be combined as well.</p>
+</div>
+<h3>Step 06</h3>
+<p>We worked on the bottom (3rd) section a week or two ago to get it to center, and it should look pretty good by now. One thing though, it looks a bit squished. I think it would look better if it were closer in size to the other sections. Use margins, height, or padding to make it so.</p>
+<div class="callout">
+<p>Third section? you may ask...what happened to the second section?  Well with mine since I used the same class names for the different parts of my rows (leftcol, rightcol) the second section just took care of itself! Anytime you have sections of your page that are styled or laid out similarly you should re-use your classes to avoid having to do the same things over and over.</p>
+
+    </div>
+<h3>Step 07</h3>
+<p>The last thing to do now is to finish the footer. According to the wireframe the copyright should be on the left, the social media icons on the right, the whole footer should be 55px high, and there should be space around the icons. This is similar to what we have done before. You should be able to figure it out.</p>
+<p>Review the tips on last weeks positioning activity if you get stuck. (Hint: there are several ways to do this, you could use float, display:inline-block, or display: flex to do the major movement, then you will probably need to add some <kbd>padding, margin, or width</kbd> on the different elements in the footer to finish it off. If you use float remember that the floated element <strong>must</strong> come before the other stuff in the html.)</p>
+
+
+<h2>Navigation</h2>
+
+<div class="callout">
                 <p>We've done a lot of work on our site over the last few weeks and it's looking pretty close to that wireframe now. The final portion that needs our attention is the header. I have to admit I'll be really happy when we get that fixed up!</p>
                 <p>The code that I am basing this activity on looks like this: (you may want to adjust yours if it is not similar)</p>
                 <div class="fig-block"><figure><img alt="Header-Code"  src="../images/header-code.jpg" title="Header-Code" /></figure></div>
                 <p>The top of my page looks like this:</p>
                 <div class="fig-block"><figure><img alt="Example Header Code" width="50%" src="../images/header-start.jpg" style="display: block; margin-left: auto; margin-right: auto;" title="Example Header Code" /></figure></div>
             </div>
-            <h3>Step 01</h3>
-            <p>Let's make our links flow across the page horizontally first. It's important to remind ourselves why they currently look the way they do...list items are block elements. So one way to make them flow horiontally would be to change them to inline-block elements instead. Write a CSS rule using a selector to only affect list items that are inside of a <kbd>nav</kbd> element to do that now.</p>
+     
+            
+            <h3>Step 08</h3>
+            <p>Let's make our links flow across the page horizontally first. It's important to remind ourselves why they currently look the way they do...list items are block elements. So one way to make them flow horiontally would be to change them to inline-block elements instead...but we also saw above that Flexbox can make columns reflow as rows...and we also gain some nifty alignment tools.  Lets use that to layout our navigation. Remember that for flexbox we need to identify the items we want to move around (in this case the <code>&lt;li&gt;</code>), then find their parent (in this case the <code>&lt;ul&gt;</code>) The parent is where we will put our <code>display:flex;</code> Write a CSS rule using a selector to only affect the list that is inside of a <kbd>nav</kbd> element and add that now.</p>
             <div class="callout">
-                <p>We learned about several new ways to <a href="http://www.w3schools.com/cssref/css_selectors.asp" target="_blank">select</a> elements with CSS this week in Khan Academy. One of them allows us to combine multiple selectors together. For step 1 above we could use simple li as our selector, but that would change all list items on the page, and we may not want that. It would be better to get <strong>only</strong> the list items that are inside of a nav. We can do that by using "<kbd>nav li</kbd>" as our selector instead of just <kbd>li</kbd>. Many of the steps of this activity will require similar selectors.</p>
+                <p>We learned about several new ways to <a href="http://www.w3schools.com/cssref/css_selectors.asp" target="_blank">select</a> elements with CSS this week in Khan Academy. One of them allows us to combine multiple selectors together. For step 1 above we could use simple ul as our selector, but that would change all lists on the page, and we may not want that. It would be better to get <strong>only</strong> the lists that are inside of a nav. We can do that by using "<kbd>nav ul</kbd>" as our selector instead of just <kbd>ul</kbd>. Many of the steps of this activity will require similar selectors.</p>
             </div>
             <p style="text-align: center;"><img alt="Header-Step2" width="78%" src="../images/header-step2.jpg" title="Header-Step2" /></p>
             <p style="text-align: center;">Page after Step 1</p>
-            <h3>Step 02</h3>
+            <h3>Step 09</h3>
             <p>The links are moving in the right direction now...but they don't stand out very well. It would be good to increase the size of both the font, and the box that the links are in to make them stand out. Increase the size of the links by adding to a rule selecting your <kbd>nav</kbd>, and adjust the height as well.</p>
             <div class="callout">
                 <p>For my example site I wanted the navigation font to be a bit larger than normal...so I added <kbd>font-size: 1.2em;</kbd> to my <kbd>nav</kbd> rule.</p>
@@ -40,7 +182,7 @@
             </div>
             <p style="text-align: center;"><img alt="Header-Step 2.3" width="78%" src="../images/header-step2.3.jpg" title="Header-Step 2.3" /></p>
             <p style="text-align: center;">Page after Step 2</p>
-            <h3>Step 03</h3>
+            <h3>Step 10</h3>
             <p>The next thing we need to do is move the whole navigation bar up...so it is under the logo. While there are several ways to do this, the simplest would be to adjust the <kbd>margin-top</kbd>. Again this is affecting the whole navigation bar so we should apply that to the <kbd>nav</kbd> rule. You'll notice that as soon as we do this your Home link sits under the logo! Lets use <kbd>padding-left</kbd> to move it out.</p>
             <div class="callout">
                 <p>You may notice that there is a small gap between the navigation bar and the image below it. This is because we placed our links in an unordered list and the default styling of lists is to have some margin on the top and bottom to space it out from things around it. In this case we don't want it...if you see it you can remove it by adding the following CSS: <kbd>nav ul { margin: 0; }</kbd> (Read that selector as "Find any unordered lists which are inside of nav elements and set their margin to 0)</p>
@@ -51,43 +193,57 @@
                 <p>We are getting closer, but we still have some issues with that logo. The image I provided has what is known as a transparent background...it lets colors underneath it show through. It's not working very well for us now. Notice above that I placed the image inside of a div. We can change the background color of that div to fix part of our issue.</p>
                 <p>You might also notice that the logo is slightly underneath the banner image below it. One way we could get that back on top would be to set <kbd>position:relative</kbd>. This pulls the element slightly out of the flow and lets us control how things layer.</p>
             </div>
-            <h3>Step 04</h3>
+            <h3>Step 11</h3>
             <p>Make a new rule for the logo div (#logo) and set the background to white. Then add another line to that rule to change it's position to relative.</p>
             <div class="callout">
                 <p>As soon as you changed the position to relative of that logo div you are probably wondering what happened to your nav bar. My page currently looks like this:</p>
                 <p><img alt="Header Step 4" width="78%" src="../images/header-step4.jpg" style="display: block; margin-left: auto; margin-right: auto;" title="Header Step 4" /></p>
                 <p>The div that we place the image in is a block element, and so it is taking the whole line up. We didn't notice it before because it was below the navbar. But when we brought it to the top it caused problems. We need to set a width on it to keep it from taking 100%</p>
             </div>
-            <h3>Step 05</h3>
+            <h3>Step 12</h3>
             <p>Get your navbar back by setting a width on the logo. (If you are using my logo 110px will work well.) Lets finish our logo off by adding a border to keep it from blending into the white background above it.</p>
             <div class="callout">
                 <p>Our page is looking great! Only a couple of last tasks left. First is to address a usability issue. You should never make a user guess about what elements are links and what aren't. We should give them plenty of visual hints.</p>
                 <p>One thing we can take advantage of is <a href="http://www.w3schools.com/css/css_pseudo_classes.asp" target="_blank">pseudo-classes</a>. Pseudo classes let us target specific states of elements, such as link. Links have 4 states: link (normal, nothing has happened), visited (link has been clicked on), active (link is currently being clicked), and hover (mouse is on link, but not clicking)</p>
                 <p>The way we would change a link on hover is to add a rule like this: <kbd>a:hover { color: green; }</kbd>. This would change the color of all links to green on hover.</p>
             </div>
-            <h3>Step 06</h3>
+            <h3>Step 13</h3>
             <p>Lets set up some hover events to let our visitors know without a doubt that our navbar is indeed a navbar with clickable things. First lets increase the area of the link that will react to a hover, by default it is only the size of the words, I want a bigger box to hit. An easy way to do this is to add some padding to the links in our navbar (Hint: selector should be something like <kbd>nav a</kbd>). This will also have the affect of spreading out our links...they are currently a bit squished together. If you made your line-height 3em like I did above then I would try something like: <kbd>padding: 1em .6em</kbd></p>
             <p style="text-align: center;"><img alt="Header Step 5" width="78%" src="../images/header-step5.jpg" title="Header Step 5" /></p>
             <p style="text-align: center;">Page after Step 6</p>
-            <h3>Step 07</h3>
+            <h3>Step 14</h3>
             <p>Now lets add those hover events. Add another rule to your CSS that looks like <kbd>nav a:hover{ }</kbd>. This will only be active when the mouse is on the links in our navbar. Change something about your link in that rule.</p>
             <div class="callout">
                 <p>There are a couple of common things that can happen when you mouse over a link. You could do something very simple and just add (or remove) an underline on hover (text-decoration: none). You could also change the color of the link text, or change the color of link and background. For mine I think I will change both foreground and background color...in fact I think I will swap them. Try a few different effects, just remember the purpose: to make sure the visitor knows what are links and what aren't.</p>
             </div>
-            <h3>Step 08</h3>
-            <p>Enter the view URL to your site into a browser to make sure the webpage displays correctly. Once verified, submit the URL for this assignment in ILearn. Then remember to backup your Handcraft files (Projects-&gt;Gear icon-&gt;Export as .zip)</p>
-            <h3>Grading</h3>
-            <p>This activity will be graded using the following rubric:</p>
-            <ul>
-                <li>Navigation and logo look similar to the wireframe. (5 pts)</li>
-                <li>Navigation links are interactive (change on hover) (5 pt)</li>
-                <li>The HTML is well formed and without errors and the page is visually appealing. (10 pt)</li>
-            </ul>
+            <div class="callout">
+                <h3>Notice!</h3>
+                <p>Most of the time CSS doesn't care much about spaces. You can have them or not.  Sometimes it does care though and pseudo-classes are one of them.  <code>nav a:hover</code> will work just fine... <code>nav a: hover</code> will not.Make sure to <strong>not</strong> add spaces around the : on your pseudo-selector.</p>
+            </div>
+            <h3>Step 15</h3>
+            <p>Enter the view URL to your site into a browser to make sure the webpage displays correctly. Once verified, submit the URL for this assignment in ILearn. REmember that the URL should look like: http://foldername.htmldrop.com</p>
             
-        </div>
-        <!-- <end></end> #article -->
-    </div>
-    <script src="../js/course.js"></script>
-</body>
+            
+<h3>Grading</h3>
+<p>This activity will be graded using the following rubric:</p>
+<ul>
+<li>Positioning of elements looks like that in the wireframe (10 pts)</li>
+<li>Navigation links are interactive (change on hover) (5 pt)</li>
+<li>The HTML is well formed and without errors and the page is visually appealing. (5 pts)</li>
+</ul>
+            
+          
 
+
+</div>
+</div>
+<!-- end #article -->
+<script src="../js/course.js"></script>
+ <script src="../js/highlight.pack.js"></script>
+    <script>
+        // <![CDATA[
+        hljs.initHighlightingOnLoad();
+        // ]]>
+    </script>
+</body>
 </html>
