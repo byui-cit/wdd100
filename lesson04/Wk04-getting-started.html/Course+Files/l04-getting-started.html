@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+	<title>W04.03 Getting Started: Create the Home Page in HTML - Instructions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../Course%20Files/css/solarized-light.css" />	
+<link rel="stylesheet" href="../Web%20Files/course.css" />
+</head>
+<body>
+<div id="main">
+<div id="header"><img src="../../images/smallBanner.jpg" alt="Course Banner" /></div>
+<div id="article">
+<h1><span style="font-family: georgia, serif;">Starting&nbsp;the Home Page in HTML</span></h1>
+<hr />
+<div class="activityContent">
+<h2>Activity Directions</h2>
+<p><span class="highlight">Estimated Time</span>:&nbsp;45 minutes</p>
+<div class="callout">
+<p>This activity will use the following new html concepts or tags (review the links if you do not remember these from Khan academy):</p>
+<ul>
+<li><a href="http://www.w3schools.com/html/html_basic.asp" target="_blank" rel="noopener noreferrer">HTML Basics</a></li>
+<li><a href="http://www.w3schools.com/html/html_elements.asp" target="_blank" rel="noopener noreferrer">HTML Elements</a></li>
+<li><a href="http://www.w3schools.com/html/html_attributes.asp" target="_blank" rel="noopener noreferrer">HTMl Attributes</a></li>
+<li><a href="http://www.w3schools.com/html/html_headings.asp" target="_blank" rel="noopener noreferrer">HTML Headings</a></li>
+<li><a href="http://www.w3schools.com/html/html_paragraphs.asp" target="_blank" rel="noopener noreferrer">HTML Paragraphs</a></li>
+<li><a href="http://www.w3schools.com/html/html_images.asp" target="_blank" rel="noopener noreferrer">HTML Images</a></li>
+<li><a href="http://www.w3schools.com/html/html_lists.asp" target="_blank" rel="noopener noreferrer">HTML Lists</a></li>
+</ul>
+</div>
+<h3><span class="highlight">Step 01</span></h3>
+<p>Make sure that you have completed the Software setup activity from week 1. If you have not, do it now. You should already have created your url using updog that is stored in dropbox. Now we are going to begin creating the first page of your website. This will be your home page and will be named index.html.</p>
+<p>You will begin by opening "Brackets" (your text editor). In the menubar, choose new. This will open a new page in the editor and you will see that the curser is on line 1. You will need to save this page as index.html. This will become your Home page.</p>
+<div class="callout">
+<h3>Naming files for the web</h3>
+<p>There are a few things to keep in mind as you come up with names for the files and folders that will make up your website.</p>
+<ul>
+<li>Always name the first page of your site&nbsp;<kbd>index.html</kbd></li>
+<li>Most web hosts are&nbsp;<i>case-sensitive</i>&nbsp;which means there is a difference between&nbsp;<kbd><span class="highlight">I</span>ndex.html</kbd>&nbsp;and&nbsp;<kbd>index.html</kbd></li>
+<li>So...Make your filenames all lowercase to avoid problems with case sensitivity.</li>
+<li>Avoid spaces and other special characters in your filenames (a-z, 0-9, -, and _ are all safe to use)</li>
+</ul>
+</div>
+<h3><span class="highlight">Step 02</span></h3>
+<p>On line 1, you will type in the first tag: &nbsp;<kbd>&lt;!DOCTYPE html&gt;</kbd> This tells the browser that this will be an html page.</p>
+<p>Line 2 will be &nbsp;<kbd>&lt;head&gt;</kbd>. Think of a page of code as having a head, a body, and a foot like a person. A head contains things that will not be seen on the page, but the browser uses them to set things up to show a page.</p>
+<p>From the Khan Academy lesson we learned about&nbsp;<kbd>&lt;meta charset="utf-8"&gt;</kbd>. Meta tags give the browser information to help it build the web page. They are always found in the &nbsp;<kbd>&lt;head&gt;</kbd>. Also found in the with the &nbsp;<kbd>&lt;head&gt;</kbd> yu will find the &nbsp;<kbd>&lt;title&gt;</kbd> which is not displayed on the page. The title shows at the top of the browser window (address bar) or on the tab of a browser window, and in the search listing for a site. Lets pick something that will make sure people know what the site is, and what page they are currently on. Let's make the title something like: Roaring Rapid Vacations || Home (Don't make it too long).</p>
+<p>So now, you should have DOCTYPE, html, head, meta charset, and the title tags... each one must have the corresponding closing tag... Now it is time to close the &nbsp;<kbd>&lt;/head&gt;</kbd></p>
+<h3><span class="highlight">Step 03</span></h3>
+<div class="callout">
+<p>We know from the <a href="/d2l/le/content/61378/viewContent/4884431/View" target="_blank" rel="noopener noreferrer">siteplan wireframe</a>&nbsp;&nbsp;for the home page for the Dry Oar site that there will be a combination of images, headlines, and text on the page. The Khan academy lesson for this week taught you how to add all of those things to a page with HTML. You will need to refer back to your wireframe and site plan document throughout this activity to make sure you don't forget anything on the home page.</p>
+<p>As you look at the wireframe you will notice a few things. First a box with a tiny raft on it indicates an your logo image will go there. The numbers that are in the corners of some of the boxes indicate sizes.</p>
+<p>The Wireframe also indicates where out headlines and paragraphs will be, and should show approximately how much space the text should take up, and the relative sizes of the headlines and paragraph text.</p>
+</div>
+<div class="callout">
+<p><strong>Note:</strong>:</p>
+<br />
+<ul>
+<li>We will not be adding colors and other styles this week.</li>
+<li>We also will not move items to the left or right either.</li>
+<li>Our only goal is to get all of the content onto the page that is shown on the wireframe.</li>
+<li>All items will be in a line down the left side of the page.</li>
+<li>Each week will get us closer, but our page will not look exactly like the wireframe until Weeks 9 and 10 so patience will be required. Do Not work ahead please:)</li>
+</ul>
+</div>
+<h3><span class="highlight">Step 04</span></h3>
+<p>We have finished the &nbsp;<kbd>&lt;head&gt;</kbd> section so now we will move on to the &nbsp;<kbd>&lt;body&gt; </kbd> (add the body tag next).</p>
+<p>Before we start adding items in the body, let's compile the images you plan to use on your page. There are a couple of ways to add images to use in your code.&nbsp;Here are a couple of pages&nbsp;with images&nbsp;that you can use for this assignment:</p>
+<ul>
+<li style="text-align: left;"><span style="color: #085394;"><a href="http://brothert.net/dryoar/dryoarimages.html" target="_blank" rel="noopener noreferrer" style="color: #085394;">dry oar images 1</a></span></li>
+<li style="text-align: left;"><span style="color: #085394;"><a href="https://www.dropbox.com/sh/r9d1gq256pyuwws/AAD7bMbgW0keCVs5ZLUG3sBDa?dl=0" target="_blank" rel="noopener noreferrer" style="color: #085394;">dry oar images 2&nbsp;</a></span></li>
+</ul>
+<p>(or you can find some of your own). Pull that site up and find a logo image you might like to use on your page.</p>
+<p>Add an&nbsp;<kbd>&lt;img&gt;</kbd>&nbsp;tag inside the&nbsp;<kbd>&lt;body&gt;</kbd>. Remember, the&nbsp;<kbd>&lt;img&gt;</kbd>&nbsp;tag has 2 required attributes: &nbsp;<kbd>src=" "</kbd>&nbsp;and&nbsp;<kbd>alt=" "</kbd>. The&nbsp;<kbd>alt=" "</kbd>&nbsp;should contain a very short description about the image (a word or two) and is used primarily for times when the image cannot be displayed for some reason or another.</p>
+<p class="callout">The logo image in this file is already the right size and is on a web server, so we just need to figure out what it's URL is to add it to our page. Your browser makes it really easy to do that. If you click with the right mouse button on any image in the browser your computer will offer you several actions you can take. The one we are interested in right now is "Copy Image Address".</p>
+<p>Copy the address for the logo image and paste the result into the src attribute in our image. the final tag should look something like this:</p>
+<pre><code class="html">&lt;img src="http://brothert.net/dryoar/images/dryoarlogo.png" alt="Dry Oar boating logo"&gt;</code></pre>
+<p>That first method works alright, but what happens if for some reason down the road, the owner of an image removes the image from the server it was on when you made the site, or moves it. It will no longer be able to be called up.</p>
+<p>The other method for getting images to use is to save the images to your folder that houses your website in dropbox. This way, they will be there for your use as long as you keep them there with your index.html page. If you choose this method, and I suggest you do, choose one of the images and right click... this time choose save image as: and choose where to save your images (keep the name it already has or choose a new name) ... and save the image... Make sure that if you first save the images to your desktop, that you drag the images to the dropbox folder that contains your index.html file we are creating.</p>
+<h3><span class="highlight">Step 05</span></h3>
+<p>Now it's time to add the list of pages that will be in your website... Home and two other pages called subpages or child pagesthat will eventually become links and provide our site's navigation.</p>
+<p class="callout">Notice that I said 'list' there. One thing most people don't realize is that most navigation bars on most websites are made with an unordered list...the same one you learned how to use in this week's Khan Academy lesson. They are well disguised, but they really are lists.</p>
+<p>Take the list of pages from your site plan that you chose (remember, your pages might be different from the 3 pages you see here) and create an unordered list&nbsp;<kbd>&lt;ul&gt;</kbd>&nbsp;with each page becoming it's own list item&nbsp;<kbd>&lt;li&gt;</kbd>&nbsp;right below the logo that<strong><em> you</em></strong> added.</p>
+<p class="callout">&nbsp;<kbd>&lt;ul&gt;</kbd>&nbsp;<br /> &nbsp;<kbd>&lt;li&gt;</kbd>&nbsp;Home&nbsp;<kbd>&lt;/li&gt;</kbd>&nbsp;<br /> &nbsp;<kbd>&lt;li&gt;</kbd>&nbsp;Rivers&nbsp;<kbd>&lt;/li&gt;</kbd>&nbsp;<br /> &nbsp;<kbd>&lt;li&gt;</kbd>&nbsp;About Us&nbsp;<kbd>&lt;/li&gt;</kbd>&nbsp;<br /> &nbsp;<kbd>&lt;/ul&gt;</kbd>&nbsp;</p>
+<h3><span class="highlight">Step 06</span></h3>
+<p>Next is a wide banner image. A regular sized image will not work here... it MUST be a page wide image. Look through the images provided and choose one to add to your page.</p>
+<p>Add another <kbd>&lt;img&gt;</kbd>&nbsp;tag for the banner image.</p>
+<p class="callout"><img class="right" width="15%" src="../Course%20Files/Images/2015-11-11_1525.png" alt="Tiny Partial Circle" title="Tiny Partial Circle" /> Remember you can see what your site is looking like anytime by hitting the view at the top of the page. If your page does not update, click the refresh button (The tiny partial circle by the address line) &nbsp;on the Chrome&nbsp;browser.&nbsp;</p>
+</div>
+<h3><span class="highlight">Step 07</span></h3>
+<p>Now we have 2 sections that each have a headline, a paragraph, and an image (Make sure to refer&nbsp;to&nbsp;the wireframe in your site plan). Using the&nbsp;<kbd>&lt;h1&gt;</kbd>or&nbsp;<kbd>&lt;h2&gt;</kbd>&nbsp;tag add the first headline to the page. then use a&nbsp;<kbd>&lt;p&gt;</kbd>&nbsp;tag to add the following text: (or something similar...feel free to edit this :) )</p>
+<p>To Create Section 1:</p>
+<p class="callout"><kbd>&lt;h1&gt;</kbd>&nbsp;Relaxing on the River<kbd>&lt;/h1&gt;</kbd>&nbsp;<br /> <kbd>&lt;p&gt;</kbd>&nbsp;We believe that there is nothing like a river trip for relaxing. That is why we subscribe to the dry oar philosophy of boating. Keeping your oars dry for us means taking time to look around and notice the beauty that surrounds the rivers we love.<kbd>&lt;/p&gt;</kbd>&nbsp;</p>
+<p>Now, choose a regular sized picture from those provided or one of your own and add it after the paragraph using another <kbd>&lt;img&gt;</kbd>&nbsp; line.</p>
+<h3><span class="highlight">Step 08</span></h3>
+<p>Section 2 is very similar to Section 1..The only difference is that the image will come first.</p>
+<p>To Create Section 2:</p>
+<p>Choose a regular sized picture from those provided or one of your own and add it after Section 1 using another <kbd>&lt;img&gt;</kbd>&nbsp; line. Now for the text:</p>
+<p class="callout"><kbd>&lt;h1&gt;</kbd>&nbsp;Feel the Rush on the Rapids<kbd>&lt;/h1&gt;</kbd>&nbsp;<br /> <kbd>&lt;p&gt;</kbd>&nbsp;That doesn't mean we don't also like rapids. Opposites in all things after all. We believe that that tenseness that comes when you are looking down the tongue of a big string of waves makes you appreciate the calm beautiful water that always follows even more.<kbd>&lt;/p&gt;</kbd>&nbsp;</p>
+<h3><span class="highlight">Step 09</span></h3>
+<p>There is no image in section 3</p>
+<p>To Create Section 3:</p>
+<p class="callout"><kbd>&lt;h1&gt;</kbd>&nbsp;Come and Enjoy!<kbd>&lt;/h1&gt;</kbd>&nbsp;<br /> <kbd>&lt;p&gt;</kbd>&nbsp;We invite you to come relax with us on one of the amazing rivers we visit. Check out our trips and let us know which one best suits you. We're waiting to hear from you!<kbd>&lt;/p&gt;</kbd>&nbsp;</p>
+<h3><span class="highlight">Step 10</span></h3>
+<p>Finally, look at the footer section of the wireframe in your site plan. Now, we are going to add that copyright symbol. You can add it by putting it into a <kbd>&lt;p&gt;</kbd>&nbsp;. To make the copyright symbol we use a special code, there are many of these but we will just learn this one today: &amp;copy; Place that right before the Sitename and 2017 (or whatever year it is for you)....</p>
+<p>Before we are finished, we are going to add your name and WDD100 and your class session on the same line with the copyright info.</p>
+<p></p>
+<p>it will look like this:</p>
+<div class="callout">
+<pre><code class="html">&lt;p&gt;&amp;copy; 2017 Dry Oar || FirstName LastName  WDD100-section&lt;/p&gt;</code></pre>
+<p>&copy; 2017 Dry Oar || FirstName LastName WDD100-section</p>
+</div>
+<p>We will add the icons for the social media links later.</p>
+<h3><span class="highlight">Step 11</span></h3>
+<p>View your web page to make sure your changes are correct and that your images show. Once verified, submit the URL from your browser that you use to view your page to iLearn.</p>
+<div class="callout">
+<p>Do <strong>NOT</strong> turn in the URL of the page where you edit your page. The instructor will not be able to see that one to grade your work. Remember, your url is the file you created in updog.:</p>
+</div>
+<p style="text-align: center;">Go to the next page to access &ldquo;W04.03 Getting Started: Create the Home Page in HTML&rdquo; and click &ldquo;Upload.&rdquo;</p>
+</div>
+<!-- end #article --></div>
+<script src="../../js/course.js"></script>
+<script src="../../js/highlight.pack.js"></script>
+<script>// <![CDATA[
+hljs.initHighlightingOnLoad();
+// ]]></script>
+</body>
+</html>
