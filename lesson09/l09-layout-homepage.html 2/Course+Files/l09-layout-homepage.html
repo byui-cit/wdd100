@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <title>W09.02 Layout the Home Page - Instructions</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="../Web%20Files/course.css" rel=
+    "stylesheet"><style>
+.mello {
+background-color: #ffffe6;
+padding: 10px;
+}
+</style>
+</head>
+<body>
+<div id="main">
+<div id="header"><img alt="Course Banner" src="../Web%20Files/smallBanner.jpg" /></div>
+<div id="article">
+<h1>Wk09 Layout the Home Page</h1>
+<hr />
+<h2>Activity&nbsp;Instructions</h2>
+<p>Estimated Time: 45 minutes</p>
+<p>We have made a lot of improvements to our page over the last few weeks. This week we finally take on the layout. After we finish the layout of our page it should look <strong>very similar</strong> to the wireframe, and will be close to complete.&nbsp; We are going to use "flexbox" to layout the sections of our page.</p>
+<blockquote style="font-size: 12pt; background-color: #faebd7;">
+<p>Review again the <a href="/d2l/le/content/61378/viewContent/4884780/View" target="_blank" rel="noopener noreferrer">siteplan wireframe</a>&nbsp;for the Dry Oar site. We will start from the top and work down to position all of the elements that need it. The header (logo and navigation) will take a bit of extra work, and few concepts that we will not learn until next week...so we are going to skip it for now.</p>
+</blockquote>
+<h3>Step 01</h3>
+<p>First let's consider the banner. According to the wireframe it should extend all the way across the width of the page. Depending on which image you are using your's may or may not be doing that. Lets set a width of 100% on that image.&nbsp;</p>
+<h3>Step 02</h3>
+<p>Now lets position the first section of headline, paragraph and image, second section of image, headline, and paragraph, and the footer section of the info/name line and the social media icons/links.</p>
+<blockquote style="font-size: 12pt; background-color: #faebd7;">
+<p>You should have grouped elements together in previous weeks...the code for this section should look something like this:</p>
+<p style="text-align: center;"><img src="../completebody.jpg" alt="" title="complete body" width="668" height="887" /></p>
+Notice how each section has a <kbd>leftcol</kbd> and <kbd>rightcol</kbd> div.&nbsp;Week 7,&nbsp; you should have set a width on them as well to&nbsp; 48%.&nbsp; Now all we need to do is get them to line up horizontally.</blockquote>
+<p>Let's try css flexbox to do this.&nbsp;<a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank" rel="noopener noreferrer">Flexbox</a>&nbsp;is good when we have several elements that we need aligned as a row or column. In fact it makes it really easy to switch from column to row and back. Flexbox relies on setting up a flex container or parent first. In our case the containers will be our rows which are made in the HTML with&nbsp;<code>&lt;section&gt;</code>s.</p>
+<blockquote style="font-size: 12pt; background-color: #faebd7;">
+<p>The link provided above is to a great resource about flexbox from CSS-Tricks:&nbsp;<a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank" rel="noopener noreferrer">A Complete Guide to Flexbox</a>. You really should take a minute to look it over.&nbsp; There are also many great youtube tutorials on flexbox, try those out when you have time.</p>
+</blockquote>
+<p>Add the following property&nbsp;<kbd>display: flex;</kbd>, to a rule in your css to modify the first 2 sections on your page to turn them into flex containers. Notice that there are leftcol and rightcol in the footer as well so we better add the footer to the statement.&nbsp; That rule would look like the following:</p>
+<div class="mello">
+<pre><code>
+#sec1, #sec2, footer { 
+display: flex; 
+ }
+</code></pre>
+</div>
+<p>Now all of the immediate children will become flex-items or children. (Again in my case with the code above the flex-items would be the 2 divs, .rightcol and .leftcol, and the footer)</p>
+<blockquote style="font-size: 12pt; background-color: #faebd7;">
+<p>You should see an immediate change once you make your first section flex. You should end up with something that looks like this:</p>
+<img alt="Float Example" width="85%" src="../Course%20Files/Images/float-jumble.jpg" title="Float Example" style="display: block; margin-left: auto; margin-right: auto;" />
+<p>Not bad for one line of css right? It automatically reformatted into a row. This is due to the <em><strong>default values</strong></em> for flex. They are set to&nbsp;<kbd>row</kbd>&nbsp;and&nbsp;<kbd>nowrap</kbd>. The row is perfect for what we are trying to do, but the&nbsp;<kbd>nowrap</kbd>could cause us problems.</p>
+<p>Those defaults are set with the&nbsp;<a href="http://www.w3schools.com/cssref/css3_pr_flex-flow.asp" target="_blank" rel="noopener noreferrer">flex-flow</a>&nbsp;property. Take a moment to review the values it <strong><em>can</em></strong> have.</p>
+<p>The problem that&nbsp;<kbd>nowrap</kbd>&nbsp;will cause is best shown by shrinking the browser window as small as it will go. (Like if you were on a phone) The page ends up looking something like this:</p>
+<p style="text-align: center;"><img src="../wk9%20step2.png" alt="" title="wk9 step2" width="400" /></p>
+<p>Not great. It would be better if the 2 elements that make up our row wrapped and stretched back out to full width at a certain point.</p>
+</blockquote>
+<h3>Step 03</h3>
+<p>Begin fixing our small screen view by adding a&nbsp;<kbd>flex-flow: row wrap;</kbd>&nbsp;line just below the line that setup our flex container (<kbd>display:flex;</kbd>). This will&nbsp;<em>allow</em>&nbsp;our flex items to wrap, but it won't&nbsp;<em>make</em>&nbsp;them wrap. Flex items by nature are allowed to shrink and grow with the space they have available. This is controlled with the&nbsp;<a href="http://www.w3schools.com/cssref/css3_pr_flex.asp" target="_blank" rel="noopener noreferrer"><kbd>flex</kbd></a>&nbsp;property.</p>
+<p>Add&nbsp;<kbd>flex: 1;</kbd>&nbsp;to both the left and right divs in your section row. (In my case it would be .leftcol and .rightcol). This will let each of them take up 1 share of the space...so they will be the same size. Try changing one of them to 2. Now it should take up twice as much space as the other.</p>
+<blockquote style="font-size: 12pt; background-color: #faebd7;">
+<p>If your images are not resizing to fit in the box you have them in make sure you have the following rule in your css:</p>
+<pre><code></code></pre>
+<div class="mello">img { <br /> max-width: 100%;<br /> }</div>
+<pre><code>
+        </code></pre>
+<p>This will make sure that none of your images can ever be larger than the box they are in.</p>
+</blockquote>
+<p>We need one last bit of css to fix our small screen view. Lets set a limit on how small the right and left columns can become. We can use the&nbsp;<code>flex</code>&nbsp;property for this. Above I showed you the simplest way to use&nbsp;<code>flex</code>. It can actually take 1, 2, or 3 values. Using 1 like we did above it basically means each flex item should have one share of the space, and let that space grow or shrink evenly as it needs to fill the available container. We could also do something like this&nbsp;<code>flex: 1 0 15em;</code>&nbsp;This would mean start with the item at 15em width, but let it grow to fill all available space (first 1). Don't let it shrink (middle 0) smaller than 15em though. Add that to your css. My css (for the html above) Is looking like this:</p>
+<div class="mello">
+<pre><code></code></pre>
+<p>#sec1, #sec2, footer {</p>
+<pre><code></code></pre>
+<p>display:&nbsp; flex;</p>
+<pre><code></code></pre>
+<p>flex-flow:&nbsp; row-wrap;</p>
+<pre><code></code></pre>
+<p>}</p>
+<pre><code></code></pre>
+<p>.leftcol&nbsp; {</p>
+<pre><code></code></pre>
+<p>width: 48%;</p>
+<pre><code></code></pre>
+<p>flex: 1 0 15em;</p>
+<pre><code></code></pre>
+<p>}&nbsp;</p>
+<pre><code></code></pre>
+<p>.rightcol {</p>
+<pre><code></code></pre>
+<p>width: 48%;</p>
+<pre><code></code></pre>
+<p>flex: 1 0 15em;</p>
+<pre><code></code></pre>
+<p>}<code>
+</code></p>
+</div>
+<blockquote style="font-size: 12pt; background-color: #faebd7;">
+<p>This should have fixed our small view. If you shrink your browser window again you should see something like this:</p>
+<p><img src="../wk9%20stp3.png" alt="" title="wk9 stp3" width="400" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p>Much Better!</p>
+</blockquote>
+<h3>Step 04</h3>
+<p>Looking good! One thing is bugging me though. The headline and paragraph in the first section is aligned at the top of that space...it would look much better closer to the center. This is another thing that flex excels at.</p>
+<div>
+<blockquote style="font-size: 12pt; background-color: #faebd7;">
+<p>Alignment in flexbox is governed by two properties.&nbsp;<a href="http://www.w3schools.com/cssref/css3_pr_align-items.asp" target="_blank" rel="noopener noreferrer"><kbd>align-items</kbd></a>&nbsp;and&nbsp;<a href="http://www.w3schools.com/cssref/css3_pr_justify-content.asp" target="_blank" rel="noopener noreferrer"><kbd>justify-content</kbd></a>.</p>
+<p>When we set the&nbsp;<kbd>flex-flow</kbd>&nbsp;to row we were actually setting up the primary axis direction: row (or horizontal). This is significant because alignment along the primary axis is controlled with&nbsp;<kbd>justify-content</kbd>, alignment along the cross-axis is governed by&nbsp;<kbd>align-items</kbd></p>
+</blockquote>
+<p>Since our primary axis is row (horizontal), we change the cross-axis (vertical) alignment with&nbsp;<kbd>align-items</kbd>. Add the following to your css for the flex container:&nbsp;<kbd>align-items: center;</kbd>. Just like that our paragraphs will always be centered vertically...no matter how the width of the page changes!</p>
+<h3>Step 05</h3>
+<p>One last thing and our rows will be done. Sometimes the paragraphs and images are smushed together. Add some margin around them to make sure this doesn't happen.</p>
+<blockquote style="font-size: 12pt; background-color: #faebd7;">
+<p>We started with separate classes for my left and right columns (.leftcol and .rightcol). But, as&nbsp;the css came together, the properties and values I had under each ended up <em><strong>exactly</strong> </em>the same, so it is a better idea to put them together like we did for the sections.</p>
+<p>Instead of this:</p>
+<div class="mello">
+<pre><code>I
+.leftcol {
+    width: 48%;
+    flex: 1 0 15em;
+    margin: .5em;
+}
+.rightcol {
+    width: 48%;
+    flex: 1 0 15em;
+    margin: .5em;
+}
+</code></pre>
+</div>
+<p>It should be this:</p>
+<div class="mello">
+<pre><code>
+.leftcol, .rightcol {
+    width: 48%;
+    flex: 1 0 15em;
+    margin: .5em;
+}
+</code></pre>
+</div>
+<p>It's good practice to review your css from time to time to watch for things like that.</p>
+<p>Also watch for css rules that have the exact same selector. Those should be combined as well.</p>
+</blockquote>
+<h3>Step 06</h3>
+<p>We worked on the bottom (3rd) section a week or two ago to get it to center, and it should look pretty good by now. One thing though, it looks a bit squished. I think it would look better if it were closer in size to the other sections. Use margins, height, or padding to make it so.</p>
+<blockquote style="font-size: 12pt; background-color: #faebd7;">
+<p>Third section? you may ask...what happened to the second section? Well with mine since I used the same class names for the different parts of my rows (leftcol, rightcol) the second section just took care of itself! Anytime you have sections of your page that are styled or laid out similarly you should re-use your classes to avoid having to do the same things over and over.</p>
+</blockquote>
+<h3>Step 07</h3>
+<p>The last thing to do now is to finish the footer. According to the wireframe the copyright should be on the left, the social media icons on the right, the whole footer should be 55px high, and there should be space around the icons. This is similar to what we have done before. You should be able to figure it out.</p>
+<p>Review the tips on last weeks positioning activity if you get stuck. (Hint: there are several ways to do this, you could use float, display:inline-block, or display: flex to do the major movement, then you will probably need to add some&nbsp;<kbd>padding, margin, or width</kbd>&nbsp;on the different elements in the footer to finish it off. If you use float remember that the floated element&nbsp;<strong>must</strong>&nbsp;come before the other stuff in the html.)</p>
+<h3>Step 08</h3>
+<p>View your page in a&nbsp;browser to make sure the webpage displays correctly. Once verified, submit the URL for this assignment in ILearn. Then remember to backup your files&nbsp;</p>
+<h3>Grading</h3>
+<p>This activity will be graded using the following rubric (10pts)</p>
+<ul>
+<li>Positioning of elements (with the exception of the logo and navigation) looks like that in the wireframe.</li>
+<li>The HTML is well formed and without errors and the page is visually appealing.&nbsp;</li>
+</ul>
+</div>
+</div>
+<!-- end #article -->
+<script src="../Web%20Files/course.js">// <![CDATA[
+
+// ]]></script>
+</div>
+</body>
+</html>
