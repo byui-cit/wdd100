@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <title>W06.03 Adding more HTML- Instructions</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="../Web%20Files/course.css"
+    rel="stylesheet">
+</head>
+<body>
+<div id="main">
+<div id="header"><img alt="Course Banner" src="../Web%20Files/smallBanner.jpg" /></div>
+<div id="article">
+<h1>Wk06 Adding More HTML</h1>
+<hr />
+<h2>Activity Directions</h2>
+<p>Estimated time: 45 minutes</p>
+<p>This week we will continue with the webpage we started in the previous activities. Open up the index.html file from last week in your editor to begin.</p>
+<h3>Step 01</h3>
+<p>First review the&nbsp; <a href="/d2l/le/content/61378/viewContent/4884434/View" target="_blank" rel="noopener noreferrer">siteplan wireframe</a>&nbsp;&nbsp;again to help remember what we are trying to do. Notice that there are still more elements on the page that are related and grouped. On this wireframe I added additional red boxes to help to see the rest of those relationships. Let's finish boxing up the related content groups now.</p>
+<p>When you are done you should have an HTML element on your page for each red box on the wireframe image (you looked at it right?), plus those that you added last week. These elements could be&nbsp;<kbd>&lt;div&gt;</kbd>s,&nbsp;<kbd>&lt;section&gt;</kbd>s, a<kbd>&lt;header&gt;</kbd>&nbsp;might be nice, or even a&nbsp;<kbd>&lt;footer&gt;</kbd>. When you are done there should not be any content that is not contained in a 'box' (see example below). Remember to use&nbsp;<a href="http://www.w3schools.com/html/html5_semantic_elements.asp" target="_blank" rel="noopener noreferrer">semantic elements</a>&nbsp;whenever possible (those that show meaning) and save&nbsp;<kbd>&lt;div&gt;</kbd>&nbsp;for those things that don't easily fit in one of the semantic boxes.</p>
+<figure style="text-align: center;"><img src="../wk06%202.jpg" alt="" title="wk062" width="677" height="236" /></figure>
+<figure style="text-align: left;">
+<p>Notice the boxes on this section of the wireframe. You have a box on the left and a box on the right. We will be making a leftcolumn and a rightcolumn on the page. We will make two tags one with a class="leftcol" and the other with class="rightcol".&nbsp; &nbsp;This will let us layout our page with a left and right later on.</p>
+<div class="callout">
+<p><span style="font-size: 14pt;"><strong>The corresponding HTML might look something like this:</strong></span></p>
+<p>&lt;section id="sec1"&gt;&nbsp;<br /> &lt;div class="leftcol" &gt;<br /> &lt;h1&gt;Relaxing on the River&lt;/h1&gt; <br /> &lt;p&gt;We believe that there is nothing like a river trip for relaxing. That is why we subscribe to the dry oar philosophy of boating. Keeping your oars dry for us means taking time to look around and notice the beauty that surrounds the rivers we. &lt;/p&gt; <br />&lt;/div&gt; <br /><br /> &lt;div class="rightcol"&gt;&nbsp;<br /> &lt;img src="images/picture1.jpg" alt="river-picture"&gt;<br /> &lt;/div&gt; <br /> &lt;/section&gt;</p>
+</div>
+<h4>Note:</h4>
+<p>Adding these grouping tags will not make your page <em>look</em> like the wireframe. We are laying a foundation, but have not learned how to position elements yet. Don't worry if your page does not look like the wireframe at this point.</p>
+<p>As you have added the 'boxes' around the content on your page have you noticed any changes? Things should have shifted around a bit. There are two basic types of HTML elements:&nbsp;<em><a href="http://www.w3schools.com/html/html_blocks.asp" target="_blank" rel="noopener noreferrer">Block and Inline</a></em>.</p>
+<div class="callout">
+<p>Block elements are greedy. By default they take up 100% of the space they have available, meaning they will not allow any other element to share the line they are on...thus forcing line breaks around themselves. Most of the semantic elements we use for grouping related content fall into the block category, as well as&nbsp;<kbd>&lt;h1&gt;</kbd>&nbsp;-&nbsp;<kbd>&lt;h6&gt;</kbd>,&nbsp;<kbd>&lt;p&gt;</kbd>,&nbsp;<kbd>&lt;div&gt;</kbd>,&nbsp;<kbd>&lt;ul&gt;</kbd>, and&nbsp;<kbd>&lt;li&gt;</kbd>.</p>
+<p>Inline elements like to share. They will allow as many other elements to share the line they are on until it is full...then they wrap. Some examples of inline elements are&nbsp;<kbd>&lt;a&gt;</kbd>,&nbsp;<kbd>&lt;img&gt;</kbd>,&nbsp;<kbd>&lt;span&gt;</kbd>,&nbsp;<kbd>&lt;strong&gt;</kbd>and plain text</p>
+<p>The default block or inline behavior of a tag can be changed with the CSS&nbsp;<a href="http://www.w3schools.com/cssref/pr_class_display.asp" target="_blank" rel="noopener noreferrer"><kbd>display</kbd></a>&nbsp;property.</p>
+</div>
+<p><img alt="index-top" src="../Course%20Files/Images/index-top.png" style="float: right;" title="index-top" />Take a moment to consider why it looks this way? Why is the list of links down below the logo? Why does each link show on it's own line? Most importantly, the wireframe shows the links on the same line as the logo and each link in the same line as each other, how can we make them do that?&nbsp; The top of your page should look something like this (except of course, you will have ONLY 3 pages: Home and two others):</p>
+<p>(I'm not going to give you the answer to this right now, and you won't be graded on it...yet. But think about it :) )</p>
+</figure>
+<h3>Step 02</h3>
+<p>Let's add one more box to our content. For this one we will use a <kbd>&lt;div&gt;</kbd> and we want the <em><strong>whole page</strong></em> to be inside of it. Place your opening <kbd>&lt;div&gt;</kbd> right after the opening <kbd>&lt;body&gt;</kbd> tag and the closing <kbd>&lt;/div&gt;</kbd> right before the closing &lt;/body&gt;. Add an <em><strong>id of <kbd>content</kbd></strong></em> to the <kbd>&lt;div&gt;</kbd>.&nbsp; In other words: &lt;div id="content"&gt;.</p>
+<div class="callout">
+<p>Right now the paragraphs of text on our site can stretch out as far as the browser is wide. On very wide screens that can leave things very thin and not very attractive. We should use the&nbsp;<a href="http://www.w3schools.com/cssref/pr_dim_width.asp" target="_blank" rel="noopener noreferrer">width</a>&nbsp;property to fix this.</p>
+<p>Where do we apply the width however? We could apply it to all&nbsp;<kbd>&lt;p&gt;</kbd>&nbsp;tags, but what if we have a paragraph that needs to be wider or more narrow than what we choose? We could make a class and apply it to all&nbsp;<kbd>&lt;p&gt;</kbd>&nbsp;elements individually, and that would work, but there is a&nbsp;much better way that we will be using.</p>
+</div>
+<h3>Step 03</h3>
+<p>Apply a width to your whole page to keep it from stretching across the whole browser window by making a css rule for the div we added in the last step with the id of&nbsp;<kbd>content</kbd>. In that rule (in the style section) let's set the width of the page to<em><strong> 960px</strong></em>. doing it on that&nbsp;<kbd>&lt;div&gt;</kbd>&nbsp;will make sure that no element on the page can be wider that than.</p>
+<h4>Centering</h4>
+<p class="callout">We set the width, but the page still doesn't look right. It would look better if it were centered instead of left aligned. Centering with CSS is not hard, but can be confusing. This is because block and inline elements are centered differently. Block elements are centered by setting a width and adjusting the left and right margin (<a href="http://www.w3schools.com/cssref/pr_margin.asp" target="_blank" rel="noopener noreferrer">Margin</a>&nbsp;is the space between elements on a page, or between the element and the edge of the browser window).&nbsp; Inline elements are centered by using the&nbsp;<strong><em><a href="http://www.w3schools.com/cssref/pr_text_text-align.asp" target="_blank" rel="noopener noreferrer">text-align</a></em></strong>&nbsp;property.</p>
+<h3>Step 04</h3>
+<p>Let's center our content. The&nbsp;<kbd>&lt;div&gt;&nbsp;</kbd>we set the width on is a block element, that means we will need to use&nbsp;<em><strong><kbd>margin</kbd></strong></em>&nbsp;to center it. The idea is to set a width (we did this in the last step) Then tell the browser to take whatever margin is available and split it between the left and right of the element. This is a lot easier than it sounds. Add&nbsp;<em><strong><kbd>margin: 0 auto;</kbd></strong></em>&nbsp;to the CSS rule for&nbsp;<em><strong><kbd>#content</kbd></strong></em>. We gave it 2 values. The first says to set the top and bottom margins to 0 and the second says to set the left and right margins to auto: meaning to split any margin available between the left and right.</p>
+<h3>Step 05</h3>
+<p>While we are centering let's try an inline element now. On the wireframe the bottom section text is centered. Apply the&nbsp;<em><strong><kbd>text-align: center;</kbd></strong></em>&nbsp;style to the bottom section (#sec3) .&nbsp; You should have placed that headline and paragraph in a box earlier. Add a class or id to that box with a meaningful name and use that to apply the style.</p>
+<h2>Links</h2>
+<h3>Step 06</h3>
+<p>We added some text in an unordered list last week to be used as links. Right now they are just text, lets fix that. Turn each item in the list into a link by wrapping just the text (not the&nbsp;<kbd>&lt;li&gt;</kbd>!) in an&nbsp;<em><strong><a href="http://www.w3schools.com/tags/tag_a.asp" target="_blank" rel="noopener noreferrer"><kbd>&lt;a&gt;</kbd></a></strong></em>&nbsp;tag. The&nbsp;<em><strong><kbd>&lt;a&gt;&nbsp;</kbd></strong></em>tag has one required attribute if you recall from Khan Academy:&nbsp;<em><strong><kbd>href=""</kbd></strong></em>.&nbsp; &nbsp;This is where we tell the browser where the link should take us to.</p>
+<p>These will all be other pages on our site, but they don't exist yet. Let's just put&nbsp;"#"&nbsp;&nbsp;in there for now until the pages are actually made. That way the link will work if it's clicked on and not give us an error.&nbsp; &nbsp;We will replace those with actual pages as we build them.</p>
+<p>Each list item should look something like this:&nbsp;<em><strong><kbd>&lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;</kbd></strong></em></p>
+<div class="callout">
+<p>Take a look at your page. Pay particular attention to our new links. Last week you should have added some CSS to change the color of the font for those links. Your carefully chosen color is probably now blue or purple! CSS stands for Cascading Style Sheets. the Cascading part means that you can have more than one set of styles apply to an element, and that they will cascade down with the rules closest to the element taking precedence.</p>
+<p>We applied a color change at the&nbsp;<kbd>&lt;nav&gt;</kbd>&nbsp;level, but&nbsp;<kbd>&lt;a&gt;</kbd>&nbsp;tags have some default styling as well and the<kbd>&lt;a&gt;</kbd>&nbsp;is closer to the text we want styled than the&nbsp;<kbd>&lt;nav&gt;</kbd>&nbsp;is so those styles override ours. If we want the links to change back to the color we chose we will need to move our rule closer...override the default styling of the&nbsp;<kbd>&lt;a&gt;</kbd>&nbsp;itself most likely.</p>
+<p>So, at this point, we will split the nav into two parts: <em><strong>nav</strong></em> and <em><strong>nav a</strong></em>.&nbsp; In the <em><strong>nav</strong></em>&nbsp;we will keep the <em><strong>background-color</strong></em>, and <em><strong>nav a</strong></em> will get the text <em><strong>color</strong></em>.&nbsp; The reason we are going to use nav a { instead of just a is because if we have any other links on the page, we might not want them to behave the same as we do the navigation items.&nbsp; W3Schools has some more info on the idea of&nbsp;<a href="http://www.w3schools.com/css/css_howto.asp" target="_blank" rel="noopener noreferrer">cascading</a>.</p>
+</div>
+<div class="callout">
+<p>If you recall from the Khan academy lesson from this week links can be used to travel to different pages on the same site, to pages on a different site, and even to different places on the same web page.</p>
+<p>It is often considered a good practice if you have a link that takes you away from the current site to have it open in a <span style="text-decoration: underline;">new window</span> or <span style="text-decoration: underline;">tab</span>. This can be done with the&nbsp;<em><strong><kbd>target="_blank"</kbd></strong></em>&nbsp;attribute.&nbsp; &nbsp;In the next step, we will be adding 3 socialmedia icons (your choice).&nbsp; Those links must use the target of blank.</p>
+<p>Since our other navigation pages are part of our site, we will <span style="text-decoration: underline;"><strong>not</strong></span> want them to take us out of the site, so do not use target for the navigation.</p>
+</div>
+<h3>Step 07</h3>
+<p>Lets add some external links to social media to our site. Khan Academy taught this week that more than just text can be used to create links. In this case it would be appropriate to make an image the link instead.</p>
+<div class="callout">
+<p>Here a some icons (images) for some common social media sites that you can use for this next step.&nbsp; There were also a lot of social media icons in the sisterA images for week 3 (in the site plan instructions).&nbsp; Or,&nbsp; you can go find some of your own.</p>
+<p><img alt="Facebook" src="../Course%20Files/Images/facebook%20(1).png" title="Facebook" />&nbsp;<img alt="googleplus" src="../Course%20Files/Images/googleplus%20(1).png" title="googleplus" />&nbsp;<img alt="instagram" src="../Course%20Files/Images/instagram%20(1).png" title="instagram" />&nbsp;<img alt="" src="../Course%20Files/Images/twitter%20(1).png" title="" />&nbsp;<img alt="youtube" src="../Course%20Files/Images/youtube%20(1).png" title="youtube" />&nbsp;<img alt="pinterest" src="../Course%20Files/Images/pinterest%20(1).png" title="pinterest" /></p>
+<p><img alt="facebook" src="../Course%20Files/Images/facebook.png" title="facebook" />&nbsp;<img alt="googleplus" src="../Course%20Files/Images/googleplus.png" title="googleplus" />&nbsp;<img alt="instagram" src="../Course%20Files/Images/instagram.png" title="instagram" />&nbsp;<img alt="twitter" src="../Course%20Files/Images/twitter.png" title="twitter" />&nbsp;<img alt="youtube" src="../Course%20Files/Images/youtube.png" title="youtube" />&nbsp;<img alt="pinterest" src="../Course%20Files/Images/pinterest.png" title="pinterest" /></p>
+</div>
+<p>Select <em><strong>3 social media sites</strong></em>&nbsp;you would like to use.&nbsp; Choose a social media icon (image) for each and create a link&nbsp;from the&nbsp;icon in the footer of your page to the particular social media url.&nbsp; The image will be the link (do not add words).&nbsp; To work, you must put the entire url for the website including https:// .&nbsp; Test each link and make sure the link works and that it opens in a new window/tab.</p>
+<div class="callout">
+<p>When we added images before, you had a choice to either right click on the image and save to your computer or right click, copy image address and used that.&nbsp; It is always a better idea to download the image and save it for use on your site because you never know if the server that houses an image will be around forever.&nbsp; Remember, to use the image after downloading to your computer,&nbsp;&nbsp;you will then need to upload it to your&nbsp;folder where you have your url saved&nbsp;.</p>
+<p>If you right click on any of the images above you will see an option "Save image as..." Do that. Browse to the folder on your hard drive where you are storing your site. <strong>Save the image file in the same directory as your index.html file</strong>.</p>
+<p>Then to use it in your site you will now just need something like this as your src :&nbsp; &nbsp;<kbd>src="facebook.png"</kbd></p>
+</div>
+<h3>Step 08</h3>
+<p>Open your website&nbsp;into your browser to make sure the web page displays correctly. Pay special attention to whether your images are all displaying. Once verified, submit the URL for your page to iLearn.</p>
+<p>Then remember to backup your index.html&nbsp;&nbsp;</p>
+<div class="callout">
+<p>If you uploaded your updated&nbsp;<kbd>index.html</kbd>&nbsp;to your host and your changes don't show when you browse there &nbsp;your browser might be caching your page. Caching is when a browser holds a copy of a site you visit in memory so that next time you visit it will load very fast. Sometimes caching backfires though, on sites that change often, and your browser shows you an old version. Hitting the Refresh button on your browser will often force it to get a fresh copy. If that doesn't work you may have to empty your browser cache. Google can point you to walkthroughs for just about any browser on how to do this.</p>
+</div>
+<h2>Grading</h2>
+<p>This activity will be graded using the following rubric&nbsp; (10pts) :</p>
+<ul>
+<li>Structural HTML tags added to group elements as shown in the wireframe</li>
+<li>Links added for the navigation&nbsp; (The links in the navigation should link to index.html for the home page and "#" for the other two pages, since we haven't created the other pages yet.</li>
+<li>Create 3 social media icons in the footer section and create working links to the corresponding social media website.&nbsp; These links must open onto a new page.</li>
+<li>Examples of centering of text (inline elements) and boxes (block elements) shown on the page.</li>
+<li>The HTML is well formed and without errors.&nbsp;</li>
+</ul>
+<p>Go to the next page to access &ldquo;W06.04 Adding more HTML&rdquo; and click &ldquo;Upload.&rdquo;</p>
+<p><!-- end #article -->
+<script src="../Web%20Files/course.js">// <![CDATA[
+
+// ]]></script>
+</p>
+</div>
+</div>
+</body>
+</html>
