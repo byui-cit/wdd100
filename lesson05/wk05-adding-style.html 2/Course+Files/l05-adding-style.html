@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+	<title>W05.02 Adding A Little Style - Instructions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../Course%20Files/css/solarized-dark.css" />
+	<link rel="stylesheet" href="../Web%20Files/course.css" />
+</head>
+<body>
+<div id="main">
+<div id="header"><img src="../Web%20Files/smallBanner.jpg" alt="Course Banner" /></div>
+<div id="article">
+<h1>Wk05 Adding A Little Style</h1>
+<hr />
+<h2>Activity Instructions</h2>
+<p><span style="color: #000000;"><span class="highlight">Estimated Time</span>: 30 minutes</span></p>
+<p>This week we will continue with the webpage we started in the Getting started: Create the home page activity. Open up the index.html file that you&nbsp;created last week.&nbsp; Your file should be located in your dropbox (app/updog/).&nbsp; Make sure that you open your page in Brackets.</p>
+<div class="callout">
+<p>The first part of this activity will use the following html concepts or properties (review the links if you do not remember these from Khan academy):</p>
+<ul>
+<li><a href="https://www.w3schools.com/HTML/html5_new_elements.asp" target="_blank" rel="noopener noreferrer">HTML5 Elements</a></li>
+<li><a href="https://www.w3schools.com/HTML/html5_semantic_elements.asp" target="_blank" rel="noopener noreferrer">HTML Semantics</a></li>
+<li><a href="https://www.w3schools.com/TAGs/tag_style.asp" target="_blank" rel="noopener noreferrer">HTML Images</a></li>
+</ul>
+</div>
+<div class="callout">This activity will use the following new css concepts or properties (review the links if you do not remember these from Khan academy):
+<ul>
+<li><a href="https://www.w3schools.com/TAGs/tag_style.asp" target="_blank" rel="noopener noreferrer">Internal Style Sheet</a></li>
+<li><a href="https://www.w3schools.com/css/css_syntax.asp" target="_blank" rel="noopener noreferrer">CSS Syntax (Including class and id selectors)</a></li>
+<li><a href="https://www.w3schools.com/cssref/pr_background-color.asp" target="_blank" rel="noopener noreferrer">Background Colors</a></li>
+<li><a href="https://www.w3schools.com/csS/css_text.asp" target="_blank" rel="noopener noreferrer">Text Colors</a></li>
+</ul>
+</div>
+<h3><span class="highlight">Step 01</span>&nbsp;</h3>
+<p><span>First review the <a href="/d2l/le/content/61378/viewContent/4884466/View" target="_blank" rel="noopener noreferrer">siteplan wireframe</a>&nbsp;to help remember what we are trying to do. Notice that there are several elements on the page that are related and grouped. On this wireframe I added red boxes to help to see some of those relationships. We need to add some markup to make 'boxes' around those same elements in our html.</span></p>
+<div class="callout">
+<p><span>Html has several tags specifically for this purpose. Some have specific semantic meanings and others don't. We should always try and use the ones with meaning whenever we can. Here is a list of some of the more common of these tags:&nbsp;<kbd>&lt;header&gt;</kbd>,&nbsp;<kbd>&lt;footer&gt;</kbd>,&nbsp;<kbd>&lt;main&gt;</kbd>,&nbsp;<kbd>&lt;section&gt;</kbd>,&nbsp;<kbd>&lt;nav&gt;</kbd>,&nbsp;<kbd>&lt;article&gt;</kbd>,&nbsp;<kbd>&lt;aside&gt;</kbd>,&nbsp;<kbd>&lt;div&gt;</kbd>, and&nbsp;<kbd>&lt;span&gt;</kbd></span></p>
+<p><span>All of them behave the same in the browser except for&nbsp;<kbd>&lt;span&gt;</kbd>, but they are used to show different sections of the page.&nbsp;We are going to use the more specific ones first, &lt;header&gt;, &lt;nav&gt;, &lt;section&gt;, &lt;footer&gt;.&nbsp; </span></p>
+<p><span>We always try to use semantic tags first&nbsp;before we resort to using the&nbsp;<kbd>&lt;div&gt;</kbd>&nbsp;tag.&nbsp; The &lt;div&gt; is a genaric statement that should always be used with with an id or class <em><strong>only</strong></em>&nbsp;, and only used if none of the semantic tags seem to apply to the content you are boxing in.</span></p>
+</div>
+<h3><span><span class="highlight">Step 02</span>&nbsp;&nbsp;</span></h3>
+<p><span>Let's add some boxes. First notice that the links are all related. Let's put them in a box. One of the tags I listed above is&nbsp;<kbd>&lt;nav&gt;</kbd>&nbsp;it is specifically for designating navigational elements on a page. Let's wrap the list &lt;ul&gt; &lt;/ul&gt;that contains our navigation in a&nbsp;<kbd>&lt;nav&gt;</kbd><kbd>&lt;/nav&gt;</kbd>&nbsp;element.</span></p>
+<h3><span class="highlight">Step 03</span></h3>
+<p><span>Next,&nbsp; notice on the wireframe that there are sections consisting of related headline, paragraph, and image. Let's group each of those and designate them as&nbsp;<kbd>&lt;section&gt;</kbd>s.</span></p>
+<p><span>Here is an example of how one of those sections should look:&nbsp;&nbsp;&lt;section&gt;&nbsp;.&nbsp; Repeat for each section.&nbsp; Remember that section 3 does not have an image.</span></p>
+<h2><span>Section Example</span></h2>
+<pre><code class="html">Each of your sections will look like this:
+&lt;section&gt;
+    &lt;h2&gt;We run Rivers to relax.&lt;/h2&gt;
+    &lt;p&gt;We believe that there is nothing like a river trip for relaxing...  &lt;/p&gt;
+    &lt;img src="images/picture1.jpg" alt="river-picture"&gt;    
+&lt;/section&gt;
+        </code></pre>
+<h3><span><span class="highlight">Step 04</span></span></h3>
+<p><span>That's enough boxing for now. Let's add some styles. In the&nbsp;<kbd>&lt;head&gt;</kbd>&nbsp;&lt;/head&gt; portion of our page let's add a&nbsp;<kbd>&lt;style&gt;&lt;/style&gt;</kbd>&nbsp;element.</span></p>
+<h3><span class="highlight">Step 05</span></h3>
+<p><span>The wireframe has a rectangle around the navigation menu. This usually indicates a <em><strong>colored box</strong> </em>in that area. Let's add some color to our&nbsp;<kbd>&lt;nav&gt;</kbd>. In the&nbsp;<kbd>&lt;style&gt;</kbd>&nbsp;block we added let's make a CSS rule modifying our&nbsp;<kbd>&lt;nav&gt;.</kbd></span></p>
+<div class="callout">
+<p><span>Every CSS rule is made up of 3 elements. First we always need a selector, in this case we want to modify any&nbsp;<kbd>&lt;nav&gt;</kbd>&nbsp;elements on our page so our selector will be:&nbsp;<kbd>nav</kbd>. Next there are always curly braces { }. Inside those braces we place one or more pairs of 'property to change: value to change it to'</span></p>
+<p><span>So in this example to change the background color of our&nbsp;<kbd>&lt;nav&gt;</kbd>&nbsp;after adding the new rule our style block would look like this: ( you should use one of your selected colors from your color theme ...... probably not salmon ; )</span></p>
+<pre><code class="html">
+&lt;style&gt;
+     nav {
+         background-color: salmon;
+     }    
+&lt;/style&gt;
+        </code></pre>
+<p><span>It's worth taking a moment&nbsp;to talk about what valid options you have to designate color. The 3 main ways are hexadecimal, rgb, and predefined color names. Take a moment to visit&nbsp;<a href="http://www.w3schools.com/cssref/css_colors_legal.asp" target="_blank" rel="noopener noreferrer">W3Schools: CSS colors</a>&nbsp;to get a brief outline about the differences. Also take a look at this&nbsp;hat your browser will understand.</span></p>
+<ul>
+<li><a href="https://www.w3schools.com/colors/colors_picker.asp" target="_blank" rel="noopener noreferrer">hexidecimal</a></li>
+<li><a href="https://www.w3schools.com/colors/colors_rgb.asp" target="_blank" rel="noopener noreferrer">rgb</a></li>
+<li><a href="https://www.w3schools.com/colors/colors_names.asp" target="_blank" rel="noopener noreferrer">predefined color names</a> &nbsp;</li>
+</ul>
+Before you make a choice of which system you will use, visit all three to see the benefits of each.</div>
+<h3><span><span class="highlight">Step 06</span></span></h3>
+<p><span>The color you changed the background of the&nbsp;<kbd>&lt;nav&gt;</kbd>&nbsp;to may have made your text hard to read. In the site plan you should have chosen a color for your links. Add another line to your css rule to change the&nbsp;<kbd>color</kbd>&nbsp;for the text in the&nbsp;<kbd>&lt;nav&gt;</kbd>&nbsp;as well. Again you should use a color from your chosen palette. </span></p>
+<p><span>Pick something that looks good with the background color and that is easily readable.&nbsp; </span></p>
+<p><span>Note:&nbsp; If your background is a dark one, a lighter text should be used and likewise, if you have a light background color, use a dark text color.</span></p>
+<p><span>After you add the text color, your code should look something like this:</span></p>
+<pre><code class="html">
+&lt;style&gt;
+     nav {
+         background-color: salmon;
+         color: #331100;
+     }    
+&lt;/style&gt;
+        </code></pre>
+<h3><span><span class="highlight">Step 07</span></span></h3>
+<p><span>Our next step is to add the background color to the second section on our page.</span></p>
+<div class="callout">
+<p><span>We have a slight problem here though. If we use the&nbsp;&lt;section&gt; as a selector like we did with&nbsp;<kbd>&lt;nav&gt;</kbd>&nbsp;it will change all of our &lt;section&gt;s , which we don't want. From the Khan Academy lesson you should have learned about 2 other selectors: id selectors and class selectors. Id selectors should be used for elements that have unique styling needs, class selectors for those elements that might share styles with other elements.</span></p>
+</div>
+<p><span>In this case let's use an ID. Add an&nbsp;<kbd>id=""</kbd>&nbsp;to the second section so we can apply some styles just to that one. keep it simple but descriptive, like &lt;section id="sec2"&gt;.&nbsp;&nbsp;&nbsp;Next, &nbsp;add a css rule to change the background color of that box to one of your colors. (Remember that when you write the rule you need to add a '#' to your id name so the browser knows it's looking for the&nbsp;<em>id</em>&nbsp;and not the&nbsp;<em>tag</em>)&nbsp; Now, give each of the other sections an id="name" to make it so that later we can add rules to them if we choose to do so.</span></p>
+<h3><span><span class="highlight">Step 08</span>&nbsp;</span></h3>
+<p><span>Next,&nbsp; let's make our headlines stand out a little more. Lets change the color of all headlines again to one of the colors in your palette. Since we need to make sure everything from&nbsp;<kbd>&lt;h1&gt; to</kbd>&nbsp;<kbd>&lt;h6&gt;</kbd>&nbsp;gets the same styling we will take advantage of the fact that you can apply the same styles to more than one selector, so we can write one rule instead of six to change them all.</span></p>
+<p><span>To have a set of rules apply to more than one selector we separate them with a comma and a space after each comma. So the rule to change the color of all headlines would look something like this:</span></p>
+<h2><span>Multiple selector Example</span></h2>
+<pre><code class="css">
+h1, h2, h3, h4, h5, h6 {
+     color: #6495ED;
+}    
+        </code></pre>
+<h3><span class="highlight">Step 09</span></h3>
+<p>Changing the color of the second section may have made the text there hard to read. For our final step lets use a <em><strong>class</strong></em> selector to change the color of that text only. Add a&nbsp;<kbd>class=""</kbd>&nbsp;to the&nbsp;<kbd>&lt;p&gt;</kbd>&nbsp;inside the second section like this: &lt;p class="&nbsp; "&gt;. Choose a very short descriptive name for the class, like class="pspec" (paragraphspecial) and then create a css rule to change the color. Remember that you need to precede your rule with a '.' so that the browser knows it's looking for the&nbsp;<em>class</em>&nbsp;and not a&nbsp;<em>tag</em>.&nbsp; If done correctly it should only change the text of the paragraph we applied the class to.</p>
+<h3><span class="highlight">Step 10</span></h3>
+<p>I forgot to remind you to save what you are doing in Brackets often just in case you have a power out or some other glitch.&nbsp; Nothing worse than typing and getting nearly done, only to hit a wrong key, or have the power go out and losing all of your work and having to start over.&nbsp;</p>
+<p>Once you verify that the changes all look right, save your brackets file and then&nbsp;<strong><em>submit&nbsp;your URL</em></strong>&nbsp;from your for your page you created in updog to iLearn.</p>
+<h3><span class="highlight">Step 11</span></h3>
+<p>This is a good time to backup your work as well. (make a separate copy of your code just in case something goes wrong at the end of every session.</p>
+<p><span id="docs-internal-guid-f5e330dd-0fd2-707b-1b40-62f0b316a405"><span>Go to the next page to access &ldquo;W05.02 Adding A Little Style&rdquo; and click &ldquo;Upload.&rdquo;</span></span></p>
+</div>
+<!-- end #article --></div>
+<script src="../Web%20Files/course.js"></script>
+<script src="../Web%20Files/highlight.pack.js"></script>
+<script>// <![CDATA[
+hljs.initHighlightingOnLoad();
+// ]]></script>
+</body>
+</html>
