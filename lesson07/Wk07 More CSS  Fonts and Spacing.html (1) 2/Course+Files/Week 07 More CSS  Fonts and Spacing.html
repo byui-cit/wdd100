@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+	<title>W07.02 More CSS: Fonts and Spacing- Instructions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../Web%20Files/course.css" />
+</head>
+<body>
+<div id="main">
+<div id="header"><img src="../Web%20Files/smallBanner.jpg" alt="Course Banner" /></div>
+<div id="article">
+<h1>Wk06 More CSS: Fonts and Spacing</h1>
+<hr />
+<h2>Activity Directions</h2>
+<p>Estimated Time: 45 minutes</p>
+<div class="callout">
+<p>This activity will use the following new css concepts or properties (review the links if you do not remember these from Khan academy):</p>
+<ul>
+<li style="text-align: left;"><a href="http://www.w3schools.com/css/css_font.asp" target="_blank" rel="noopener noreferrer">CSS Fonts</a></li>
+<li style="text-align: left;"><a href="http://www.w3schools.com/css/css_boxmodel.asp" target="_blank" rel="noopener noreferrer">CSS Box Model</a></li>
+<li style="text-align: left;"><a href="http://www.w3schools.com/css/css_padding.asp" target="_blank" rel="noopener noreferrer">CSS Padding</a></li>
+<li style="text-align: left;"><a href="http://www.w3schools.com/css/css_text.asp" target="_blank" rel="noopener noreferrer">CSS Text Properties</a></li>
+</ul>
+</div>
+<div class="callout">
+<p>Nothing makes a webpage feel like more of a product and less of a project than changing from the default fonts. You should have chose one or two fonts when you were putting the site plan together for your site. Go review that now.</p>
+<p>Here is a&nbsp;<a href="http://www.w3schools.com/cssref/css_websafe_fonts.asp" target="_blank" rel="noopener noreferrer">web-safe list</a>&nbsp;that can be used just like Khan academy showed you this week. (Here is another list of the web-safe fonts:&nbsp;<a href="http://www.cssfontstack.com/" target="_blank" rel="noopener noreferrer">http://www.cssfontstack.com/</a>)</p>
+<p>Now we are going to add a little sparkle to our sites with fancier fonts.&nbsp;</p>
+<p>Choose <strong>3 fonts</strong> from Google Fonts and make the font available to the web page first before we can use them.</p>
+<p>No matter which fonts you&nbsp;choose it is always a good idea to list some fall-back fonts, in case for some reason your first choice doesn't work correctly...you can control how it degrades. Your second choice should be similar to your first (and usually web-safe), the third font in the list should usually be one of the default font families. (serif, san-serif, fantasy, monospace, or script)</p>
+<p>So for example if I chose Helvetica&nbsp;as my font for body copy I would add something like&nbsp;<kbd>font-family: Helvetica, Arial, sans-serif;</kbd>&nbsp;to a rule modifying the&nbsp;<kbd>body</kbd> of my page.</p>
+<p>If however I wanted to use the font Rock Salt for my headlines, that is not a web safe font and will probably not be on most computers. I have to do an extra step to make it available.</p>
+<p>Google Fonts makes it very easy to add your fonts. Find your font in Google Fonts and click the red plus: Select this Font:</p>
+<p style="text-align: center;"><img src="/content/enforced/325226-Online.2017.Fall.WDD100.11/Course Files/../Course%2BFiles/googlefont1-new.jpg" alt="googlefont1" title="googlefont1" data-d2l-editor-default-img-style="true" /></p>
+<p></p>
+<p>Then find the black bar on the bottom of your screen and click on it to expand it. Then click on the "@import" tab.</p>
+<p style="text-align: center;"><img src="/content/enforced/325226-Online.2017.Fall.WDD100.11/Course Files/../Course%2BFiles/googlefont2-new.jpg" alt="googlefont2" title="googlefont2" data-d2l-editor-default-img-style="true" /></p>
+<p></p>
+<p>Copy the line that starts with '@import' and add it to the&nbsp;<strong>top</strong>&nbsp;of your &lt;style&gt; block. It should look something like this:</p>
+<p><img src="/content/enforced/325226-Online.2017.Fall.WDD100.11/Course Files/../Course%2BFiles/wk7%203.png" alt="wk7 3" title="wk7 3" data-d2l-editor-default-img-style="true" /></p>
+<p>*note: google fonts can be imported with multiple fonts in one statement.&nbsp; They can be imported as a &lt;link&gt; in the &lt;head&gt;&nbsp;section of the html section <strong>or</strong> in the style section (css).</p>
+<p>Now you can use that font just like normal, ie:&nbsp;<kbd>font-family: 'Rock Salt', cursive;</kbd></p>
+</div>
+<h3>Step 01</h3>
+<p>Based on your font choices from your site plan, we are going to find <strong>similar fonts</strong> in google fonts to import and use on your page.&nbsp; You are to add the appropriate&nbsp;<kbd><strong>font-family</strong>:</kbd>, and&nbsp;<kbd>@import</kbd>&nbsp;lines to your CSS &lt;style&gt; section to change the body font and headline font on your webpage.&nbsp;</p>
+<p><strong>You MUST import and use at least two google fonts for this assignment</strong>.</p>
+<h3>Step 02</h3>
+<p>Often the default font sizes are fine...but there are times when they need to be changed. For example it's good for the links used for navigation to be nice and easy to click, so lets increase their size. Let's make it 110% of normal.</p>
+<p>(Remember the 'em' unit of measurement for fonts. <strong>1em</strong> = the normal size of your font...so 1.1em = 110%)</p>
+<div class="callout"><img src="/content/enforced/325226-Online.2017.Fall.WDD100.11/Course Files/Images/paddingexample.jpg" alt="paddingexample" title="paddingexample" style="float: right;" />
+<p>Nice to have those fonts in there :) Now though notice what is happening anywhere that you have made colored boxes around anything. Here is an example:</p>
+<p>The font and image are pressed right up against the edge of the border and it looks...not great. Lets fix it.</p>
+<p>The space between the content in a box and the edge of a box is called <a href="http://www.w3schools.com/cssref/pr_padding.asp" target="_blank" rel="noopener noreferrer">padding</a>. We can add padding to one or all sides. for example if I wanted to add some padding to all 4 sides of the box I would do something like this:&nbsp;<kbd>padding: 1em;</kbd>&nbsp;(</p>
+<p>We will learn more about padding next week)</p>
+</div>
+<h3>Step 03</h3>
+<p>Use <kbd>padding</kbd> to space out the content on your page from any edges or borders where it is needed.&nbsp; &nbsp;Put 10px padding on both your paragraphs and headlines.</p>
+<p>It is best to use padding rather than hard margins at this point.</p>
+<h3>Step 04</h3>
+<p>Proximity is a design principle that we rely on to help to know which elements on our page are related to each other by their distance from each other. Let's make sure that visitors to our site know that the headlines and paragraphs are related to each other by bringing them a little closer together. (The default spacing has them just a little far apart.) Adjust the&nbsp;<kbd>line-height</kbd>&nbsp;of your headlines to bring them closer to the paragraphs they belong to. You could even play with the line-height of your paragraphs to see how it affects readability as well.</p>
+<div class="callout">
+<p>If you are having a hard time getting your headlines to come closer to your paragraphs try this: right click on one of your headlines and select "Inspect". An area on your browser should open at either the side or bottom of the screen that shows both the html and the styles for that element. This is a powerful tool.</p>
+<p>When I did this I saw the following:</p>
+<p style="text-align: center;"><img src="/content/enforced/325226-Online.2017.Fall.WDD100.11/Course Files/../Course%2BFiles/inspect%20(1).jpg" alt="inspect" title="inspect" data-d2l-editor-default-img-style="true" /></p>
+<ul>
+<li style="text-align: left;">Notice that browser is showing me the size of the element in pixels.</li>
+<li style="text-align: left;">It's also showing me the area it takes up both for size (blue highlight) and margins (brown highlight). If there were any padding it would be green.</li>
+<li style="text-align: left;">All the styles are shown. The third arrow shows styles I defined.</li>
+<li style="text-align: left;">The last arrow shows several styles I&nbsp;<strong>did not</strong>&nbsp;define. Notice it says "user agent stylesheet" That's just another way of saying "browser default styling".</li>
+</ul>
+<p>The highlighted area and the styles are both showing in different ways that&nbsp;<kbd>&lt;h2&gt;</kbd>&nbsp;has top and bottom margins defined by default. Those defaults are probably interfering with your desire to move the headline closer to the paragraph.</p>
+<p>Another way of seeing this can be found if you scroll down in the area showing the styles...you should see something like in the Box model figure.</p>
+<p style="text-align: center;"></p>
+<img src="/content/enforced/325226-Online.2017.Fall.WDD100.11/Course Files/../Course%2BFiles/box-model.jpg" alt="boxmodel" title="boxmodel" data-d2l-editor-default-img-style="true" width="346" height="283" style="display: block; margin-left: auto; margin-right: auto;" /></div>
+<div class="callout">
+<p>If you refer back to the wireframe you will notice that the paragraphs in each of the sections only take up about half the screen. Let's make them do that now. We can use the&nbsp;<a href="http://www.w3schools.com/cssref/pr_dim_width.asp" target="_blank" rel="noopener noreferrer">width</a>&nbsp;property again to do this. You should have placed the headline and paragraph together in a box and given it a class to identify it. If you didn't do that now. My code looks like this</p>
+<p><img src="/content/enforced/325226-Online.2017.Fall.WDD100.11/Course Files/../Course%2BFiles/wk7%201.png" alt="" title="" data-d2l-editor-default-img-style="true" /></p>
+<p>It might be helpful to review the <a href="/d2l/le/content/61378/viewContent/4884479/View" target="_blank" rel="noopener noreferrer">siteplan wireframe</a>&nbsp;I am basing my page on. Notice how I have grouped and identified things. I placed the headline, and paragraph in the first section in a &lt;div&gt; with a class of leftcol, then I use that same class for the left column in section2. Then I did the same thing for the content that will be in the right column (once we learn positioning). This was part of last week's assignment.</p>
+<p>If yours doesn't look similar to this you might want to adjust it. Please do not work ahead, even if you have prior experience... this page is done a specific way... you will have more creative freedom.&nbsp;</p>
+<p>Layout will go much easier if your HTML is well structured. Think of a body and skeleton. If the bones in your elbows bent backwards instead of forwards you could scratch your own back easily, but you would have a really hard time eating :) You could get it done, but it's better to have a structure that makes it easy. Poor HTML structure will make positioning and laying out your site&nbsp;<strong>much</strong>&nbsp;more work.</p>
+</div>
+<h3>Step 05</h3>
+<p>Review your wireframe and set widths for elements that need it. In my example I would <strong>set a width of 48%</strong> on the left and right columns, and the footer.&nbsp; This would look like this:</p>
+<p style="text-align: center;"><img src="/content/enforced/325226-Online.2017.Fall.WDD100.11/Course Files/../Course%2BFiles/wk7%202.png" alt="wk7 2" title="wk7 2" width="658" height="73" /></p>
+<h3>Step 06</h3>
+<p>You will notice that I have added a 3d effect to my images by using box-shadow and I rounded the corners using border-radius... you are not required to do this, but you are welcome to try it.&nbsp;&nbsp;</p>
+<p>I have also added comments in my css section /*&nbsp; &nbsp;*/.... they can also be added to your html using &lt;!--&nbsp; --&gt;.... comments help clarify things to you as you go through your code trying to find where you put stuff, trust me... they can be helpful when troubleshooting.</p>
+<h3>Step 07</h3>
+<p>You are to also add font-size and line height to your headlines, paragraphs, and your nav items to adjust their size and the line spacing... line spacing can never be less than 1em, but can be larger if desired.</p>
+<p>We are now going to split the nav into <strong>3 parts</strong> at this point.... nav { , nav a { , and nav li { .&nbsp;</p>
+<p>The nav will contain the background-color padding of 1em.</p>
+<p>The nav li will have font-family, font-size, and list-style-type: none (this removes the dot from the list items).&nbsp;</p>
+<p>The nav a will have text color (color), line-height, and put text-decoration: none (this removes the underline).&nbsp;&nbsp;</p>
+<h3>Step 08</h3>
+<p>View&nbsp;&nbsp;your website&nbsp;in your browser to make sure the web page displays correctly.</p>
+<p>Pay special attention to whether your images are all displaying.</p>
+<p>Once verified, submit the URL for your page to iLearn.&nbsp;</p>
+<p>Then remember to backup your Handcraft files (Projects-&gt;Gear icon-&gt;Export as .zip)</p>
+<h2>Grading</h2>
+<p>This activity will be graded using the following rubric (10pts):</p>
+<ul>
+<li style="text-align: left;">Your website must show examples of using font-family, font-size, line-height, width, and padding with classes or ids</li>
+<li style="text-align: left;">All headlines, paragraphs and nav a must have a line-height of 1em (can be more not less)</li>
+<li style="text-align: left;">add text-decoration: none to nav a (removes the dot from each list item) and list-style-type: none to nav li (this removes the underline)</li>
+<li style="text-align: left;">In css to make a font style bold:&nbsp; font- weight: bold;&nbsp; &nbsp; to make italics:&nbsp; font-style: italic;</li>
+<li style="text-align: left;">Fonts of the webpage are changed from the default browser font to at least 2 or 3 google fonts. You must also have a series of&nbsp;at least 3&nbsp;fonts have been indicated in the CSS (font-family) to control how the font degrades if a desired font is not available (the final font should be a default font).&nbsp;</li>
+<li style="text-align: left;">The nav will have been split into 3 parts: nav,&nbsp; nav a,&nbsp; and nav li and the proper parts will be put within.</li>
+<li style="text-align: left;">You will have give a width of 48% to leftcol, rightcol, and the footer.</li>
+<li style="text-align: left;">Not required, but if you want to add a 3d effect to your images, add the border-radius and box-shadow (see my example)</li>
+<li style="text-align: left;">The HTML is well formed and without errors.&nbsp;</li>
+</ul>
+</div>
+</div>
+<script src="../Web%20Files/course.js"></script>
+</body>
+</html>
