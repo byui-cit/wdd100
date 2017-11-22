@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+	<title>W10.01 External CSS - Instructions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../Web%20Files/course.css" />
+</head>
+<body>
+<div id="main">
+<div id="header"><img src="../Web%20Files/smallBanner.jpg" alt="Course Banner" /></div>
+<div id="article">
+<h1>External CSS</h1>
+<hr />
+<h2>Activity&nbsp;Instructions</h2>
+<p>Estimated Time: 15 minutes</p>
+<blockquote style="font-size: 12pt; background-color: #faebd7;">
+<p>Until now,&nbsp; we have been using an <strong><em>internal stylesheet</em></strong>. This is what Khan Academy teaches, and it is a good place to start learning because it keeps everything on one page.</p>
+<p>Eventually though, you can start running into some limitations of internal CSS:</p>
+<ul>
+<li>Your html code page becomes increasingly long and difficult to discover errors or to see what you have on the page</li>
+<li>When you add more than one page to your site,&nbsp; keeping your styling in sync between&nbsp;<strong><em>ALL</em></strong> of&nbsp; your pages becomes quite a chore as every page will have a copy of the styles in the <kbd style="font-size: 12pt;">&lt;head&gt;</kbd><span style="font-size: 12pt;">!</span></li>
+</ul>
+<p>External style sheets solve this problem by removing the CSS from the page and into a separate file of type <kbd>.css</kbd> After removing the css you then have to <kbd>&lt;link&gt;</kbd> your html to the css so it can find the styles.</p>
+</blockquote>
+<h3>Step 01</h3>
+<p>Make your CSS external by first creating a new file in your editor and saving it as <kbd>main.css</kbd>.</p>
+<h3>Step 02</h3>
+<p>Next copy your CSS out of your <kbd>index.html</kbd> file (it will be everything in the <kbd>&lt;style&gt;</kbd> block, but <strong>not</strong> the <kbd>&lt;style&gt;</kbd> tags themselves) and pasting the CSS into your new <kbd>main.css</kbd> file.</p>
+<blockquote style="font-size: 12pt; background-color: #faebd7;">
+<p style="text-align: center;"><img src="../excsstop.jpg" alt="" title="excsstop" width="500" /></p>
+<p style="text-align: center;">Example CSS file</p>
+</blockquote>
+<h3>Step 03</h3>
+<p>Now link your css to your html page by adding a <kbd>&lt;link&gt;</kbd> tag. First remove the <kbd>&lt;style&gt;</kbd> block from the <kbd>&lt;head&gt;</kbd> of your document. The link will go in the place of it. A link tag has 3 required attributes: <em><strong><kbd>rel, type</kbd>, and <kbd>href</kbd></strong></em>. Two of the attributes will always be the same for CSS, the third you will have to provide. In this case the line should look like this (assuming you named your file main.css):</p>
+<blockquote style="font-size: 12pt; background-color: #ffffe6;">&lt;link rel="stylesheet" type="text/css" href="main.css" &gt;</blockquote>
+<blockquote style="font-size: 12pt; background-color: #faebd7;">
+<p style="text-align: center;"><img src="../excss1.jpg" alt="" title="excess1" width="500" /></p>
+<p style="text-align: center;">HTML file with internal CSS (before we add the link)</p>
+<p style="text-align: center;"><img src="../excss2.jpg" alt="" title="excss2" width="500" /></p>
+<p style="text-align: center;">HTML file with link to external CSS (after we add the link)</p>
+</blockquote>
+<h3>Step 04</h3>
+<p>After you finish, make sure that you check your index.html file in your browser to make sure that your css file is connecting properly.&nbsp; If it is not showing the same as before you moved everything off of the .html file onto the .css file, you will need to do some troubleshooting.&nbsp; Here are a few things that can easily happen to make things go wrong:</p>
+<ul>
+<li>Check to make sure your links is typed properly... check your spacing... and check to make sure that your link is in the &lt;head&gt; &lt;/head&gt; section.</li>
+<li>make sure that you did not leave the &lt;style&gt; &lt;/style&gt; links on the .html page</li>
+<li>make sure that you did not transfer any &lt;html&gt; links to the .css page.... at the top or the bottom of the code.... that is a sure fire way to make things not work properly... no html tags can be on the .css page.</li>
+</ul>
+After you make sure that the page looks as it should look (the layout of the page), &nbsp;submit the URL your (index.html) for your page to iLearn.<br />
+<h3>Grading</h3>
+<p>This activity will be graded using the following rubric (10pts):</p>
+<ul>
+<li>All CSS (including the &lt;style&gt; tags has been removed from the HTML file and placed into an external CSS file&nbsp;</li>
+<li>CSS is linked to the html file and styles still show (the link works properly)</li>
+</ul>
+<p>Go to the next page to access "W10.01 External CSS" and click "Upload" to submit this assignment.</p>
+</div>
+<!-- end #article --></div>
+<script src="../Web%20Files/course.js"></script>
+</body>
+</html>
