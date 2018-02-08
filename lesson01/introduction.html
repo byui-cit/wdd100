@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en-us">
+ <head>
+  <meta charset="utf-8"> 
+  <title>Introduction</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <link rel="stylesheet" href="../css/solarized-light.css" />	
+  <link rel="stylesheet" href="../css/course.css"> 
+ </head>
+ <body>
+<div id="main">
+<header id="header"><img src="../images/smallBanner.jpg" alt="Course Banner" width="100%" /></header>
+<div id="article">
+<h1>Introduction</h1>
+<hr />
+<h2>Activity&nbsp;Instructions</h2>
+<p>This week we have two important goals.  One to introduce you to HTML, and two to introduce you to each other.  With this activity we will accomplish both.</p>
+<h3>Step 01</h3>
+
+<p>If you haven’t already, make sure to complete the instructions in the <a href="software-setup.html" target="_blank">Software Setup</a> activity.
+</p>
+
+<h3>Step 02</h3>
+    <p>Learn the vocabulary.</p> 
+    <div class="callout">
+    <p>HTML has some very specific vocabulary that comes with it.  It is important that we become familiar with it.  Spend a few minutes familiarizing yourself with the following list. You will have a hard time making sense of the instruction given in this course if you don't understand these terms.</p>
+    <dl class="def-list">
+        <dt>Tag</dt><dd>HTML tags are key words surrounded by angle brackets: ie <code>&lt;body&gt;</code></dd>
+        <dt>Element</dt><dd>An HTML element usually consists of a start tag and end tag, with the content inserted in between</dd>
+        <dt>Nesting</dt><dd>Elements can be placed inside of other elements.</dd>
+        <dt>Parent</dt><dd>In nesting the parent is the element that contains other elements.</dd>
+        <dt>Child</dt><dd>In nesting a child element is contained <em>inside</em> of another element</dd>
+        <dt>Attribute</dt><dd>Attributes provide additional information about HTML elements.</dd>
+        <dt>Semantics</dt><dd>Semantics is the study of the meanings of words and phrases in a language.  Semantic elements = elements with a meaning.</dd>
+        
+    </dl>
+    <p>Watch for mention of the terms above as you review the following short tutorials.</p>
+    <ul>
+        <li><a href="https://www.w3schools.com/html/html_intro.asp" target="_blank">Introduction to HTML</a> </li>
+        <li><a href="https://www.w3schools.com/html/html_basic.asp" target="_blank">HTML Basics</a> </li>
+        <li><a href="https://www.w3schools.com/html/html_elements.asp" target="_blank">HTML Elements</a> </li>
+        <li><a href="https://www.w3schools.com/html/html_attributes.asp" target="_blank">HTML Attributes</a> </li>
+        <li><a href="https://www.w3schools.com/html/html5_semantic_elements.asp" target="_blank">HTML Semantics</a> </li>
+    </ul>
+    </div>
+    <div class="fig-block">
+<figure><img alt="HTMLDrop account screen"  src="../images/brackets-first-open.jpg" title="Brackets default opening" />
+<figcaption>Brackets-first time launching</figcaption>
+</figure>
+    </div>
+    
+    
+    <h3>Step 03</h3>
+    <p>Let's write some HTML.  The Introduction to HTML link above contained a nice starting point.  Below you can find the same thing.  Type the HTML below into the new file we created in your editor.</p>
+<pre><code class="html">
+&lt;!doctype html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+          &lt;title&gt;All About Me&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;p&gt;Hello World!&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+    <p>This code contains everything you need for a basic web page. It has most of the items listed above. Tags, elements, nesting,parent elements, child elements, and semantics. Can you spot them all?</p>
+     <h3>Step 04</h3>
+     <p>A visitor to a website should not have to guess what the page is about.  To let them know what our page is, let's add a headline advertising it. We can use the <code>&lt;h1&gt;</code> tag for this. Add a line between the <code>&lt;body&gt;</code> and <code>&lt;p&gt;</code> elements. Add an <code>&lt;h1&gt;</code> opening tag, then type "About Me", then enter <code>&lt;/h1&gt;</code> to close the element.</p>
+     <p>Your code should look like this:</p>
+     <pre><code class="html">
+&lt;!doctype html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+          &lt;title&gt;All About Me&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;About Me&lt;/h1&gt;
+        &lt;p&gt;Hello World!&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+    <h3>Step 05</h3>
+    <p>If you have Chrome installed on your computer you can click on the Live Preview button on the right side of the edit window and it will bring your page up in that browser for you to see.  As long as you don’t have any errors in your html it should update real-time as you make changes. If you don’t have Chrome installed, open the folder that contains the html file and right click-&gt;Open with and select your preferred browser.</p>
+    
+    <h3>Step 06</h3>
+    <p>Open a new window/tab in your browser and enter the updog URL in. For me this would be <code>https://w17thompsond.updog.co</code>.  You should see the same thing there that you did when you previewed in Brackets. That is the URL you will turn in for your assignments.</p>
+    
+    
+
+
+</div>
+</div>
+<script src="../js/course.js"></script>
+<script src="../js/highlight.pack.js"></script>
+<script>// <![CDATA[
+hljs.initHighlightingOnLoad();
+// ]]></script>
+</body>
+</html>

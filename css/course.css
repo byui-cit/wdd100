@@ -266,3 +266,12 @@ figcaption {
 .hint input[type=checkbox]:checked ~ i:after {
   transform: translate(2px, 0) rotate(-45deg);
 }
+
+.def-list dt {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+.def-list dd {
+    padding-left: 1em;
+}
+
