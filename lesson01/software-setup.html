@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>BYU-Idaho</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/solarized-light.css" />
     <link rel="stylesheet" href="../css/course.css" />
 </head>
 
@@ -44,9 +45,47 @@
                 <li>This is where you can add a new file to your project.</li>
             </ol>
             <h2>Step 4</h2>
-            <p>Lets practice writing a little HTML. Begin by creating a new file. Click on the <strong>New File</strong> button. Then change the default name there to <code>introduction.html</code> and click <strong>Add file</strong></p>
+            <p>Now we need to make some changes to the <code>index.html</code> file that Glitch created for you.  Go ahead and copy/paste the following html to replace everything that is currently in the <code>index.html</code> file.</p>
+            <pre><code class="html">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;title&gt;Hello!&lt;/title&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+    &lt;link rel="stylesheet" href="/styles.css"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;
+            WDD 100 Assignments
+        &lt;/h1&gt;
+        &lt;nav&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="aboutme.html"&gt;About Me&lt;/a&gt; &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+            </code></pre>
+            <p>It's ok if this doesn't make sense yet.  We will eventually talk about what each line in this code does. For now let's take a look at the page this code created.  Click on the "Show" button. You should see a very basic page with only two links and a headline.</p>
+            <h2>Step 5</h2>
+            <p>Let's make one more change to the Glitch settings. In the top right corner of the screen there are two icons. The far right one let's you see some information about Glitch...it usually looks like a fish. The other is for some User options.  Click on that one. You shuold see something similar to the image below. Uncheck "Refresh App", and check "Wrap Text"</p>
             <div class="fig-block">
-                <figure><img alt="Glitch create new file" src="../images/glitch-create-file.jpeg" title="Glitch create new file" />
+                <figure><img alt="Glitch settings" src="../images/glitch-settings.png" title="Glitch settings" />
+                    <figcaption>Change default settings</figcaption>
+                </figure>
+            </div>
+            <p>You can also change Glitch to use a dark theme instead of the light one from that menu as well if you prefer that.</p>
+            <h2>Step 6</h2>
+            <p>Lets practice writing a little HTML of our own now. Begin by creating a new file. Click on the <strong>New File</strong> button. Then change the default name there to <code>aboutme.html</code> and click <strong>Add file</strong></p>
+            <div class="fig-block">
+                <figure><img alt="Glitch create new file" src="../images/glitch-create-file.png" title="Glitch create new file" />
                     <figcaption>Create a New File</figcaption>
                 </figure>
             </div>
@@ -68,5 +107,9 @@
         <!-- end #article -->
     </div>
     <script src="../js/course.js"></script>
+    <script src="../js/highlight.pack.js"></script>
+<script>// <![CDATA[
+hljs.initHighlightingOnLoad();
+// ]]></script>
 </body>
 </html>
