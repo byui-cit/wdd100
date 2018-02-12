@@ -19,7 +19,7 @@ padding: 20px;
 </head>
 <body>
 <div id="main">
-<div id="header"><img src="../Web%20Files/smallBanner.jpg" alt="Course Banner" /></div>
+<div id="header"><img src="../images/smallBanner.jpg" alt="Course Banner" /></div>
 <div id="article">
 <h1>An&nbsp;"About Me" Web Page</h1>
 <hr />
@@ -104,24 +104,24 @@ padding: 20px;
 
 </div>
 <h2>Step 05</h2>
-<p>Next, let's write a few paragraphs to tell little bit about yourself.&nbsp;&nbsp;You don&rsquo;t have to reveal anything you don&rsquo;t want to, however, you&nbsp;should include most of the following information:</p>
+<p>Next, let's write a few paragraphs to tell little bit about yourself.&nbsp;&nbsp;You don&rsquo;t have to reveal anything you don&rsquo;t want to, however, here is a list of ideas to talk about to get you started:</p>
 <div class="callout">
 <ul>
 <li>Your name and perhaps a nick-name.</li>
-<li>Your contact information so that others may email or call you if they want to work with you on an assignment.&nbsp;</li>
 <li>Where are you located now and where are you from originally.</li>
 <li>What degree and/or career path are you headed down.</li>
 <li>What are some of the things you love to do, hobbies.</li>
 <li>Are you married, do you have children, grandchildren...&nbsp;</li>
 <li>Do you have a current career/job... are you making a change by pursuing your education.</li>
 <li>The thing you love most about BYU-Idaho.&nbsp; What degree are you pursuing?&nbsp; AA BS, WDD?</li>
-<li>The advantages you see from learning about carers in web design, why you are taking the course, what you hope to get out of it, and how you will use the information in your personal or professional life.</li>
-<li>How long have you been a member of the Church of Jesus Christ of Latter Day Saints.&nbsp; Do you have a favorite quote from one of the leaders of the church.&nbsp; Do you have a favorite scripture.</li>
+<li>The advantages you see from learning about careers in web design, why you are taking the course, what you hope to get out of it, and how you will use the information in your personal or professional life.</li>
+<li>How long have you been a member of the Church of Jesus Christ of Latter Day Saints?&nbsp; Do you have a favorite quote from one of the leaders of the church?&nbsp; Do you have a favorite scripture?</li>
 <li>Anything else you may want to share.</li>
 </ul>
 </div>
 <p>Start with the &lt;p&gt; that says "Hello World".&nbsp; Replace that with your own information and wording. Each time you want a new paragraph (please break it into more than one paragraph!) Add a new <code>&lt;p&gt;&lt;/p&gt;</code> element.</p>
-    <p>When you have finished adding your paragraphs you will want to preview. To see your page click on the "Show" button at the top left of the screen.  "Show" always starts with the <strong><code>index.html</code></strong> page, but you can click on the link we created there to see the <strong><code>aboutme.html</code></strong> page instead. Once you are on that page you can hit Refresh on your browser to see additional changes.  Your page and HTML might look something like the images below:</p>
+    
+    <p>When you have finished adding your paragraphs you will want to view your webpage. To do this click on the "Show" button at the top left of the screen.  "Show" always starts with the <strong><code>index.html</code></strong> page, but you can click on the link we created there to see the <strong><code>aboutme.html</code></strong> page instead. Once you are on that page you can hit Refresh on your browser to see additional changes as you make them.  Your page and HTML might look something like the images below:</p>
  <div class="fig-block">
 <figure><img alt="About me html"  src="../images/about-me-step5-html.jpg" title="About me html"  />
 <figcaption>HTML example</figcaption>
@@ -143,7 +143,7 @@ padding: 20px;
 </ul>
 </div>
 -->
-<p>Before you can put an image on your web page, you have to get it onto a web server. Luck for us Glitch makes this easy. We simply need to upload the image from your computer to your assets folder in Glitch. Click on the assets link and then drag and drop your image to the assets page.&nbsp; Then to put the image on your page, click on the image and then click on the"copy url" button.&nbsp; That puts the image link on your clipboard so that you can paste it into the image tag:&nbsp; &nbsp; &nbsp;&nbsp;</p>
+<p>Before you can put an image on your web page, you have to get it onto a web server. Lucky for us Glitch makes this easy. We simply need to upload the image from your computer to your assets folder in Glitch. Click on the assets link and then drag and drop your image to the assets page.&nbsp; Then to put the image on your page, click on the image and then click on the"copy url" button.&nbsp; That puts the image link on your clipboard so that you can paste it into the image tag:&nbsp; &nbsp; &nbsp;&nbsp;</p>
 <div class="fig-block">
 <figure><img alt="Glitch adding assets"  src="../images/glitch-asset1.png" title="Glitch adding assets"  />
 <figcaption>Assets Tab</figcaption>
@@ -156,13 +156,12 @@ padding: 20px;
 </figure>
     </div>
 
-<p>Put your image right after the &lt;h1&gt; line. You will start with the <code>img</code> tag.  But images require additional information in order to work.  We have to tell the browser where to find the image. We can use an "attribute" for this.  (Remember <strong>attribute</strong> was one of the vocabulary above.  If you have forgotten what it is go review). The attribute we need is <code>src=""</code>.  Add this right after the word <code>img</code>.  So it will look like this:</p>
+<p>Put your image right after the &lt;h1&gt; line. You will start with the <code>img</code> tag.  Images require additional information in order to work however.  We have to tell the browser where to find the image. We can use an "attribute" for this.  (Remember <strong>attribute</strong> was one of the vocabulary above.  If you have forgotten what it is go review). The attribute we need is <code>src=""</code>. Add this right after the word <code>img</code>.  So it will look like this:</p>
 <pre><code class="html">&lt;img src=""&gt;</code></pre>
 <p>Paste the URL you copied for your image into the "" after the <code>src</code>.  The final tag should look something like this:</p>
-<pre><code class="html">
-    &lt;img alt="image of me" src="https://cdn.glitch.com/3de58351-6a1f-4d05-80fc-6813c05f9c98%2Ffemaleicon.png?1518133139064"&gt;
+<pre><code class="html">&lt;img alt="image of me" src="https://cdn.glitch.com/3de58351-6a1f-4d05-80fc-6813c05f9c98%2Ffemaleicon.png"&gt;
 </code></pre>
-<p>Notice that I snuck an extra attribute in on you: <code>alt</code>. The <code>alt</code> attribute should contain a short description of the image. It is shown if the browser can't find the image or it is read for visually impaired visitors to your site.</p>
+    <p>Notice that I snuck an extra attribute in on you: <strong><code>alt</code></strong>. The <code>alt</code> attribute should contain a short description of the image. It is shown if the browser can't find the image or it is read for visually impaired visitors to your site. <strong>All</strong> of your images should have an <code>alt</code> attribute.</p>
 
 <!--
 <p style="text-align: left;"><span style="font-size: 12pt;">Next, we will add just a little bit of color to the page.&nbsp; This can be done two ways:&nbsp; inline html or css via &lt;style&gt;</span></p>
@@ -177,7 +176,7 @@ padding: 20px;
 <p style="text-align: left;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<img src="../stylefinal.png" alt="" title="" width="352" height="449" />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<img src="../finalpage.png" alt="" title="" width="311" height="446" /></p>
 <h2>Step 07</h2>
 <p><strong>In your I-Learn profile,&nbsp;add</strong>&nbsp;a picture that has a <strong>close up of your face</strong>.&nbsp; This is the image others will see when you make comments on a discussion board.&nbsp;</p>
-<p>To add a picture of yourself to your I-Learn profile, do the following<img src="../edit%20user.jpg" alt="" title="" width="238" height="154" style="float: right; padding: 20px;" />ng:</p>
+<p>To add a picture of yourself to your I-Learn profile, do the following: <img src="../edit%20user.jpg" alt="" title="" width="238" height="154" style="float: right; padding: 20px;" /></p>
 <div class="callout">
 <ol>
 <li>Click on your name located on the top right corner of the page.</li>
@@ -187,16 +186,18 @@ padding: 20px;
 </ol>
 </div>
 <h2>Step&nbsp;08</h2>
-<p>Lastly, go to the next page and do the following two things:</p>
+<p>Lastly, go to the Getting to Know You discussion board and do the following things:</p>
 <ul>
+<li>Make a new post.</li>
 <li>Upload the image you took of your About Me Web Page.</li>
-<li>In the group portion of the assignment, view your fellow student's web pages to get to know those in your class and make comments on at least 5&nbsp; of your peers web pages.&nbsp; Take some time to get to know your fellow classmates a nd who knows, you might even make a friend or two!</li>
+<li>Add contact information to the discussion board post if you would like to make that available to your fellow classmates.</li>
+<li>In the group portion of the assignment, view your fellow student's web pages to get to know those in your class and make comments on at least 5&nbsp; of your peers web pages.&nbsp; Take some time to get to know your fellow classmates and who knows, you might even make a friend or two!</li>
 </ul>
 <div class="highlight1">
 <h4>Grading (10 pts)</h4>
 <p>You must accomplish the following:</p>
 <ul>
-<li>Using your text editor, create a short auto-biography page using a few html tags that contains an image of you specifically,&nbsp;a title area using headlines with your name (and nick-name), and a few paragraphs telling some facts and information about you.</li>
+<li>Using your text editor, create a short auto-biography page using a few html tags that contains an image of you , a title area using headlines with your name (and nick-name), and a few paragraphs telling some facts and information about you.</li>
 <li>You also must add your image to your profile in iLearn (if it is not already there.).</li>
 </ul>
 </div>
