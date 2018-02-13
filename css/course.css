@@ -275,3 +275,14 @@ figcaption {
     padding-left: 1em;
 }
 
+.outline > h2 {
+    margin-left: 1em;
+    color: black;
+    font-size: 1.5em;
+}
+.outline > h3 {
+    margin-left: 2em;
+    color: black;
+    font-size: 1.2em;
+}
+

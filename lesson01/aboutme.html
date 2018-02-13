@@ -29,7 +29,7 @@ padding: 20px;
 <h2>Step 01</h2>
 <p>If you haven&rsquo;t already, make sure to complete the instructions in the&nbsp;<a href="http://byui-cit.github.io/wdd100/lesson01/software-setup.html" target="_blank" rel="noopener noreferrer">Software Setup</a>&nbsp;activity.</p>
 <h2>Step 02</h2>
-<p>Let's learn the vocabulary.</p>
+<p>Let's learn the vocabulary you will need to succeed in this course.</p>
 <div class="callout">
 <p>HTML has some very specific vocabulary that comes with it. It is important that we become familiar with it. Spend a few minutes familiarizing yourself with the following list. You will have a hard time making sense of the instruction given in this course if you don't understand these terms.</p>
 <dl>
@@ -48,6 +48,7 @@ padding: 20px;
 <dt><span style="font-size: 14pt;"><strong>Semantics</strong></span></dt>
 <dd>Semantics is the study of the meanings of words and phrases in a language. Semantic elements = elements with a meaning.</dd>
 </dl>
+<hr>
 <p>Watch for mention of the terms above as you review the following short tutorials.</p>
 <ul>
 <li><a href="https://www.w3schools.com/html/html_intro.asp" target="_blank" rel="noopener noreferrer">Introduction to HTML</a></li>
@@ -58,7 +59,7 @@ padding: 20px;
 </ul>
 </div>
 <h2>Step 03</h2>
-<p>Let's write some HTML. The Introduction to HTML link above contained a nice starting point. Below you can find the same thing. Open (log into) your editor, and click on the <code>aboutme.html</code> file you should have created earlier. (If you don't see it create it now)</p>
+<p>Let's write some HTML. The Introduction to HTML link above contained a nice starting point. Below you can find some similar code. Open (log into) your editor, and click on the <code>aboutme.html</code> file you should have created earlier. (If you don't see it create it now)</p>
 <div class="callout">
 <p>Type the HTML below into the new file we created in your editor.</p>
 <pre><code class="html">
@@ -76,14 +77,25 @@ padding: 20px;
 <p>This code contains everything you need for a basic web page. It has most of the items listed above. Tags, elements, nesting, parent elements, child elements, and semantics. Can you spot them all?</p>
 </div>
 <h2>Step 04</h2>
-<p>A visitor to a website should not have to guess what the page is about. The &lt;title&gt;&nbsp;says "All About Me". Although, you can see "All About Me" looking at the html, it will not show up on the page.&nbsp; This is because &lt;title&gt; is in the &lt;head&gt; section and anything in the &lt;head&gt; is not seen.&nbsp; &nbsp;Only items in the &lt;body&gt; section are actually seen on the page. The &lt;title&gt; shows up as the name of the tab or window.</p>
+<p>A visitor to a website should not have to guess what the page is about. The &lt;title&gt;&nbsp;says "All About Me". Although you can see "All About Me" looking at the html, it will not show up on the page.&nbsp; This is because &lt;title&gt; is in the &lt;head&gt; section and anything in the &lt;head&gt; is not seen in the browser window.&nbsp; &nbsp;Only items in the &lt;body&gt; section are actually seen on the page. The &lt;title&gt; shows up as the name of the tab or window.</p>
 <p>We can use a headline element on our page so that when someone visits your page, they will know what your page is about.</p>
 <div class="callout">
 <p>There are various sizes of headlines: &lt;h1&gt; - &lt;h6&gt; These can be used to establish a hierarchy for your page. The <em>smaller</em> the number with the h like &lt;h1&gt; for instance, the <em>larger</em> the text and the more important the headline should be. An &lt;h1&gt; for example should be used for the <em>most important</em> title on the page. You should only use one &lt;h1&gt; on your page.</p>
-   <p>&lt;h2&gt; tags would be the next level and you can use as many as you need.  To put this in other terms lets look at an essay for example.  Look at the following outline:</p>
-<pre></pre>
+   <p>&lt;h2&gt; tags would be the next level and you can use as many as you need.  Think about the structure of this course. It is broken up into weeks and activities. An outline using headline elements would look like the following:</p>
+<div class="outline">
+  <h1>WDD 100 (&lt;h1&gt;)</h1> 
+   <h2>Week1 (&lt;h2&gt;)</h2> 
+       <h3>Software Setup (&lt;h3&gt;)</h3> 
+       <h3>Getting to Know you (&lt;h3&gt;)</h3> 
+       <h3>Purpose and Audience (&lt;h3&gt;)</h3> 
+    <h2>Week2 (&lt;h2&gt;)</h2> 
+    <h3>Site Plan (&lt;h3&gt;)</h3> 
+    <h3>Getting Started (&lt;h3&gt;)</h3>
+    <h2>Week3 (&lt;h2&gt;)</h2> 
+    ...
     </div>
-<p>To let&nbsp;visitors to your page know what it is about at a glance, let's add a larger headline to advertise.&nbsp;Let's use the&nbsp;<code>&lt;h1&gt;</code>&nbsp;tag for this. Add a line between the&nbsp;<code>&lt;body&gt;</code>&nbsp;and&nbsp;<code>&lt;p&gt;</code>&nbsp;elements and add an&nbsp;<code>&lt;h1&gt;</code>opening tag,&nbsp;and type "About Me".&nbsp; Then enter&nbsp;<code>&lt;/h1&gt;</code>&nbsp;to close the element. Let's add a sub-title or two as well.&nbsp; Let's use &lt;h2&gt; (smaller text) and put your name and your nickname if you have one.&nbsp; Do this right after the &lt;h1&gt; About Me&lt;/h1&gt;:</p>
+    </div>
+<p>To let&nbsp;visitors to your page know what it is about at a glance, let's add a larger headline to advertise.&nbsp;Let's use the&nbsp;<code>&lt;h1&gt;</code>&nbsp;tag for this. Add a line between the&nbsp;<code>&lt;body&gt;</code>&nbsp;and&nbsp;<code>&lt;p&gt;</code>&nbsp;elements and add an&nbsp;<code>&lt;h1&gt;</code>opening tag,&nbsp;and type "About Me".&nbsp; Then enter&nbsp;<code>&lt;/h1&gt;</code>&nbsp;to close the element. Let's add a sub-heading or two as well.&nbsp; Let's use &lt;h2&gt; (smaller text) and put your name and your nickname if you have one.&nbsp; Do this right after the &lt;h1&gt; About Me&lt;/h1&gt;:</p>
 <div class="callout">
 <p>Now your code should look like this:</p>
 <pre><code class="html">
