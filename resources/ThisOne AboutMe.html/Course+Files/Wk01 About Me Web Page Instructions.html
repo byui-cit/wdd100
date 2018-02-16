@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+	<title>W01.04 Getting to Know You- Instructions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../Web%20Files/course.css" />
+<style>
+.highlight1 {
+background-color: #ebffcc;
+padding: 20px;
+}
+.highlight2 {
+background-color: #FFF8DC;
+padding: 20px;
+}
+</style>
+</head>
+<body>
+<div id="main">
+<div id="header"><img src="../Web%20Files/smallBanner.jpg" alt="Course Banner" /></div>
+<div id="article">
+<h1>An&nbsp;"About Me" Web Page</h1>
+<hr />
+<h2>Activity&nbsp;Instructions</h2>
+<p>Estimated Time: 30 minutes</p>
+<p>This week we have two important goals. One to introduce you to HTML, and two to introduce you to each other. With this activity we will accomplish both.</p>
+<h2>Step 01</h2>
+<p>If you haven&rsquo;t already, make sure to complete the instructions in the&nbsp;<a href="http://byui-cit.github.io/wdd100/lesson01/software-setup.html" target="_blank" rel="noopener noreferrer">Software Setup</a>&nbsp;activity.</p>
+<h2>Step 02</h2>
+<p>Let's learn the vocabulary.</p>
+<div class="callout">
+<p>HTML has some very specific vocabulary that comes with it. It is important that we become familiar with it. Spend a few minutes familiarizing yourself with the following list. You will have a hard time making sense of the instruction given in this course if you don't understand these terms.</p>
+<dl>
+<dt><span style="font-size: 14pt;"><strong>Tag</strong></span></dt>
+<dd>HTML tags are key words surrounded by angle brackets: ie&nbsp;<code>&lt;body&gt;</code></dd>
+<dt><span style="font-size: 14pt;"><strong>Element</strong></span></dt>
+<dd>An HTML element usually consists of a start tag and end tag, with the content inserted in between</dd>
+<dt><span style="font-size: 14pt;"><strong>Nesting</strong></span></dt>
+<dd>Elements can be placed inside of other elements.</dd>
+<dt><span style="font-size: 14pt;"><strong>Parent</strong></span></dt>
+<dd>In nesting the parent is the element that contains other elements.</dd>
+<dt><span style="font-size: 14pt;"><strong>Child</strong></span></dt>
+<dd>In nesting a child element is contained&nbsp;<em>inside</em>&nbsp;of another element</dd>
+<dt><span style="font-size: 14pt;"><strong>Attribute</strong></span></dt>
+<dd>Attributes provide additional information about HTML elements.</dd>
+<dt><span style="font-size: 14pt;"><strong>Semantics</strong></span></dt>
+<dd>Semantics is the study of the meanings of words and phrases in a language. Semantic elements = elements with a meaning.</dd>
+</dl>
+<p>Watch for mention of the terms above as you review the following short tutorials.</p>
+<ul>
+<li><a href="https://www.w3schools.com/html/html_intro.asp" target="_blank" rel="noopener noreferrer">Introduction to HTML</a></li>
+<li><a href="https://www.w3schools.com/html/html_basic.asp" target="_blank" rel="noopener noreferrer">HTML Basics</a></li>
+<li><a href="https://www.w3schools.com/html/html_elements.asp" target="_blank" rel="noopener noreferrer">HTML Elements</a></li>
+<li><a href="https://www.w3schools.com/html/html_attributes.asp" target="_blank" rel="noopener noreferrer">HTML Attributes</a></li>
+<li><a href="https://www.w3schools.com/html/html5_semantic_elements.asp" target="_blank" rel="noopener noreferrer">HTML Semantics</a></li>
+</ul>
+</div>
+<h2>Step 03</h2>
+<p>Let's write some HTML. The Introduction to HTML link above contained a nice starting point. Below you can find the same thing. Open (log into) your editor, and create a <strong>new</strong> file.&nbsp; Name&nbsp;your new file aboutme.htm .&nbsp;</p>
+<div class="highlight2">
+<p>Type the HTML below into the new file we created in your editor.</p>
+<pre><code><span style="color: #e69138;">
+&lt;!DOCTYPE html&gt;</span>
+<span style="color: #085394;">&lt;html&gt;</span>
+    <span style="color: #085394;">&lt;head&gt;</span>
+          <span style="color: #085394;">&lt;title&gt;</span>All About Me<span style="color: #085394;">&lt;/title&gt;</span>
+    <span style="color: #085394;">&lt;/head&gt;</span>
+    <span style="color: #085394;">&lt;body&gt;</span>
+        <span style="color: #085394;">&lt;p&gt;</span>Hello World!<span style="color: #085394;">&lt;/p&gt;</span>
+<span style="color: #085394;">    &lt;/body&gt;
+&lt;/html&gt;
+</span></code></pre>
+<p></p>
+<p>This code contains everything you need for a basic web page. It has most of the items listed above. Tags, elements, nesting, parent elements, child elements, and semantics. Can you spot them all?</p>
+</div>
+<h2>Step 04</h2>
+<p>A visitor to a website should not have to guess what the page is about. The &lt;title&gt;&nbsp;says "All About Me". Although you can see "All About Me" looking at the html, it will not show up on the page.&nbsp; This is because &lt;title&gt; is in the &lt;head&gt; section and anything in the &lt;head&gt; is not seen in the browser window.&nbsp; &nbsp;Only items in the &lt;body&gt; section are actually seen on the page. The &lt;title&gt; shows up as the name of the tab or window.</p>
+<p>We can use a headline element on our page so that when someone visits your page, they will know what your page is about.</p>
+<div class="callout">
+<p>There are various sizes of headlines: &lt;h1&gt; - &lt;h6&gt; These can be used to establish a hierarchy for your page. The&nbsp;<em>smaller</em>&nbsp;the number with the h like &lt;h1&gt; for instance, the&nbsp;<em>larger</em>&nbsp;the text and the more important the headline should be. An &lt;h1&gt; for example should be used for the&nbsp;<em>most important</em>&nbsp;title on the page. You should only use one &lt;h1&gt; on your page.</p>
+<p>&lt;h2&gt; tags would be the next level and you can use as many as you need. Think about the structure of this course. It is broken up into weeks and activities. An outline using headline elements would look like the following:</p>
+<div class="highlight2">
+<h1><span style="font-size: 14pt;">WDD 100 (&lt;h1&gt;)</span></h1>
+<h2><span style="font-size: 14pt;">Week1 (&lt;h2&gt;)</span></h2>
+<h3><span style="font-size: 14pt;">Software Setup (&lt;h3&gt;)</span></h3>
+<h3><span style="font-size: 14pt;">Getting to Know you (&lt;h3&gt;)</span></h3>
+<h3><span style="font-size: 14pt;">Purpose and Audience (&lt;h3&gt;)</span></h3>
+<h2><span style="font-size: 14pt;">Week2 (&lt;h2&gt;)</span></h2>
+<h3><span style="font-size: 14pt;">Site Plan (&lt;h3&gt;)</span></h3>
+<h3><span style="font-size: 14pt;">Getting Started (&lt;h3&gt;)</span></h3>
+<h2><span style="font-size: 14pt;">Week3 (&lt;h2&gt;)</span></h2>
+...</div>
+</div>
+<p>To let&nbsp;visitors to your page know what it is about at a glance, let's add a larger headline to advertise.&nbsp;Let's use the&nbsp;<code>&lt;h1&gt;</code>&nbsp;tag for this. Add a line between the&nbsp;<code>&lt;body&gt;</code>&nbsp;and&nbsp;<code>&lt;p&gt;</code>&nbsp;elements and add an&nbsp;<code>&lt;h1&gt;</code>opening tag,&nbsp;and type "About Me".&nbsp; Then enter&nbsp;<code>&lt;/h1&gt;</code>&nbsp;to close the element. Let's add a sub-heading or two as well.&nbsp; Let's use &lt;h2&gt; (smaller text) and put your name and your nickname if you have one.&nbsp; Do this right after the &lt;h1&gt; About Me&lt;/h1&gt;:</p>
+<div class="callout">
+<p>Now your code should look like this:</p>
+<div class="highlight2">
+<pre><code></code></pre>
+<p><span style="color: #e69138;">&lt;!DOCTYPE html&gt;</span></p>
+<pre><code></code></pre>
+<p><span style="color: #085394;">&lt;html&gt;</span><br /><span style="color: #085394;">&lt;head&gt;</span><br /><span style="color: #085394;">&lt;title&gt;</span>All About Me<span style="color: #085394;">&lt;/title&gt;</span><br /> <span style="color: #085394;">&lt;/head&gt;</span><br /><span style="color: #085394;">&lt;body&gt;</span><br /> <br /> <span style="color: #085394;">&lt;h1&gt;</span>About Me<span style="color: #085394;">&lt;/h1&gt;</span><br /><span style="color: #085394;">&lt;h2&gt;</span>"First Name Last Name"<span style="color: #085394;">&lt;/h2&gt;</span><br /> <span style="color: #085394;">&lt;h2&gt;</span>"My Nic-name"<span style="color: #085394;">&lt;/h2&gt;</span></p>
+<pre><code></code></pre>
+<p><span style="color: #085394;">&lt;p&gt;</span>Hello World!<span style="color: #085394;">&lt;/p&gt;</span></p>
+<pre><code></code></pre>
+<p><span style="color: #085394;">&lt;/body&gt;</span></p>
+<pre><span style="color: #085394;"><code></code></span></pre>
+<p><span style="color: #085394;">&lt;/html&gt;</span></p>
+</div>
+</div>
+<h2>Step 05</h2>
+<p>Next, let's write a few paragraphs to tell little bit about yourself.&nbsp;&nbsp;You don&rsquo;t have to reveal anything you don&rsquo;t want to, however, you&nbsp;should include most of the following information:</p>
+<div class="callout">
+<ul>
+<li>Your name and perhaps a nick-name.</li>
+<li>Your contact information so that others may email or call you if they want to work with you on an assignment.&nbsp;</li>
+<li>Where are you located now and where are you from originally.</li>
+<li>What degree and/or career path are you headed down.</li>
+<li>What are some of the things you love to do, hobbies.</li>
+<li>Are you married, do you have children, grandchildren...&nbsp;</li>
+<li>Do you have a current career/job... are you making a change by pursuing your education.</li>
+<li>The thing you love most about BYU-Idaho.&nbsp; What degree are you pursuing?&nbsp; AA BS, WDD?</li>
+<li>The advantages you see from learning about carers in web design, why you are taking the course, what you hope to get out of it, and how you will use the information in your personal or professional life.</li>
+<li>How long have you been a member of the Church of Jesus Christ of Latter Day Saints.&nbsp; Do you have a favorite quote from one of the leaders of the church.&nbsp; Do you have a favorite scripture.</li>
+<li>Anything else you may want to share.</li>
+</ul>
+</div>
+<p>Start with the &lt;p&gt; that says "Hello World".&nbsp; Replace that with your own information and wording. Each time you want a new paragraph (please break it into more than one paragraph!) Add a new&nbsp;<code>&lt;p&gt;&lt;/p&gt;</code>&nbsp;element.</p>
+<p>When you have finished adding your paragraphs you will want to view your webpage. To do this click on the "Show" button at the top left of the screen. "Show" always starts with the&nbsp;<strong><code>index.html</code></strong>&nbsp;page, but you can click on the link we created there to see the&nbsp;<strong><code>aboutme.html</code></strong>&nbsp;page instead. Once you are on that page you can hit Refresh on your browser to see additional changes as you make them.</p>
+<p>Your page and HTML might look something like the images below:</p>
+<p></p>
+<p>&nbsp; <img src="../aboutmecode.jpg" alt="" title="" width="468" height="334" />&nbsp;&nbsp;&nbsp;<img src="../aboutme2.jpg" alt="" title="" width="394" height="384" /></p>
+<h2>Step 06</h2>
+<p>Look's good, but it is a little plain.&nbsp;Let's&nbsp;add an image to dress up your page.&nbsp;</p>
+<p>Before you can put an image on your web page, you have to get it onto a web server. Lucky for us Glitch makes this easy. We simply need to upload the image from your computer to your assets folder in Glitch. Click on the assets link and then drag and drop your image to the assets page.&nbsp; Then to put the image on your page, click on the image and then click on the"copy url" button.&nbsp; That puts the image link on your clipboard so that you can paste it into the image tag:&nbsp; &nbsp; &nbsp; &nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;<img src="../asset1.png" alt="" title="" width="250" height="175" data-d2l-editor-default-img-style="true" />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<img src="../assets2.png" alt="" title="asset2" width="250px" />&nbsp; &nbsp; &nbsp; &nbsp;<img src="../useassets.png" alt="" title="useasset" width="250px" data-d2l-editor-default-img-style="true" /></p>
+<p>Put your image right after the &lt;h1&gt; line. You will start with the&nbsp;<code>img</code>&nbsp;tag. Images require additional information in order to work however. We have to tell the browser where to find the image. We can use an "attribute" for this. (Remember&nbsp;<strong>attribute</strong>&nbsp;was one of the vocabulary above. If you have forgotten what it is go review). The attribute we need is&nbsp;<code>src=""</code>. Add this right after the word&nbsp;<code>img</code>. So it will look like this:</p>
+<div class="highlight2">
+<pre><code>&lt;img src=""&gt;<br /><br /></code></pre>
+</div>
+<p>Paste the URL you copied for your image into the "" after the&nbsp;<code>src</code>. The final tag should look something like this:</p>
+<div class="highlight2">
+<pre><span style="font-size: 10pt;"><code>&lt;img alt="image of me" src="<a href="https://cdn.glitch.com/3de58351-6a1f-4d05-80fc-6813c05f9c98%2Ffemaleicon.png">https://cdn.glitch.com/3de58351-6a1f-4d05-80fc-6813c05f9c98%2Ffemaleicon.png</a>"&gt;<br />
+</code></span></pre>
+</div>
+<p>Notice that I snuck an extra attribute in on you:&nbsp;<strong><code>alt</code></strong>. The&nbsp;<code>alt</code>&nbsp;attribute should contain a short description of the image. It is shown if the browser can't find the image or it is read for visually impaired visitors to your site.&nbsp;<strong>All</strong>&nbsp;of your images should have an&nbsp;<code>alt</code>&nbsp;attribute.</p>
+<p>There, that looks great.... you coded a web page about yourself that is simple, informative, and has a touch of style.</p>
+<p>Your final page should look something like the pages below but with your information and your actual image.</p>
+<p style="text-align: left;"></p>
+<p style="text-align: left;">&nbsp; &nbsp; &nbsp;<img src="../aboutmefinishedhtml.jpg" alt="" title="" width="422" height="382" />&nbsp; &nbsp; &nbsp;&nbsp;<img src="../aboutmefinishedpage.jpg" alt="" title="" width="376" height="384" /></p>
+<h2>Step 07</h2>
+<p><strong>In your I-Learn profile,&nbsp;add</strong>&nbsp;a picture that has a <strong>close up of your face</strong>.&nbsp; This is the image others will see when you make comments on a discussion board.&nbsp;</p>
+<p>To add a picture of yourself to your I-Learn profile, do the followingg:</p>
+<div class="callout">
+<div class="highlight2">
+<ol>
+<li>Click on your name located on the top right corner of the page.</li>
+<li>Select the option titled "Profile".</li>
+<li>Select "Change Picture" and and upload a picture of yourself from your computer.</li>
+<li>Close the window.<img src="../edit%20profile.jpg" alt="" title="" width="359" height="165" style="display: block; margin-left: auto; margin-right: auto;" /></li>
+</ol>
+</div>
+</div>
+<h2>Step&nbsp;08</h2>
+<p>Lastly, go to the Getting to Know You discussion board and do the following things:</p>
+<ol>
+<li>Make a new post.</li>
+<li>Paste in the link to your About Me Web Page. (To find this open your project in Glitch then click on the Project name in the top left corner. The link is there with a handy "copy" button.)</li>
+<li>Add contact information to the discussion board post if you would like to make that available to your fellow classmates.</li>
+<li>In the group portion of the assignment, view your fellow student's web pages to get to know those in your class and make comments on at least 5&nbsp; of your peers web pages.&nbsp; Take some time to get to know your fellow classmates and who knows, you might even make a friend or two!</li>
+</ol>
+<div class="highlight1">
+<h4>Grading (10 pts)</h4>
+<p>You must accomplish the following:</p>
+<ul>
+<li>Using your text editor, create a short auto-biography page using a few html tags and a touch of css&nbsp;that contains an image of you specifically,&nbsp;a title area using headlines with your name (and nick-name), a few paragraphs telling some facts and information about you, and formatted with text color and background color for the page.</li>
+<li>You also must add your image to your profile in iLearn (if it is not already there.).</li>
+</ul>
+</div>
+<p><!-- end #article --></p>
+</div>
+<script src="../Web%20Files/course.js"></script>
+</div>
+</body>
+</html>
