@@ -75,11 +75,11 @@
             <p>Select 3 social media sites and create a link to them in the footer of your page using an image. Make sure the link opens in a new window/tab.</p>
             <div class="callout">
                 <p>When we added images before we found the URL of the image (right click, copy image address) and used that. In this case it would be better to download the image to our computer and then upload it to our host as part of the site.</p>
-                <p>If you right click on any of the images above you will see an option "Save image as..." Do that. Login to Glitch and click on the Assets folder.  Drag each of the files you need into the browser window to upload them to Glitch.  Then you can click on the image and click the "Copy URL" button to get what you need to add to the img tag.</p>
-                <p>Glitch has really long image URLs so I would recommend always using the copy functionality.</p>
+                <p>If you right click on any of the images above you will see an option "Save image as..." Do that. Browse to the folder on your hard drive where you are storing your site. Save the image file in the same directory as your index.html file.</p>
+                <p>To use it in your site you will now just need something like this as your src&nbsp;<kbd>src="facebook.png"</kbd>.</p>
                 <p>The whole img tag with a src like above would look like this: </p>
                 <pre><code class="html">
-    &lt;img src="https://cdn.glitch.com/c852da23-70d9-4da6-83eb-4823e3bbe587%2Ffacebook.png?1518559207353" alt="Facebook icon"&gt;
+    &lt;img src="facebook.png" alt="Facebook icon"&gt;
                 </code> </pre>
             </div>
 
@@ -89,7 +89,7 @@
                 <p>We've been doing a lot with HTML so far...and in fact we have now added almost all the html we will need! I think it's high time we got to CSS!</p>
                 <p>The second half of the activity will use the following new html/css concepts or tags (review the links if you do not remember these from Khan academy):</p>
                 <ul>
-                    <li><a href="http://www.w3schools.com/css/css_howto.asp" target="_blank">External Style Sheet</a> </li>
+                    <li><a href="http://www.w3schools.com/css/css_howto.asp" target="_blank">Internal Style Sheet</a> </li>
                     <li><a href="http://www.w3schools.com/css/css_syntax.asp" target="_blank">CSS Syntax</a> (Including class and id selectors) </li>
                     <li><a href="http://www.w3schools.com/css/css_background.asp" target="_blank">Background Colors</a> </li>
                     <li><a href="http://www.w3schools.com/css/css_text.asp" target="_blank">Text Colors</a> </li>
@@ -101,41 +101,32 @@
                 </ul>
             </div>
             <h3><span class="highlight">Step 04</span></h3>
-            <p>Let's add some styles! The Khan Academy lessons start out by having you add CSS in the&nbsp;<kbd>&lt;head&gt;</kbd>&nbsp;portion of your page. There is actually a better way, and we are already setup to do it.  We will use an external stylesheet instead of the Internal method Khan uses.</p>
-            <p>You may have noticed the line in your HTML that looks like this:</p>
-            <pre><code class="html">&lt;link rel="stylesheet" href="/styles.css"&gt;</code></pre>
-            <p>You may have also noticed a file in your list called <code>styles.css</code>.  The <code>link</code> tag tells the html file where to find the CSS it should use to style the page.  We will enter all of our CSS in the <code>styles.css</code> file. If you open up that file you will notice a bit of CSS already written. Let's remove that so that we start with a clean slate.</p>
-           
+            <p>Let's add some styles! In the&nbsp;<kbd>&lt;head&gt;</kbd>&nbsp;portion of our page let's add a&nbsp;<kbd>&lt;style&gt;&lt;/style&gt;</kbd>&nbsp;element.</p>
             <h3><span class="highlight">Step 05</span></h3>
-            <p>The wireframe has a rectangle around the navigation menu. This usually indicates a colored box in that area. Let's add some color to our&nbsp;<kbd>&lt;nav&gt;</kbd>. In the&nbsp;<kbd>styles.css</kbd> file let's make a CSS rule modifying our&nbsp;<kbd>&lt;nav&gt;</kbd></p>
+            <p>The wireframe has a rectangle around the navigation menu. This usually indicates a colored box in that area. Let's add some color to our&nbsp;<kbd>&lt;nav&gt;</kbd>. In the&nbsp;<kbd>&lt;style&gt;</kbd>&nbsp;block we added let's make a CSS rule modifying our&nbsp;<kbd>&lt;nav&gt;</kbd></p>
             <div class="callout">
                 <h4>CSS Basics</h4>
                 <p>Every CSS rule is made up of 3 elements. First we always need a selector, in this case we want to modify any&nbsp;<kbd>&lt;nav&gt;</kbd>&nbsp;elements on our page so our selector will be:&nbsp;<kbd>nav</kbd>. Next there are always curly braces { }. Inside those braces we place one or more pairs of 'property to change: value to change it to'</p>
                 <p>So in this example to change the background color of our&nbsp;<kbd>&lt;nav&gt;</kbd>&nbsp;after adding the new rule our style block would look like this: (you should use one of your selected colors, probably not salmon)</p>
-                <pre><code class="css">
+                <pre>        <code class="html">
+&lt;style&gt;
      nav {
          background-color: salmon;
      }    
+&lt;/style&gt;
         </code>
         </pre>
                 <p>It's worth taking a moment and talking about what valid options you have to designate color. The 3 main ways are hexadecimal, rgb, and predefined color names. Take a moment to visit&nbsp;<a href="http://www.w3schools.com/cssref/css_colors_legal.asp" target="_blank">W3Schools: CSS colors</a>&nbsp;to get a brief outline about the differences. Also take a look at this&nbsp;<a href="http://www.w3schools.com/colors/colors_names.asp" target="_blank">list of color names</a>&nbsp;that your browser will understand.</p>
             </div>
             <h3><span class="highlight">Step 06</span></h3>
-            <p>The color you changed the background of the&nbsp;<kbd>&lt;nav&gt;</kbd>&nbsp;to may have made your text hard to read. In the site plan you should have chosen a color for your links. Add the following line to your css rule to change the&nbsp;<kbd>color</kbd>&nbsp;for the text in the&nbsp;<kbd>&lt;nav&gt;</kbd>&nbsp;. Again replace the colorwith one from your chosen palette. Pick something that looks good with the background color and that is easily readable.</p>
-            <pre><code class="css">
-     nav {
-         color: #ee1010;
-     }    
-</code>
-        </pre>
-           <p>What changed?  Nothing!!? Read below for an explanation why.</p>
+            <p>The color you changed the background of the&nbsp;<kbd>&lt;nav&gt;</kbd>&nbsp;to may have made your text hard to read. In the site plan you should have chosen a color for your links. Add another line to your css rule to change the&nbsp;<kbd>color</kbd>&nbsp;for the text in the&nbsp;<kbd>&lt;nav&gt;</kbd>&nbsp;as well. Again you should use a color from your chosen palette. Pick something that looks good with the background color and that is easily readable.</p>
             <div class="callout">
                 <p>Take a look at your page. Pay particular attention to our new links. Did the color change? Your carefully chosen color is probably still blue or purple! CSS stands for Cascading Style Sheets. the Cascading part means that you can have more than one set of styles apply to an element, and that they will cascade down with the rules closest to the element taking precedence.</p>
                 <p>We applied a color change at the&nbsp;<kbd>&lt;nav&gt;</kbd>&nbsp;level, but&nbsp;<kbd>&lt;a&gt;</kbd>&nbsp;tags have some default styling as well and the<kbd>&lt;a&gt;</kbd>&nbsp;is closer to the text we want styled than the&nbsp;<kbd>&lt;nav&gt;</kbd>&nbsp;is so those styles override ours. If we want the links to change back to the color we chose we will need to move our rule closer...override the default styling of the&nbsp;<kbd>&lt;a&gt;</kbd>&nbsp;itself most likely. W3Schools has some more info on the idea of&nbsp;<a href="http://www.w3schools.com/css/css_howto.asp" target="_blank">cascading</a>.</p>
 
             </div>
             <p><em>Really</em> change the color of your navigation link text by adding a rule with <code>"nav a"</code> as the selector. Then add your <code>color: #whatever your color is;</code> to that rule. (We will learn more about that combo selector in a week or two)</p>
-            <p>Your new css rule should look something like this (change the color to one of your colors)</p>
+            <p>Your new css rule should look soemthing like this (change the color to one of your colors)</p>
             <pre>        <code class="css">
      nav a {
          color: #ee1010;
@@ -148,7 +139,7 @@
             <div class="callout">
                 <p>We have a slight problem here though. If we use the tag as a selector like we did with&nbsp;<kbd>&lt;nav&gt;</kbd>&nbsp;it will change both of our sections, which we don't want. From the Khan Academy lesson you should have learned about 2 other selectors: id selectors and class selectors. Id selectors should be used for elements that have unique styling needs, class selectors for those elements that might share styles with other elements. (I tend to use far more class selectors than id, I like re-using CSS rules)</p>
             </div>
-            <p>In this case let's use an ID. Add an&nbsp;<kbd>id=""</kbd>&nbsp; attribute to the second section so we can apply some styles just to that one. Pick a descriptive name for the id, then add a rule to change the background color of that box to one of your colors. (Remember that when you write the rule you need to add a '#' to your id name so the browser knows it's looking for the&nbsp;<em>id</em>&nbsp;and not the&nbsp;<em>tag</em>)</p>
+            <p>In this case let's use an ID. Add an&nbsp;<kbd>id=""</kbd>&nbsp;to the second section so we can apply some styles just to that one. Pick a descriptive name for the id, then add a rule to change the background color of that box to one of your colors. (Remember that when you write the rule you need to add a '#' to your id name so the browser knows it's looking for the&nbsp;<em>id</em>&nbsp;and not the&nbsp;<em>tag</em>)</p>
             <div class="callout">
                 <p>When naming ids or classes make sure to follow the same guidelines you were given last week for filenames. ie all lowercase, no spaces or other special characters!</p>
             </div>
@@ -172,29 +163,7 @@ h1,h2,h3,h4,h5,h6 {
         </pre>
             <h3><span class="highlight">Step 09</span></h3>
             <p>Changing the color of the second section may have made the text there hard to read. For our final step lets use a class selector to change the color of that text. Add a&nbsp;<kbd>class=""</kbd>&nbsp;to the&nbsp;<kbd>&lt;p&gt;</kbd>&nbsp;inside the second section. Choose a descriptive name for the class, then create a css rule to change the color. Remember that you need to precede your rule with a '.' so that the browser knows it's looking for the&nbsp;<em>class</em>&nbsp;and not a&nbsp;<em>tag</em>. If done correctly it should only change the text of the paragraph we applied the class to.</p>
-<div class="callout">
-    <p>Here is an example of how the HTML and CSS might look for this step</p>
-    <pre><code class="html">
-&lt;section id="middle-row"&gt; &lt;!-- this is the second row of content --&gt; 
-        &lt;div&gt; 
-            &lt;img ...&gt;
-        &lt;/div&gt;
-        &lt;div&gt; 
-            &lt;h2&gt;Section2 title&lt;/h2&gt;
-            &lt;p class="goldcolor"&gt;Section2 paragraph&lt;/p&gt;
-        &lt;/div&gt;
-&lt;/section&gt;        
-    </code></pre>
-    <pre><code class="css">
-#middle-row {
-   background-color: #396E94
-}    
-.goldcolor {
-    color: #E7C24F
-}
-    </code></pre>
-   
-</div>
+
             <h3>Step 10</h3>
             <p>Let's add one more box to our content. For this one we will use a <kbd>&lt;div&gt;</kbd> and we want the whole page to be inside of it. Place your opening <kbd>&lt;div&gt;</kbd> right after the opening <kbd>&lt;body&gt;</kbd> tag and the closing <kbd>&lt;/div&gt;</kbd> right before the closing &lt;/body&gt;. Add an id of <kbd>content</kbd> to the <kbd>&lt;div&gt;</kbd>.</p>
             <div class="callout">
