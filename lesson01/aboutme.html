@@ -34,8 +34,7 @@
                 With this activity we will accomplish both.</p>
             <h2>Step 01</h2>
             <p>If you haven&rsquo;t already, make sure to complete the instructions in the&nbsp;
-                <a href="http://byui-cit.github.io/wdd100/lesson01/software-setup.html"
-                    target="_blank" rel="noopener noreferrer">Software Setup</a>&nbsp;activity.</p>
+                <a href="http://byui-cit.github.io/wdd100/lesson01/software-setup.html" target="_blank" rel="noopener noreferrer">Software Setup</a>&nbsp;activity.</p>
             <h2>Step 02</h2>
             <p>Let's learn the vocabulary you will need to succeed in this course.</p>
             <div class="callout">
@@ -47,16 +46,23 @@
                         <strong>Tag</strong>
                     </dt>
                     <dd>HTML tags are key words surrounded by angle brackets: ie&nbsp;
-                        <code>&lt;body&gt;</code>
+                        <pre><code class="html">&lt;body&gt;</code></pre>
                     </dd>
                     <dt>
                         <strong>Element</strong>
                     </dt>
-                    <dd>An HTML element usually consists of a start tag and end tag, with the content inserted in between</dd>
+                    <dd>An HTML element usually consists of a start tag and end tag, with the content inserted in between:
+                        <pre><code class="html">&lt;p&gt;Content&lt;/p&gt;</code></pre>
+                    </dd>
                     <dt>
                         <strong>Nesting</strong>
                     </dt>
-                    <dd>Elements placed inside of other elements are called nested.</dd>
+                    <dd>Elements placed inside of other elements are called nested. Nested Elements are indented to make it easier
+                        to see which elements are inside of others.
+                        <pre><code class="html">&lt;div&gt;
+    &lt;p&gt;Content&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+                    </dd>
                     <dt>
                         <strong>Parent</strong>
                     </dt>
@@ -65,13 +71,17 @@
                         <strong>Child</strong>
                     </dt>
                     <dd>In nesting a child element is contained&nbsp;
-                        <em>inside</em>&nbsp;of another element</dd>
+                        <em>inside</em>&nbsp;of another element
+                        <pre><code class="html">&lt;div&gt;  &lt;-- Parent --&gt; 
+    &lt;p&gt;Content&lt;/p&gt; &lt;-- Child --&gt;
+&lt;/div&gt;</code></pre>
+                    </dd>
                     <dt>
                         <strong>Attribute</strong>
                     </dt>
                     <dd>Attributes provide additional information about HTML elements. They are placed inside of the opening
-                        tag ie
-                        <code>&lt;p title="A paragraph about where I am from" &gt;</code>
+                        tag. The value of the attribute should be wrapped in quotes. ie
+                        <pre><code class="html">&lt;p title="A paragraph about where I am from" &gt;Idaho&lt;/p&gt;</code></pre>
                     </dd>
                     <dt>
                         <strong>Semantics</strong>
@@ -82,6 +92,10 @@
                 </dl>
                 <hr>
                 <p>Watch for mention of the terms above as you review the following short tutorials.</p>
+                <p>I do not expect you to memorize all of the tags, etc in these links. The goal is to familiarize yourself
+                    with the concepts and learn to recognize instances of the terms above. The site that these link to is
+                    also a great resource for learning/reviewing HTML and CSS concepts in general.</p>
+                <p>Make sure to tap on the "Try It" buttons a few times to experiment!</p>
                 <ul>
                     <li>
                         <a href="https://www.w3schools.com/html/html_intro.asp" target="_blank" rel="noopener noreferrer">Introduction to HTML</a>
@@ -101,25 +115,42 @@
                 </ul>
             </div>
             <h2>Step 03</h2>
-            <p>Let's write some HTML. The Introduction to HTML link above contained a nice starting point for a basic HTML page.
-                Below you can find some similar code. Open (log into) your editor, and click on the
-                <code>aboutme.html</code> file you should have created earlier. (If you don't see it create it now)</p>
+            <p>Let's write some HTML. Open (log into) your editor, and click on the
+                <code>aboutme.html</code> file that should have been created earlier. (If you don't see it create it now). Below you can see what
+                should currently be in that file.</p>
+            <p>This code contains everything you need for a basic web page. It has most of the items listed above. Tags, elements,
+                nesting, parent elements, child elements, and semantics. Can you spot them all?</p>
             <div class="callout">
-                <p>Type the HTML below into the new file we created in your editor.</p>
+
                 <pre><code class="html">
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
-    &lt;head&gt;
-          &lt;title&gt;All About Me&lt;/title&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
-        &lt;p&gt;Hello World!&lt;/p&gt;
-    &lt;/body&gt;
+
+&lt;head&gt;
+    &lt;title&gt;All About Me&lt;/title&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;link rel="stylesheet" href="/styles.css"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;nav&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="aboutme.html"&gt;About Me&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+    &lt;main&gt;
+    &lt;!-- Your code goes here --&gt;
+    &lt;p&gt;Hello World!&lt;/p&gt;
+    &lt;/main&gt;
+&lt;/body&gt;
+
 &lt;/html&gt;
 </code></pre>
 
-                <p>This code contains everything you need for a basic web page. It has most of the items listed above. Tags,
-                    elements, nesting, parent elements, child elements, and semantics. Can you spot them all?</p>
+
             </div>
             <h2>Step 04</h2>
             <p>A visitor to a website should not have to guess what the page is about. The &lt;title&gt;&nbsp;says "All About
@@ -160,7 +191,8 @@
                 <code>&lt;h1&gt;</code>opening tag,&nbsp;and type "About Me".&nbsp; Then enter&nbsp;
                 <code>&lt;/h1&gt;</code>&nbsp;to close the element. Let's add a sub-heading or two as well.&nbsp; Let's use &lt;h2&gt; (smaller text)
                 and put your first name and your nickname if you have one.&nbsp; Do this right after the &lt;h1&gt; About
-                Me&lt;/h1&gt;:</p>
+                Me&lt;/h1&gt;:
+            </p>
             <div class="callout">
                 <p>Now your code should look like this:</p>
                 <pre><code class="html">
@@ -170,11 +202,23 @@
           &lt;title&gt;All About Me&lt;/title&gt;
     &lt;/head&gt;
     &lt;body&gt;
-       &lt;h1&gt;About Me&lt;/h1&gt;
-       &lt;h2&gt;"FirstName"&lt;/h2&gt;
-       &lt;h2&gt;"Nick Name" (optional)&lt;/h2&gt;
+    &lt;header&gt;
+        &lt;nav&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="aboutme.html"&gt;About Me&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+    &lt;main&gt;
+        &lt;!-- Your code goes here --&gt;
+        &lt;h1&gt;About Me&lt;/h1&gt;
+        &lt;h2&gt;Your First Name Here&lt;/h2&gt;
+        &lt;h2&gt;Your Nick Name Here (optional)&lt;/h2&gt;
         &lt;p&gt;Hello World!&lt;/p&gt;
+    &lt;/main&gt;
     &lt;/body&gt;
+    
 &lt;/html&gt;
 </code></pre>
 
@@ -194,7 +238,8 @@
                     <li>The thing you love most about BYU-Idaho.&nbsp; What degree are you pursuing?&nbsp; AA BS, WDD?</li>
                     <li>The advantages you see from learning about careers in web design, why you are taking the course, what
                         you hope to get out of it, and how you will use the information in your personal or professional
-                        life.</li>
+                        life.
+                    </li>
                     <li>How long have you been a member of the Church of Jesus Christ of Latter Day Saints?&nbsp; Do you have
                         a favorite quote from one of the leaders of the church?&nbsp; Do you have a favorite scripture?</li>
                     <li>Anything else you may want to share.</li>
@@ -211,8 +256,8 @@
                 </strong> page, but you can click on the link we created there to see the
                 <strong>
                     <code>aboutme.html</code>
-                </strong> page instead. Once you are on that page you can hit Refresh on your browser to see additional changes as
-                you make them. Your page and HTML might look something like the images below:</p>
+                </strong> page instead. Once you are on that page you can hit Refresh on your browser to see additional changes
+                as you make them. Your page and HTML might look something like the images below:</p>
             <div class="fig-block">
                 <figure>
                     <img alt="About me html" src="../images/about-me-step5-html.jpg" title="About me html" />
@@ -275,7 +320,7 @@
                 <code>alt</code> attribute should contain a short description of the image. It is shown if the browser can't find the image
                 or it is read for visually impaired visitors to your site.
                 <strong>All</strong> of your images should have an
-                <code>alt</code> attribute.</p>
+                <code>alt</code> attribute. If a tag has multiple attributes, the order of the attributes does not matter.</p>
 
             <!--
 <p style="text-align: left;"><span style="font-size: 12pt;">Next, we will add just a little bit of color to the page.&nbsp; This can be done two ways:&nbsp; inline html or css via &lt;style&gt;</span></p>
@@ -304,7 +349,8 @@
             <p>
                 <strong>In your I-Learn profile,&nbsp;add</strong>&nbsp;a picture that has a
                 <strong>close up of your face</strong>.&nbsp; This is the image others will see when you make comments on a discussion
-                board.&nbsp;</p>
+                board.&nbsp;
+            </p>
             <p>To add a picture of yourself to your I-Learn profile, do the following: </p>
             <div class="callout">
                 <img src="../images/edit-profile.jpg" alt="Ilearn Edit profile screen" style="float: right; " />
@@ -322,7 +368,8 @@
                 <li>Paste in the link to your About Me Web Page. (To find this open your project in Glitch then click on the
                     Share button below the Project name in the top left corner. The link is there with a handy "copy" button.)</li>
                 <li>Add contact information to the discussion board post if you would like to make that available to your fellow
-                    classmates.</li>
+                    classmates.
+                </li>
                 <li>In the group portion of the assignment, view your fellow student's web pages to get to know those in your
                     class and make comments on at least 5&nbsp; of your peers web pages.&nbsp; Take some time to get to know
                     your fellow classmates and who knows, you might even make a friend or two!</li>
