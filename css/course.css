@@ -1,242 +1,232 @@
 /******************************************************** The purpose of course.css is to house only the css specific to an individual course. The online.css houses all the default template formatting. ********************************************************/
 
-
 /* DO NOT DELETE OR MODIFY THIS IMPORT */
 
-@import url("https://content.byui.edu/integ/gen/599082e0-3e89-4fd9-ac69-2615865d63c7/0/online.css");
+@import url('https://content.byui.edu/integ/gen/599082e0-3e89-4fd9-ac69-2615865d63c7/0/online.css');
 
 /* Add Course Specific css Below */
 
 html {
-    background: -webkit-radial-gradient(ellipse, #87c6e0 0%, #00273a 100%) fixed;
-    background: radial-gradient(ellipse, #87c6e0 0%, #00273a 100%) fixed;
+  background: -webkit-radial-gradient(ellipse, #87c6e0 0%, #00273a 100%) fixed;
+  background: radial-gradient(ellipse, #87c6e0 0%, #00273a 100%) fixed;
 }
-img { 
-    max-width: 100%;
+img {
+  max-width: 100%;
 }
 h1 {
-    color: #0d1e28;
+  color: #0d1e28;
 }
 
 h2 {
-    color: #10808e;
+  color: #10808e;
 }
 
 h3 {
-    color: #383838;
+  color: #383838;
 }
 
 h4 {
-    color: #10808e;
+  color: #10808e;
 }
 
 h5 {
-    color: #383838;
+  color: #383838;
 }
 
 a {
-    color: #2d5d94;
-    border-bottom: 2px solid #2d5d94;
+  color: #2d5d94;
+  border-bottom: 2px solid #2d5d94;
 }
 
 a:hover {
-    color: #14304f;
-    border-bottom: 2px solid #14304f;
+  color: #14304f;
+  border-bottom: 2px solid #14304f;
 }
 
 a:visited {
-    color: #14304f;
-    border-bottom: 2px solid #14304f;
+  color: #14304f;
+  border-bottom: 2px solid #14304f;
 }
 
 header {
-    background-color: #14304f;
-    
-    display: flex;
-    flex-flow: row wrap;
-    padding: .8em;
+  background-color: #14304f;
+
+  display: flex;
+  flex-flow: row wrap;
+  padding: 0.8em;
 }
 
 header h1 {
-    border-left: 1px solid;
-    line-height: 3em;
-    padding-left: .6em;
-    color: white;
+  border-left: 1px solid;
+  line-height: 3em;
+  padding-left: 0.6em;
+  color: white;
 }
 header .logo {
-    margin-right: .6em;
-    
-    align-self: center;
+  margin-right: 0.6em;
+
+  align-self: center;
 }
 
 #footer {
-    color: #e2e2e2;
-    background-color: #14304f;
+  color: #e2e2e2;
+  background-color: #14304f;
 }
-
 
 /******************************************** SPLASH PAGE STYLING *********************************************/
 
 .splash #article {
-    color: #eaeaea;
-    background-color: #0e4c5f;
+  color: #eaeaea;
+  background-color: #0e4c5f;
 }
 
 .splash h1 {
-    color: #fafafa;
+  color: #fafafa;
 }
 
 .splash h2 {
-    color: #bbd8e4;
+  color: #bbd8e4;
 }
 
 .splash h3 {
-    color: #e3e3e3;
+  color: #e3e3e3;
 }
 
 .splash h4 {
-    color: #bbd8e4;
+  color: #bbd8e4;
 }
 
 .splash h5 {
-    color: #e3e3e3;
+  color: #e3e3e3;
 }
 
 .splash a {
-    color: #a1d7ff;
-    border-bottom: 2px solid #a1d7ff;
+  color: #a1d7ff;
+  border-bottom: 2px solid #a1d7ff;
 }
 
 .splash a:hover {
-    color: #e59f55;
-    border-bottom: 2px solid #e59f55;
+  color: #e59f55;
+  border-bottom: 2px solid #e59f55;
 }
 
 .splash a:visited {
-    color: #e59f55;
-    border-bottom: 2px solid #e59f55;
+  color: #e59f55;
+  border-bottom: 2px solid #e59f55;
 }
 
 .splash #footer {
-    color: #e2e2e2;
-    background-color: #4487a3;
+  color: #e2e2e2;
+  background-color: #4487a3;
 }
 
-
 /******************************************** FEATURES STYLING *********************************************/
-
 
 /* Callout box */
 
 .callout {
-    color: #292929;
-    background: antiquewhite;
+  color: #292929;
+  background: antiquewhite;
 }
-
 
 /* Drop downs */
 
 .drop-down {
-    background: #1c5571;
+  background: #1c5571;
 }
 
 .drop-down:hover {
-    background: #053349;
+  background: #053349;
 }
 
-
 /* Rubric table */
-
 
 /* Column headings */
 
 .rubric tr:first-child th {
-    background-color: #1c5571;
+  background-color: #1c5571;
 }
-
 
 /* Row headings */
 
 .rubric th {
-    background-color: #1e698d;
+  background-color: #1e698d;
 }
-
 
 /* Mouseover popups */
 
 #main .popup {
-    border-bottom: dotted 2px #00273a;
+  border-bottom: dotted 2px #00273a;
 }
 
 #main .popup span {
-    background: #00273a;
+  background: #00273a;
 }
 
 #main .popup:after {
-    border-color: #00273a transparent transparent transparent;
+  border-color: #00273a transparent transparent transparent;
 }
 
 .fig-block {
-    display: flex;
-    flex-flow: row wrap;
-    margin: 1em auto;
+  display: flex;
+  flex-flow: row wrap;
+  margin: 1em auto;
 }
 
 .fig-block > * {
-    max-width: 100%;
-    flex: 1 0 auto;
+  max-width: 100%;
+  flex: 1 0 auto;
 }
 
 .fig-block figure {
-    text-align: center;
-    
+  text-align: center;
 }
 .fig-block figure > a {
-    text-decoration: none;
-    border-bottom: none;
+  text-decoration: none;
+  border-bottom: none;
 }
 figcaption {
-    font-size: .8em;
-    text-align: center;
+  font-size: 0.8em;
+  text-align: center;
 }
 .right {
-    float: right;
-    padding: 0 20px 20px 20px;
+  float: right;
+  padding: 0 20px 20px 20px;
 }
 .clearfix:after {
-  content: "";
+  content: '';
   display: table;
   clear: both;
 }
 
 .hint {
-    border: 1px solid grey;
-    background: #e0e0e0;
-    padding: .5em;
-    position: relative;
-    margin: 1em 0;
+  border: 1px solid grey;
+  background: #e0e0e0;
+  padding: 0.5em;
+  position: relative;
+  margin: 1em 0;
 }
 .hint h3 {
-    margin: 0;
+  margin: 0;
 }
 .hint:hover {
-    background: #d0d0d0;
+  background: #d0d0d0;
 }
 .hint > div {
-    display: none;
+  display: none;
 }
 
-.hint input[type=checkbox] {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    z-index: 1;
-    cursor: pointer;
+.hint input[type='checkbox'] {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 1;
+  cursor: pointer;
 }
 
-.hint input[type=checkbox]:checked ~ div {
-    display: block;
+.hint input[type='checkbox']:checked ~ div {
+  display: block;
 }
 
 .hint i {
@@ -244,10 +234,11 @@ figcaption {
   transform: translate(-6px, 0);
   margin-top: 16px;
   right: 10px;
-    top: -3px;
+  top: -3px;
 }
-.hint i:before, .hint i:after {
-  content: "";
+.hint i:before,
+.hint i:after {
+  content: '';
   position: absolute;
   background-color: black;
   width: 3px;
@@ -260,29 +251,33 @@ figcaption {
   transform: translate(-2px, 0) rotate(-45deg);
 }
 
-.hint input[type=checkbox]:checked ~ i:before {
+.hint input[type='checkbox']:checked ~ i:before {
   transform: translate(-2px, 0) rotate(45deg);
 }
-.hint input[type=checkbox]:checked ~ i:after {
+.hint input[type='checkbox']:checked ~ i:after {
   transform: translate(2px, 0) rotate(-45deg);
 }
 
 .def-list dt {
-    font-weight: bold;
-    font-size: 1.2em;
+  font-weight: bold;
+  font-size: 1.2em;
 }
 .def-list dd {
-    padding-left: 1em;
+  padding-left: 1em;
 }
 
 .outline > h2 {
-    margin-left: 1em;
-    color: black;
-    font-size: 1.5em;
+  margin-left: 1em;
+  color: black;
+  font-size: 1.5em;
 }
 .outline > h3 {
-    margin-left: 2em;
-    color: black;
-    font-size: 1.2em;
+  margin-left: 2em;
+  color: black;
+  font-size: 1.2em;
 }
 
+.highlight1 {
+  background-color: #ebffcc;
+  padding: 20px;
+}

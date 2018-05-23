@@ -32,7 +32,7 @@
             <p>Estimated Time: 60 minutes</p>
             <p>This week we have two important goals. One to introduce you to HTML, and two to introduce you to each other.
                 With this activity we will accomplish both.</p>
-            <h2>Step 01</h2>
+            <h2>Step 01: Vocabulary</h2>
             <p>If you haven&rsquo;t already, make sure to complete the instructions in the&nbsp;
                 <a href="http://byui-cit.github.io/wdd100/lesson01/software-setup.html" target="_blank" rel="noopener noreferrer">Software Setup</a>&nbsp;activity.</p>
             <h2>Step 02</h2>
@@ -117,22 +117,23 @@
                     yourself with the concepts and learn to recognize instances of the terms above. The site that these link
                     to is also a great resource for learning/reviewing HTML and CSS concepts in general.</p>
             </div>
-            <h2>Step 03</h2>
-            <p>Let's write some HTML. Open (log into) your editor, and click on the
-                <code>aboutme.html</code> file that should have been created earlier. (If you don't see it create it now). Below you can see what
-                should currently be in that file.</p>
+            <h2>Step 03: Our first HTML</h2>
+            <p>Let's write some HTML. Open (log into) your editor, and create a new file called
+                <code>aboutme.html</code>. (It needs to be exactly
+                <code>aboutme.html</code>. No caps, no spaces.) Click on the
+                <code>aboutme.html</code> file and type the HTML below.</p>
             <p>This code contains everything you need for a basic web page. It has most of the items listed above. Tags, elements,
                 nesting, parent elements, child elements, and semantics. Can you spot them all?</p>
             <div class="callout">
-
+                <h3>Note!</h3>
+                <p>I encourage you to not take the shortcut of copy and paste here with the code examples. You will find that
+                    your ability to write HTML will improve dramatically if you type them all out.</p>
                 <pre><code class="html">
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
 
 &lt;head&gt;
     &lt;title&gt;All About Me&lt;/title&gt;
-    &lt;meta charset="utf-8"&gt;
-    &lt;link rel="stylesheet" href="/styles.css"&gt;
 &lt;/head&gt;
 
 &lt;body&gt;
@@ -155,7 +156,7 @@
 
 
             </div>
-            <h2>Step 04</h2>
+            <h2>Step 04: Titles and Headlines</h2>
             <p>A visitor to a website should not have to guess what the page is about. The &lt;title&gt;&nbsp;says "All About
                 Me". Although you can see "All About Me" looking at the html, it will not show up on the page.&nbsp; This
                 is because &lt;title&gt; is in the &lt;head&gt; section and anything in the &lt;head&gt; is not seen in the
@@ -227,7 +228,7 @@
 
 
             </div>
-            <h2>Step 05</h2>
+            <h2>Step 05: Paragraphs</h2>
             <p>Next, let's write a few paragraphs to tell little bit about yourself. Here is a list of ideas to talk about to
                 get you started. Remember however that this will be a public website...so don't put anything too personal
                 or identifying.</p>
@@ -248,8 +249,8 @@
                     <li>Anything else you may want to share.</li>
                 </ul>
             </div>
-            <p>Start with the &lt;p&gt; that says "Hello World".&nbsp; Replace that with your own information and wording. Each
-                time you want a new paragraph (please break it into more than one paragraph!) Add a new
+            <p>Start with the &lt;p&gt; (paragraph) that says "Hello World".&nbsp; Replace that with your own information and
+                wording. Each time you want a new paragraph (please break it into more than one paragraph!) Add a new
                 <code>&lt;p&gt;&lt;/p&gt;</code> element.</p>
 
             <p>When you have finished adding your paragraphs you will want to view your webpage. To do this click on the "Show"
@@ -272,18 +273,9 @@
                 </figure>
             </div>
 
-            <h2>Step 06</h2>
+            <h2>Step 06: Add an image</h2>
             <p>Look's good, but it is a little plain.&nbsp;Let's add an image to dress up your page.</p>
-            <!--
-<div class="callout">
-<p>Here are a few ideas</p>
-<ul>
-<li>add a small image of yourself at the top of the page.</li>
-<li>color and size of font of the body of the information</li>
-<li>background color of your page</li>
-</ul>
-</div>
--->
+
             <p>Before you can put an image on your web page, you have to get it onto a web server. Lucky for us Glitch makes
                 this easy. We simply need to upload the image from your computer to your assets folder in Glitch. Click on
                 the assets link and then drag and drop your image to the assets page.&nbsp; Then to put the image on your
@@ -325,12 +317,7 @@
                 <strong>All</strong> of your images should have an
                 <code>alt</code> attribute. If a tag has multiple attributes, the order of the attributes does not matter.</p>
 
-            <!--
-<p style="text-align: left;"><span style="font-size: 12pt;">Next, we will add just a little bit of color to the page.&nbsp; This can be done two ways:&nbsp; inline html or css via &lt;style&gt;</span></p>
-<p><span style="font-size: 12pt;">We are going to add a small &lt;style&gt; section at the top of your html code in the &lt;head&gt;&nbsp; &lt;/head&gt; section.&nbsp; We are going to add&nbsp;color to the &lt;h1&gt; and &lt;h4&gt; and a background color to the page and a little padding to the paragraph.&nbsp; Padding will&nbsp;keep the text go all the way to the page edge so it will be easier to read and look nicer.&nbsp; There are three types of color: hex, rgb, and color names.&nbsp; To keep things simpler for this assignment, we are going to use color names. Here is a good color name chart (it also has hex).&nbsp; &nbsp;<a href="https://www.w3schools.com/colors/colors_names.asp" target="_blank" rel="noopener noreferrer">Color Name Chart</a></span></p>
-<p><span style="font-size: 12pt;">CSS is written a little different:&nbsp; first comes the element followed by one space and a { bracket.&nbsp; The next line has the attribute: chosen attribute;&nbsp; and the next line ends with a closing } .&nbsp; &nbsp;example:&nbsp; &nbsp;color: green;</span></p>
-<p><span style="font-size: 12pt;"><img src="../style.jpg" alt="" title="" width="238" height="185" style="float: right;" />Choose your colors and write your &lt;style&gt; section like this:</span></p>
--->
+
 
             <p style="text-align: left;">There, that looks great.... you coded a web page about yourself that is simple, informative, and has a touch
                 of style.</p>
@@ -348,7 +335,7 @@
 
             </div>
 
-            <h2>Step 07</h2>
+            <h2>Step 07: Ilearn Profile</h2>
             <p>
                 <strong>In your I-Learn profile,&nbsp;add</strong>&nbsp;a picture that has a
                 <strong>close up of your face</strong>.&nbsp; This is the image others will see when you make comments on a discussion
@@ -364,7 +351,7 @@
                     <li>Close the window.</li>
                 </ol>
             </div>
-            <h2>Step&nbsp;08</h2>
+            <h2>Step&nbsp;08: Post to the discussion board</h2>
             <p>Lastly, go to the Getting to Know You discussion board and do the following things:</p>
             <ol>
                 <li>Make a new post.</li>
