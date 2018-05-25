@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <title>WDD 130: CSS Vocabulary</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/solarized-light.css" />
+    <link rel="stylesheet" href="../css/course.css" />
+
+</head>
+
+<body>
+    <div id="main">
+        <div id="header">
+            <img src="../images/smallBanner.jpg" alt="Course Banner" />
+        </div>
+        <div id="article">
+            <h1>CSS Vocabulary</h1>
+            <hr />
+            <h2>Activity&nbsp;Instructions</h2>
+            <p>Estimated Time: 30 minutes</p>
+            <p>Just like with HTML, CSS also has some important vocabulary that you should be familiar with as we move forward.
+            </p>
+            <h2>Step 01: Vocabulary list</h2>
+            <p>Let's learn the CSS vocabulary you will need to succeed in this course.</p>
+            <div class="callout">
+                <p>CSS has some very specific vocabulary that comes with it. It is important that we become familiar with it.
+                    Spend a few minutes familiarizing yourself with the following list. You will have a hard time making
+                    sense of the instruction given in this course if you don't understand these terms.</p>
+
+                <dl class="def-list">
+
+                    <dt>
+                        <strong>Selector</strong>
+                    </dt>
+                    <dd>How you specify to the browser which HTML element(s) should be changed. We will focus primarily on 3
+                        kinds of selectors in this class:
+                        <ol>
+                            <li>Element. If we wanted to modify all the paragraphs in</li>
+                            <li>Class</li>
+                            <li>ID</li>
+                        </ol>
+                        <pre><code class="html">
+&lt;p&gt;A short paragraph&lt;/p&gt;
+&lt;p class="green"&gt;A short paragraph&lt;/p&gt;
+&lt;p id="paragraph3"&gt;A short paragraph&lt;/p&gt;
+                            </code></pre>
+
+                        <pre><code class="css">p (element): Would select all p (paragraph) elements
+.
+                        </code></pre>
+                    </dd>
+                    <dt>
+                        <strong>Property</strong>
+                    </dt>
+                    <dd>Elements placed inside of other elements are called nested. Nested Elements are indented to make it easier
+                        to see which elements are inside of others.
+                        <pre><code class="html">&lt;div&gt;
+    &lt;p&gt;Content&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+                    </dd>
+                    <dt>
+                        <strong>Value</strong>
+                    </dt>
+                    <dd>In nesting the parent is the element that contains other elements.</dd>
+                    <dt>
+                        <strong>Declaration</strong>
+                    </dt>
+                    <dd>In nesting a child element is contained&nbsp;
+                        <em>inside</em>&nbsp;of another element
+                        <pre><code class="html">&lt;div&gt;  &lt;-- Parent --&gt; 
+    &lt;p&gt;Content&lt;/p&gt; &lt;-- Child --&gt;
+&lt;/div&gt;</code></pre>
+                    </dd>
+                    <dt>
+                        <strong>Declaration Block</strong>
+                    </dt>
+                    <dd>Attributes provide additional information about HTML elements. They are placed inside of the opening
+                        tag. The value of the attribute should be wrapped in quotes. ie
+                        <pre><code class="html">&lt;p title="A paragraph about where I am from" &gt;Idaho&lt;/p&gt;</code></pre>
+                    </dd>
+                    <dt>
+                        <strong>Rule</strong>
+                    </dt>
+                    <dd>HTML tags are key words surrounded by angle brackets: ie&nbsp;
+                        <pre><code class="html">&lt;body&gt;</code></pre>
+                    </dd>
+                    <dt>
+                        <strong>Units</strong>
+                    </dt>
+                    <dd>Semantics is the study of the meanings of words and phrases in a language. Semantic elements = elements
+                        with a meaning. Writing semantic HTML means using the html tag that best describes the content you
+                        are adding to your page.</dd>
+                </dl>
+            </div>
+            <h2>Step 02: Look deeper</h2>
+            <p>Watch for mention of the terms above as you review the following tutorials.</p>
+
+            <p>Make sure to tap on the "Try It Yourself" buttons in the tutorials to experiment!</p>
+            <ul>
+                <li>
+                    <a href="https://www.w3schools.com/html/html_intro.asp" target="_blank" rel="noopener noreferrer">Introduction to CSS</a>
+                </li>
+                <li>
+                    <a href="https://www.w3schools.com/css/css_syntax.asp" target="_blank" rel="noopener noreferrer">CSS Syntax</a>
+                </li>
+                <li>
+                    <a href="https://www.w3schools.com/cssref/css_units.asp" target="_blank" rel="noopener noreferrer">CSS Units</a>
+                </li>
+                <li>
+                    <a href="https://www.w3schools.com/html/html_basic.asp" target="_blank" rel="noopener noreferrer">CSS Selectors</a> Look over this list, pay particular attention to the element, class, and id selectors.
+                    (we won't use all of these types in this class!)
+                </li>
+                <li>
+                    <a href="https://www.w3schools.com/cssref/default.asp" target="_blank" rel="noopener noreferrer">CSS Properties</a> Look over this list and click on a few that look interesting.
+                </li>
+
+
+            </ul>
+
+
+            <div class="callout">
+                <h3>Note!</h3>
+                <p>Just like with the HTML, I do not expect you to memorize all of the properties, etc in these links at this
+                    point. The goal is to familiarize yourself with the concepts and learn to recognize instances of the
+                    terms above. The site that these link to is also a great resource for learning/reviewing HTML and CSS
+                    concepts in general.</p>
+            </div>
+            <h2>Step 03: Test yourself</h2>
+            <p>Visit this site:
+                <a href="http://apps.workflower.fi/vocabs/css/en#unit" target="_blank">CSS Vocabulary</a> and see how many instances of the terms you learned above you can find. After looking
+                on your own, select each term one at a time on the right and see if you found all the instances. This list
+                has more vocabulary on it than I asked you to learn. Focus on the list above.
+
+                <div class="highlight1">
+                    <h4>Grading (10 pts)</h4>
+                    <p>You must accomplish the following:</p>
+                    <ul>
+                        <li>Using your html editor, create a short auto-biography page using a few html tags that contains an
+                            image of you , a title area using headlines with your name (and nick-name), and a few paragraphs
+                            telling some facts and information about you. (150-250 words)</li>
+                        <li>You also must add your image to your profile in iLearn (if it is not already there.).</li>
+                    </ul>
+                </div>
+
+
+
+        </div>
+        <!-- end #article -->
+        <script src="../js/course.js"></script>
+        <script src="../js/highlight.pack.js"></script>
+        <script>// <![CDATA[
+            hljs.initHighlightingOnLoad();
+// ]]></script>
+    </div>
+</body>
+
+</html>
