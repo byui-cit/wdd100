@@ -43,23 +43,23 @@
                         </ol>
                         <p>For example, if we have the following HTML:</p>
                         <pre><code class="html">
-&lt;p&gt;A short paragraph&lt;/p&gt;
-&lt;p class="green"&gt;Another short paragraph&lt;/p&gt;
-&lt;p class="green" id="paragraph3"&gt;Yet another short paragraph&lt;/p&gt;
+&lt;p&gt;No class or id on this paragraph&lt;/p&gt;
+&lt;p class="green"&gt;This paragraph has a class&lt;/p&gt;
+&lt;p class="green" id="paragraph3"&gt;This paragraph has a class and an id &lt;/p&gt;
                             </code></pre>
                         <p>We could select all of the paragraphs by using the element selector:
                             <code>p</code>
                         </p>
-                        <p>We could grab just the second and third paragraphs by using the class attribute on them as a selector
+                        <p>We could select just the second and third paragraphs by using the class attribute on them as a selector
                             like this:
                             <code>.green</code>
                         </p>
-                        <p>...and we could grab just the last paragraph by using it's ID as a selector like this:
+                        <p>...and we could select just the last paragraph by using its ID as a selector like this:
                             <code>#paragraph3</code>
                         </p>
-                        <pre><code class="css">p /* all paragraphs */
-.green /* all paragraphs with an attribute class="green" */
-#paragraph3 /* the paragraph with the attribute id="paragraph3" */
+                        <pre><code class="css">p /* element selector: all paragraphs */
+.green /* class selector: all paragraphs with an attribute class="green" */
+#paragraph3 /* id selector: the paragraph with the attribute id="paragraph3" */
                         </code></pre>
                     </dd>
                     <dt>
@@ -90,7 +90,7 @@
 }</code></pre>
                     </dd>
                     <dt>
-                        <strong>Rule</strong>
+                        <strong>Rule (or Rule-set)</strong>
                     </dt>
                     <dd>A rule is the combination of a selector and declaration block
                         <pre><code class="css">.green {
