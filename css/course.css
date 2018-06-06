@@ -277,7 +277,12 @@ figcaption {
   font-size: 1.2em;
 }
 
-.highlight1 {
+.danger {
+  color: red;
+}
+
+.highlight1,
+.rubric {
   background-color: #ebffcc;
   padding: 20px;
 }

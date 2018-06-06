@@ -48,14 +48,14 @@
 &lt;p class="green" id="paragraph3"&gt;This paragraph has a class and an id &lt;/p&gt;
                             </code></pre>
                         <p>We could select all of the paragraphs by using the element selector:
-                            <code>p</code>
+                            <code>p</code> (Notice that there is no preface...we simply use the tag name)
                         </p>
                         <p>We could select just the second and third paragraphs by using the class attribute on them as a selector
                             like this:
-                            <code>.green</code>
+                            <code>.green</code> (Notice that we preface the class name with a period)
                         </p>
                         <p>...and we could select just the last paragraph by using its ID as a selector like this:
-                            <code>#paragraph3</code>
+                            <code>#paragraph3</code> (Notice that we preface the ID with a hashtag)
                         </p>
                         <pre><code class="css">p /* element selector: all paragraphs */
 .green /* class selector: all paragraphs with an attribute class="green" */
@@ -92,7 +92,8 @@
                     <dt>
                         <strong>Rule (or Rule-set)</strong>
                     </dt>
-                    <dd>A rule is the combination of a selector and declaration block
+                    <dd>A rule is the combination of a selector and declaration block. The example below would select all elements
+                        with a class="green" and turn their background green!
                         <pre><code class="css">.green {
     background-color: green;
     margin: 5px;    
