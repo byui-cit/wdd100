@@ -21,20 +21,11 @@
             <p>Estimated Time: 45 minutes</p>
             <div class="callout">
                 <p>This activity will use the following css concepts or properties (review the links if you do not remember
-                    these from Khan academy):</p>
+                    these):</p>
                 <ul>
                     <li>
-                        <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">Flexbox</a> or
-                        <a href="http://www.w3schools.com/css/css3_flexbox.asp" target="_blank">W3Schools Flexbox</a>
-                    </li>
-                    <li>
-                        <a href="http://www.w3schools.com/cssref/css3_pr_flex-flow.asp" target="_blank">flex-flow</a>
-                    </li>
-                    <li>
-                        <a href="http://www.w3schools.com/cssref/css3_pr_justify-content.asp" target="_blank">justify-content</a>
-                    </li>
-                    <li>
-                        <a href="http://www.w3schools.com/cssref/css3_pr_flex.asp" target="_blank">flex</a>
+                        <a href="https://css-tricks.com/snippets/css/complete-guide-grid/" target="_blank">Complete guide to CSS Grid</a> or
+                        <a href="https://www.w3schools.com/css/css_grid.asp" target="_blank">W3Schools CSS Grid</a>
                     </li>
                     <li>
                         <a href="http://www.w3schools.com/cssref/pr_margin.asp" target="_blank">margin</a>
@@ -59,88 +50,130 @@
                 complete.</p>
             <div class="callout">
                 <p>Review again the
-                    <a href="../images/wireframe-boxes.jpg" target="_blank">wireframe</a> for the Dry Oar site. We will start from the top and work down to position all of the elements
-                    that need it. The header (logo and navigation) will take a bit of extra work, and few concepts that we
-                    will not learn until next week...so we are going to skip it for now.</p>
+                    <a href="../images/wireframe-grid.png" target="_blank">wireframe</a> for the Dry Oar site.</p>
             </div>
             <h3>Step 01</h3>
             <p>First lets consider the banner. According to the wireframe it should extend all the way across the width of the
                 page. Depending on which image you are using your's may or may not be doing that. Lets set a width of 100%
-                on that image. Make a class for the image called
-                <kbd>fullwidth</kbd> and apply the style with that.</p>
-            <h3>Step 02</h3>
-            <p>Now lets position the first section of headline, paragraph and image.</p>
+                on that image. Find the <code>&lt;div&gt;</code> that contains your banner image. You chould have added a class calling it something like <kbd>banner</kbd>. We can use that class to apply our width.</p>
+                <div  class="callout">
+                    <p>You might have tried something like:</p>
+                    <pre><code class="css">.banner {
+    width: 100%;
+}
+                    </code> </pre>
+                    <p>to set the banner width. If you did you will find that it didn't work! Why not? Well...that would apply the width to the element with the class of banner. Guess what? As a <code>&lt;div&gt;</code> it already had a width of 100%! What we need to do is apply the width to the image <em>inside</em> of the element with the class of banner. Does that make sense? We can do that by changing our selector slightly: </p>
+                    <pre><code class="css">.banner img {
+    width: 100%;
+}
+                    </code> </pre>
+                </div>
+                
+            <h3>Step 02: Visualizing the Grid</h3>
+            <p>Now lets tackle the main portion of the site. We will be using the CSS Grid you learned last week to accomplish this. The first step is to look at the <a href="../images/wireframe-grid-column-lines.png" target="_blank">wireframe</a> and see if we can visualize how a grid (columns and rows) would fit around the elements on the page. Open it up, you may even want to print it out and draw some lines on it. </p>
             <div class="callout">
-                <p>You should have grouped elements together in previous weeks...the code for this section should look something
-                    like this:</p>
-                <div class="fig-block">
+                <p>In case your powers of visualization are a bit rusty...you can see my result below for the columns.</p>
+                <section class="hint"><input type="checkbox" > <h4>Wireframe with Gridlines</h4><i></i><div>
+                   <div class="fig-block">
                     <figure>
-                        <img alt="Code Example" src="../images/codeexample.jpg" title="Code Example" />
+                        <img alt="Wireframe with gridlines" src="../images/wireframe-grid-column-lines.png" title="Wireframe with gridlines" />
                     </figure>
                 </div>
-                <p>Notice how each section has a
-                    <kbd>leftcol</kbd> and
-                    <kbd>rightcol</kbd> div. Last week you should have set a width on them as well to about 48%. Now all we need
-                    to do is get them to line up horizontally.</p>
+                <p>Notice how I used 5 equal columns...and each element can be fit in one or more columns.
+                    </p>
+                </div></section>
+                
+                <p>And here is another image showing columns, rows, and gaps.</p>
+                <section class="hint"><input type="checkbox" > <h4>Layout with Grid lines</h4><i></i><div>
+                   <div class="fig-block">
+                    <figure>
+                        <img alt="Wireframe with gridlines" src="../images/finished-layout-with-grid-lines.jpg" title="Wireframe with gridlines" />
+                    </figure>
+                </div>
+                
+                </div></section>
+                <p>After you have a good idea of what the grid needs to look like (numbers and sizes of rows and columns), either by figuring it out on your own, or by review the two images above, continue on to the next step.</p>
+                
             </div>
-            <p>Let's try css flexbox to do this.
-                <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">Flexbox</a> is good when we have several elements that we need aligned as a row or column. In fact it makes
-                it really easy to switch from column to row and back. Flexbox relies on setting up a flex container or parent
-                first. In our case the containers will be our rows which are made in the HTML with
-                <code>&lt;section&gt;</code>s.</p>
-            <p class="callout">The link I provided above is to a great resource about flexbox from CSS-Tricks:
-                <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/"
-                    target="_blank">A Complete Guide to Flexbox</a>. You really should take a minute to look it over.</p>
-            <p>Add the following property
-                <kbd>display: flex;</kbd>, to a rule in your css to modify the first 2 sections on your page to turn them into
-                flex containers. In my case that rule would look like the following:</p>
+            <h3>Step 03: Defining the Grid</h3>
+            <p>Let's try css grid to do this.
+                <a href="https://css-tricks.com/snippets/css/complete-guide-grid/" target="_blank">CSS Grid</a> is good when we have several elements that need to be placed into specific spots on a page.</p>
+                <div class="callout">
+                    <p>The instructions below are expecting a certain structure in your HTML to work. If you followed the instructions in the <a href="getting-started-p1.html" target="_blank">Getting Started</a> activity you should have it. It should look similar to the following:</p>
+                   <pre><code class="html">
+&lt;main&gt;
+    &lt;div class="banner-box"&gt;
+        &lt;img src="river-wide.JPG" alt="wide shot of the salmon river"&gt;
+    &lt;/div&gt;
+    &lt;div class="home-grid"&gt;
+        &lt;h2 class="home-headline-1"&gt;We run Rivers to relax.&lt;/h2&gt;
+        &lt;p class="home-paragraph-1"&gt;We believe...&lt;/p&gt;
+        &lt;div class="home-right-img"&gt;
+            &lt;img src="river-evening.jpg" alt="peaceful evening shot of a river"&gt;
+        &lt;/div&gt;
+        &lt;h2 class="home-headline-2"&gt;We run Whitewater for the Rush.&lt;/h2&gt;
+        &lt;p class="home-paragraph-2"&gt;That doesn't mean...&lt;/p&gt;
+        &lt;div class="home-left-img"&gt;
+            &lt;img src="river-narrow.jpg" alt="river flowing through a canyon"&gt;
+        &lt;/div&gt;
+        &lt;section class="home-paragraph-3"&gt;
+            &lt;h2&gt;Come Run with us.&lt;/h2&gt;
+            &lt;p&gt;We invite you...&lt;/p&gt;
+        &lt;/section&gt;
+    &lt;/div&gt;
+&lt;/main&gt;
+</code> </pre> 
+               <p>Make any changes necessary to have yours match what is above. (HTML only...your images and text can be different)</p>
+                </div>
+            <p>Locate the <code>&lt;div&gt;</code> inside of <code>&lt;main&gt;</code> that contains most of our content. You should have given it a class earlier like <kbd>grid-main</kbd> (give it that class now if you didn't before). If you don't already have a rule in your CSS with that selecter add one now. Add the following property:
+                <code>display: grid;</code>, to modify that section of your page to turn it into
+                a grid container. In my case that rule would look like the following:</p>
             <pre><code class="css">
-#top-row, #middle-row {
-    display: flex;
+.grid-main {
+    display: grid;
 }    
 </code> </pre>
-            <p> Now all of the immediate children will become flex-items or children. (Again in my case with the code above the
-                flex-items would be the 2 divs, .rightcol and .leftcol)</p>
+            <p> Now all of the immediate children will become grid-items or children.</p>
+            <p>Next we need to define our columns. Above you should have found that this layout works best with 5 equally sized columns. To define this in grid we use the <code>grid-template-columns</code> property. It is a property of the grid container, so we can add it to out <code>.grid-main</code> rule set. We don't know exactly how wide each column should be...only that they need to be equal. We can use the <kdb>fr</kdb> unit to do this. <kbd>1fr</kbd> = one equal portion of a space.</p>
+            <pre><code class="css">
+.grid-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}    
+</code> </pre>
+           <p>If you remember the <code>repeat()</code> method from the Grid videos, you might try writing that rule like this instead:</p>
+           <pre><code class="css">
+.grid-main {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}    
+</code> </pre>
             <div class="callout">
-                <p>You should see an immediate change once you make your first section flex. You should end up with something
-                    that looks like this:</p>
-                <div class="fig-block">
-                    <figure>
-                        <img alt="flex 1 example" src="../images/layout-flex01.jpg" title="flex example 1" />
-                    </figure>
-                </div>
-                <p>Not bad for one line of css right? It automatically reformatted into a row. This is due to the default values
-                    for flex. They are set to
-                    <kbd>row</kbd> and
-                    <kbd>nowrap</kbd>. The row is perfect for what we are trying to do, but the
-                    <kbd>nowrap</kbd> could cause us problems.</p>
-                <p>Those defaults are set with the
-                    <a href="http://www.w3schools.com/cssref/css3_pr_flex-flow.asp" target="_blank">flex-flow</a> property. Take a moment to review the values it can have. </p>
-                <p>The problem that
-                    <kbd>nowrap</kbd> will cause is best shown by shrinking the browser window as small as it will go. (Like if
-                    you were on a phone) The page ends up looking something like this:</p>
-                <div class="fig-block">
-                    <figure>
-                        <img alt="flex 2 example" src="../images/layout-flex02.jpg" title="flex example 2" />
-                    </figure>
-                </div>
-                <p>Not great. It would be better if the 2 elements that make up our row wrapped and stretched back out to full
-                    width at a certain point.</p>
+                <p>You should see an immediate change once you define your columns. The browser will try to start placing items into cells. It will do this even though we have not yet defined any rows!</p>
+                  <h4>Explicit vs Implicit Grids</h4>
+                  <p>Grids can be constructed either <em>explicitly</em>: you define everything about the grid, column number and widths, row numb and heights, and where every item should be placed, or <em>implicitly</em>: you let the browser make as many of the decisions as possible. Most grids are a mix of both. All grids need to have some columns defined, but after that the browsers will <em>implicitly</em> create rows as needed.</p>
+                  <p>If you review the 'Layout with grid lines' image above you will see that the rows are not all the same height.  You may have been wondering how you are to know how big to make each row? I'll let you in on a little secret: you don't have to know in many cases. You can often let the browser figure it out!</p>
+                  <p>My workflow when creating a new Grid layout is usually the following:</p>
+                  <ol>
+                      <li>Review my wireframe to begin visualizing the grid I need to make.</li>
+                      <li>Define columns...and then see how close I am to achieving my desired layout!</li>
+                      <li>Explicitly create rows <em>if needed</em></li>
+                      <li>Explicitly place items <em>as needed</em></li>
+                      <li>Adjust alignment <em>as needed</em></li>
+                  </ol>
+                <p>Let the browser do as much of the work as you can is my advice!</p>
             </div>
-            <h3>Step 03</h3>
-            <p>Begin fixing our small screen view by adding a
-                <kbd>flex-flow: row wrap;</kbd> line just below the line that setup our flex container (
-                <kbd>display:flex;</kbd>). This will
-                <em>allow</em> our flex items to wrap, but it won't
-                <em>make</em> them wrap. Flex items by nature are allowed to shrink and grow with the space they have available.
-                This is controlled with the
-                <a href="http://www.w3schools.com/cssref/css3_pr_flex.asp" target="_blank">
-                    <kbd>flex</kbd>
-                </a> property. </p>
-            <p>Add
-                <kbd>flex: 1;</kbd> to both the left and right divs in your section row. (In my case it would be .leftcol and
-                .rightcol). This will let each of them take up 1 share of the space...so they will be the same size. Try
-                changing one of them to 2. Now it should take up twice as much space as the other.</p>
+            <h3>Step 04: Place the items</h3>
+                <p>In our layout implicitly (automatically) created rows will be just fine.  But most of our items will have to be explicitly placed to get them into the right spots. Let's place the first together.</p>
+            <p>Find the first headline.  It should have a class of <kbd>home-headline-1</kbd>, if it does not, add that class to it. Make a rule in your css for that class. Use the <code>grid-column</code> and <code>grid-row</code> properties to assign this item to a portion of the grid. If you review this <a href="../images/finished-layout-with-grid-lines.jpg" target="_blank">layout image</a> again you will see that the headline is in row 1, and only needs one row of space. It also starts in column 1, but needs 3 columns of space to fit. Your rule should look like this:</p>
+                     <pre><code class="css">
+.home-headline-1 {
+    grid-column: 1 / span 3;
+    grid-row: 1 / span 1;
+}    
+</code> </pre>
+            <p>Continue placing the rest of the items into the correct rows/columns.</p>
+              
             <div class="callout">
                 <p>If your images are not resizing to fit in the box you have them in make sure you have the following rule
                     in your css: </p>
@@ -151,95 +184,12 @@ img {
         </code> </pre>
                 <p>This will make sure that none of your images can ever be larger than the box they are in.</p>
             </div>
-            <p>We need one last bit of css to fix our small screen view. Lets set a limit on how small the right and left columns
-                can become. We can use the
-                <code>flex</code> property for this. Above I showed you the simplest way to use
-                <code>flex</code>. It can actually take 1, 2, or 3 values. Using 1 like we did above it basically means each flex item should
-                have one share of the space, and let that space grow or shrink evenly as it needs to fill the available container.
-                We could also do something like this
-                <code>flex: 1 0 15em;</code> This would mean start with the item at 15em width, but let it grow to fill all available space (first 1).
-                Don't let it shrink (middle 0) smaller than 15em though. Add that to your css. My css (for the html above)
-                Is looking like this:</p>
-            <pre><code class="css">
- #section1, #section2 {
-    display:flex;
-   flex-flow: row wrap;
-}
-.leftcol {
-  width: 48%;
-  flex: 1 0 15em;
- }
-.rightcol {
-  width: 48%;
-  flex: 1 0 15em;
-}       
-    </code> </pre>
-            <div class="callout">
-                <p>This should have fixed our small view. If you shrink your browser window again you should see something like
-                    this:</p>
-                <div class="fig-block">
-                    <figure>
-                        <img alt="flex 3 example" src="../images/layout-flex03.jpg" title="flex example 3" />
-                    </figure>
-                </div>
-                <p>Much better!</p>
-            </div>
-
-            <h3>Step 04</h3>
-            <p>Looking good! One thing is bugging me though. The headline and paragraph in the first section is aligned at the
-                top of that space...it would look much better closer to the center. This is another thing that flex excels
-                at.</p>
-            <div class="callout">
-                <p>Alignment in flexbox is governed by two properties.
-                    <a href="http://www.w3schools.com/cssref/css3_pr_align-items.asp"
-                        target="_blank">
-                        <kbd>align-items</kbd>
-                    </a> and
-                    <a href="http://www.w3schools.com/cssref/css3_pr_justify-content.asp" target="_blank">
-                        <kbd>justify-content</kbd>
-                    </a>.</p>
-                <p>When we set the
-                    <kbd>flex-flow</kbd> to row we were actually setting up the primary axis direction: row (or horizontal). This
-                    is significant because alignment along the primary axis is controlled with
-                    <kbd>justify-content</kbd>, alignment along the cross-axis is governed by
-                    <kbd>align-items</kbd>
-                </p>
-            </div>
-            <p>Since our primary axis is row (horizontal), we change the cross-axis (vertical) alignment with
-                <kbd>align-items</kbd>. Add the following to your css for the flex container:
-                <kbd>align-items: center;</kbd>. Just like that our paragraphs will always be centered vertically...no matter
-                how the width of the page changes!</p>
-            <h3>Step 05</h3>
-            <p>One last thing and our rows will be done. Sometimes the paragraphs and images are smushed together. Add some
-                margin around them to make sure this doesn't happen. </p>
-            <div class="callout">
-                <p>I started with separate classes for my left and right columns (.leftcol and .rightcol). But as my css came
-                    together the properties and values I had under each ended up exactly the same.</p>
-                <pre><code class="css">
-.leftcol {
-    width: 48%;
-    flex: 1 0 15em;
-    margin: .5em;
-}
-.rightcol {
-    width: 48%;
-    flex: 1 0 15em;
-    margin: .5em;
-}
-</code></pre>
-                <p>It's good practice to review your css from time to time to watch for things like that. Since they are the
-                    same I could combine them like this: </p>
-                <pre><code class="css">
-.leftcol, .rightcol {
-    width: 48%;
-    flex: 1 0 15em;
-    margin: .5em;
-}
-</code></pre>
-
-                <p>Also watch for css rules that have the exact same selector. Those should be combined as well.</p>
-            </div>
-            <h3>Step 06</h3>
+            <h3>Step 05: Grid Gap</h3>
+            <p>Looking good! One thing is bugging me though. The headlines and paragraphs are in some cases squished up against the images. If you refer back to the <a href="../images/finished-layout-with-grid-lines.jpg" target="_blank">layout image</a> again you will notice some space between the columns and rows. This is called a <kbd>gap</kbd> and can be added with the <code>grid-gap</code> property. This is a property that gets applied to the grid container. So add a grid gap or <kbd>1em</kbd> to your grid. </p>
+            
+            
+            
+            <h3>Step 06: Navigation</h3>
             <p>We worked on the bottom (3rd) section a week or two ago to get it to center, and it should look pretty good by
                 now. One thing though, it looks a bit squished. I think it would look better if it were closer in size to
                 the other sections. Use margins, height, or padding to make it so.</p>
@@ -250,7 +200,7 @@ img {
                     to avoid having to do the same things over and over.</p>
 
             </div>
-            <h3>Step 07</h3>
+            <h3>Step 07: Footer</h3>
             <p>The last thing to do now is to finish the footer. According to the wireframe the copyright should be on the left,
                 the social media icons on the right, the whole footer should be 55px high, and there should be space around
                 the icons. This is similar to what we have done before. You should be able to figure it out.</p>
@@ -286,7 +236,7 @@ img {
 
             <h3>Step 08</h3>
             <p>Let's make our links flow across the page horizontally first. It's important to remind ourselves why they currently
-                look the way they do...list items are block elements. So one way to make them flow horiontally would be to
+                look the way they do...list items are block elements. So one way to make them flow horizontally would be to
                 change them to inline-block elements instead...but we also saw above that Flexbox can make columns reflow
                 as rows...and we also gain some nifty alignment tools. Lets use that to layout our navigation. Remember that
                 for flexbox we need to identify the items we want to move around (in this case the

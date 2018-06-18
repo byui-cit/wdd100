@@ -295,3 +295,10 @@ figcaption {
   background-color: #a2c4c9;
   text-align: center;
 }
+
+code {
+    color: #268bd2;
+}
+kbd {
+    color: #b58900;
+}
