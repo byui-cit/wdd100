@@ -92,7 +92,7 @@
                 </div>
                 
                 </div></section>
-                <p>After you have a good idea of what the grid needs to look like (numbers and sizes of rows and columns), either by figuring it out on your own, or by review the two images above, continue on to the next step.</p>
+                <p>After you have a good idea of what the grid needs to look like (numbers and sizes of rows and columns), either by figuring it out on your own or by reviewing the two images above, continue on to the next step.</p>
                 
             </div>
             <h3>Step 03: Defining the Grid</h3>
@@ -151,7 +151,7 @@
             <div class="callout">
                 <p>You should see an immediate change once you define your columns. The browser will try to start placing items into cells. It will do this even though we have not yet defined any rows!</p>
                   <h4>Explicit vs Implicit Grids</h4>
-                  <p>Grids can be constructed either <em>explicitly</em>: you define everything about the grid, column number and widths, row numb and heights, and where every item should be placed, or <em>implicitly</em>: you let the browser make as many of the decisions as possible. Most grids are a mix of both. All grids need to have some columns defined, but after that the browsers will <em>implicitly</em> create rows as needed.</p>
+                  <p>Grids can be constructed either <em>explicitly</em>: you define everything about the grid, column number and widths, row number and heights, and where every item should be placed, or <em>implicitly</em>: you let the browser make as many of the decisions as possible. Most grids are a mix of both. All grids need to have some columns defined, but after that the browsers will <em>implicitly</em> create rows as needed.</p>
                   <p>If you review the 'Layout with grid lines' image above you will see that the rows are not all the same height.  You may have been wondering how you are to know how big to make each row? I'll let you in on a little secret: you don't have to know in many cases. You can often let the browser figure it out!</p>
                   <p>My workflow when creating a new Grid layout is usually the following:</p>
                   <ol>
@@ -185,31 +185,19 @@ img {
                 <p>This will make sure that none of your images can ever be larger than the box they are in.</p>
             </div>
             <h3>Step 05: Grid Gap</h3>
-            <p>Looking good! One thing is bugging me though. The headlines and paragraphs are in some cases squished up against the images. If you refer back to the <a href="../images/finished-layout-with-grid-lines.jpg" target="_blank">layout image</a> again you will notice some space between the columns and rows. This is called a <kbd>gap</kbd> and can be added with the <code>grid-gap</code> property. This is a property that gets applied to the grid container. So add a grid gap or <kbd>1em</kbd> to your grid. </p>
+            <p>Looking good! One thing is bugging me though. The headlines and paragraphs are in some cases squished up against the images. If you refer back to the <a href="../images/finished-layout-with-grid-lines.jpg" target="_blank">layout image</a> again you will notice some space between the columns and rows. This is called a <kbd>gap</kbd> and can be added with the <code>grid-gap</code> property. This is a property that gets applied to the grid container. So add a grid gap of <kbd>1em</kbd> to your grid. </p>
             
             
             
             <h3>Step 06: Navigation</h3>
-            <p>We worked on the bottom (3rd) section a week or two ago to get it to center, and it should look pretty good by
-                now. One thing though, it looks a bit squished. I think it would look better if it were closer in size to
-                the other sections. Use margins, height, or padding to make it so.</p>
-            <div class="callout">
-                <p>Third section? you may ask...what happened to the second section? Well with mine since I used the same class
-                    names for the different parts of my rows (leftcol, rightcol) the second section just took care of itself!
-                    Anytime you have sections of your page that are styled or laid out similarly you should re-use your classes
-                    to avoid having to do the same things over and over.</p>
-
-            </div>
+            
             <h3>Step 07: Footer</h3>
             <p>The last thing to do now is to finish the footer. According to the wireframe the copyright should be on the left,
                 the social media icons on the right, the whole footer should be 55px high, and there should be space around
                 the icons. This is similar to what we have done before. You should be able to figure it out.</p>
             <p>Review the tips on last weeks positioning activity if you get stuck. (Hint: there are several ways to do this,
-                you could use float, display:inline-block, or display: flex to do the major movement, then you will probably
-                need to add some
-                <kbd>padding, margin, or width</kbd> on the different elements in the footer to finish it off. If you use float
-                remember that the floated element
-                <strong>must</strong> come before the other stuff in the html.)</p>
+                but since we have spent the most time with CSS Grid I would recommend that to get things into the right locations, then 
+                <kbd>padding, margin, or width</kbd> on the different elements in the footer may be needed to finish it off.)</p>
 
 
             <h2>Navigation</h2>
