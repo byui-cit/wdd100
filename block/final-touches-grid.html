@@ -260,7 +260,7 @@ img {
 
 
             <h3>Step 08: Logo and navigation placement</h3>
-            <p>Let's start with getting the logo and the list of links to line up in a row first. There are several ways we could do this...but since we are most fmailiar with Grid...we'll use that. This is really just a simple grid with one row and two columns! The only tricky part is identifying which element will be the Grid container and which are the grid items.</p>
+            <p>Let's start with getting the logo and the list of links to line up in a row first. There are several ways we could do this...but since we are most familiar with Grid...we'll use that. This is really just a simple grid with one row and two columns! The only tricky part is identifying which element will be the Grid container and which are the grid items.</p>
             <p>We want to move the <kdb>nav</kdb> and <kdb>logo-box</kdb> elements. Their parent is the <code>&lt;header&gt;</code> element. That is where we will start. Create a rule targeting the <code>header</code> in your CSS if you don't already have one. Add the properties to turn on grid and define some columns.</p>
             <div class="callout">
                 <p>How big should the columns be this time? We have a small issue.  This time the columns will not be the same size.  We know how big the column with the logo needs to be (the size of the logo...around 110px), but we don't know the size for the navigation! We really just want it to be whatever is left. CSS Grid has an option to indicate that: <kbd>auto</kbd>.</p>
@@ -284,7 +284,7 @@ header {
             <h3>Step 09: Navigation link layout</h3>
             <p>Let's make our links flow across the page horizontally next. It's important to remind ourselves why they currently
                 look the way they do...list items are block elements. So one way to make them flow horizontally would be to
-                change them to inline-block elements instead...but we also saw above that Grid can be used to make columns reflow
+                change them to inline-block elements instead...but we also saw above that Grid can be used to make columns act
                 as rows as well...and we also gain some nifty alignment tools. Lets use that to layout our navigation. Again remember that
                 for grid we need to identify the items we want to move around (in this case the
                 <code>&lt;li&gt;</code>), then find their parent (in this case the
