@@ -300,7 +300,7 @@ header {
                     <code>nav ul</code>" as our selector instead of just
                     <code>ul</code>. Many of the steps of this activity will require similar selectors.</p>
             </div>
-            <p>We also need to define our columns. The easiest way to do this would be to count the number of items in our list, and create that many <kbd>1fr</kbd> sized columns. This would certainly work, but it a bit rigid.  If someone views our page on a smaller screen the links might start looking squished. What would be nicer to to have the browser define <em>as many columns as will fit in the current width</em>. there is actually a way to do this! Take a look at the example below</p>
+            <p>We also need to define our columns. The easiest way to do this would be to count the number of items in our list, and create that many <kbd>1fr</kbd> sized columns. This would certainly work, but it is a bit rigid.  If someone views our page on a smaller screen the links might start looking squished. What would be nicer to to have the browser define <em>as many columns as will fit in the current width</em>. There is actually a way to do this! Take a look at the example below</p>
             <pre><code class="css">
 nav ul {
    list-style: none; /* removes the bullets! */
@@ -308,9 +308,9 @@ nav ul {
     grid-template-columns: repeat(auto-fit, minmax(6em, 1fr));          
 }
             </code></pre>
-            <p>Let's break that down. It uses the <kbd>repeat</kbd> method, but instead of giving a number of columns like in the past we use the keyword <kbd>auto-fit</kbd>. This tells the browser to create as many columns as it can fit.  Then instead of giving a specific size we used the <kbd>minmax</kbd> method. This tells the browser to create columns that are <kbd>1fr</kbd> big, <em>but no column can be smaller than <kbd>6em</kbd></em>.</p>
-            <p>So using a bit of math to illustrate: If we have 4 links and the browser window is currently <kbd>60em</kbd> (about 960px): <kbd>60em / 4 = 15em</kbd> this is way bigger than <kbd>6em</kbd> so we would get four equally sized columns of <kbd>1fr</kbd>.  If the browser window size were only <kbd>20em</kbd> (around 320px) then <kbd>20em / 4 = 5em</kbd>.  This is smaller than our minimum of <kbd>6em</kbd> so it can't fit all four columns.  It will instead create 3 equal columns on the first row, and one more on a second row. </p>
-            <p>why <kbd>6em</kbd> for the minimum you may be asking? Well it was based on the length of my longest link (Rates/Dates). Any smaller than that and the words got squished. If your links are longer you may have to use more than <kbd>6em</kbd></p>
+            <p>Let's break that down. It uses the <kbd>repeat</kbd> method, but instead of giving a number of columns like in the past we use the keyword <kbd>auto-fit</kbd>. This tells the browser to create as many columns as it can fit in the space available.  Then instead of giving a specific size for each column, we used the <kbd>minmax</kbd> method. This tells the browser to create columns that are <kbd>1fr</kbd> big, <em>but no column can be smaller than <kbd>6em</kbd></em>.</p>
+            <p>So using a bit of math to illustrate: If we have 4 links and the browser window is currently <kbd>60em</kbd> (about 960px): <kbd>60em / 4 = 15em</kbd> this is way bigger than <kbd>6em</kbd> so we would get four equally sized columns (1fr) of <kbd>15em</kbd>.  If the browser window size were only <kbd>20em</kbd> (around 320px) then <kbd>20em / 4 = 5em</kbd>.  This is smaller than our minimum of <kbd>6em</kbd> so it can't fit all four columns.  It will instead create 3 equal columns on the first row, and one more on a second row. </p>
+            <p>Why <kbd>6em</kbd> for the minimum you may be asking? Well it was based on the length of my longest link (Rates/Dates). Any smaller than that and the words got squished. If your links are longer you may have to use more than <kbd>6em</kbd> as your minimum.</p>
             <div class="fig-block">
                     <figure>
                         <img alt="Header Step 9"  src="../images/header-grid-3.png" 
@@ -321,9 +321,9 @@ nav ul {
                 </div>
             <h3>Step 10: Finishing up the navigation</h3>
             <p>The links are moving in the right direction now...but the alignment isn't quite right, and the row is a bit bigger than we want it to be. The row is easy to fix.  It's actually caused by the unordered list we used for our links. Lists (and many other elements) have some default styling that come with them. In this case there is some margin automatically added to the top and bottom of the list that is causing us problems. Let's turn it off by adding <code>margin: 0</code> to our <code>nav ul</code> rule.</p>
-            <p>One final issue...the links are aligned at the top of the row. They would look better in the middle (or bottom). Vertical alignment for Grid items is controlled with the <kbd>align-items</kbd> property. We can add <code>align-items: center;</code> to our Grid container (in this case would be the <code>header</code> rule) To fix this issue.</p>
+            <p>One final issue...the links are aligned at the top of the row. They would look better in the middle (or bottom). Vertical alignment for Grid items is controlled with the <kbd>align-items</kbd> property. We can add <code>align-items: center;</code> to our Grid container (in this case would be the <code>header</code> rule) to fix this issue.</p>
            <div class="callout">
-               <p>If you are having issues getting your header and navigation to turn out right. Click below to see my code.</p>
+               <p>If you are having issues getting your header and navigation to turn out right. Click below to see my css code.</p>
                <section class="hint"><input type="checkbox" > <h4>Header CSS</h4><i></i><div>
                    <pre><code class="css">
 header {

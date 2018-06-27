@@ -302,3 +302,32 @@ code {
 kbd {
     color: #b58900;
 }
+
+.steps {
+  list-style: none;
+  counter-reset: my-counter;
+
+  margin: 0;
+  padding: 0;
+}
+.steps > li {
+  counter-increment: my-counter;
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.steps > li::before {
+  content: counter(my-counter);
+  font-weight: bold;
+  font-size: 3rem;
+  margin-right: 0.5rem;
+  font-family: 'Impact', serif;
+  line-height: 1;
+}
+.steps > li:nth-child(-n+9):before {
+    content: '0'counter(my-counter);
+}
+.steps h3 {
+    display: inline-block;
+}
+
