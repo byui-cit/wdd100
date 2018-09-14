@@ -10,6 +10,11 @@ html {
   background: -webkit-radial-gradient(ellipse, #87c6e0 0%, #00273a 100%) fixed;
   background: radial-gradient(ellipse, #87c6e0 0%, #00273a 100%) fixed;
 }
+/* body {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+  font-size: 18px;
+} */
 img {
   max-width: 100%;
 }
@@ -48,7 +53,69 @@ a:visited {
   border-bottom: 2px solid #14304f;
 }
 
-header {
+#content {
+  width: 90%;
+  max-width: 950px;
+  margin: 0 auto;
+  box-shadow: 0 0 12px #000000;
+}
+
+/*
+<div>
+  <h1><span>WEB</span> Fundamentals</h1>
+  <h2>WDD 130</h2>
+</div> 
+*/
+.headerBanner {
+  padding: 0.2em 0;
+  background-color: #bbd8e4;
+  font-family: 'Lucida Console', 'Lucida Grande', 'Lucida Sans', Arial,
+    sans-serif;
+  text-transform: uppercase;
+  letter-spacing: -4px;
+}
+
+.headerBanner > div {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  margin: 0.3em 0;
+  padding: 0.3em;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 1) 20%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+.headerBanner h1 {
+  color: #bbd8e4;
+  font-size: 3.5em;
+  display: flex;
+}
+@media screen and (max-width: 500px) {
+  .headerBanner h1 {
+    font-size: 10vw;
+  }
+}
+.headerBanner h1 > span {
+  font-size: 0.6em;
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+  transform: rotate(180deg);
+  padding-top: 0.2em;
+  margin-right: -0.2em;
+}
+.headerBanner h2 {
+  align-self: flex-end;
+  margin-right: 1.5em;
+  margin-bottom: 5px;
+  font-size: 2em;
+  letter-spacing: 1px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.headerLogo {
   background-color: #14304f;
 
   display: flex;
@@ -56,16 +123,23 @@ header {
   padding: 0.8em;
 }
 
-header h1 {
+.headerLogo h1 {
   border-left: 1px solid;
   line-height: 3em;
   padding-left: 0.6em;
   color: white;
 }
-header .logo {
+.headerLogo .logo {
   margin-right: 0.6em;
 
   align-self: center;
+}
+
+main {
+  position: relative;
+  padding: 20px;
+  color: #3e3e3e;
+  background-color: #f0f0f0;
 }
 
 #footer {
@@ -123,8 +197,13 @@ header .logo {
 /******************************************** FEATURES STYLING *********************************************/
 
 /* Callout box */
-
 .callout {
+  display: block;
+
+  margin: 15px auto;
+  width: 90%;
+  padding: 10px;
+  border: 1px solid black;
   color: #292929;
   background: antiquewhite;
 }
@@ -297,26 +376,26 @@ figcaption {
 }
 
 code {
-    color: #268bd2;
+  color: #268bd2;
 }
 kbd {
-    color: #b58900;
+  color: #b58900;
 }
 
-.steps {
+.bigSteps {
   list-style: none;
   counter-reset: my-counter;
 
   margin: 0;
   padding: 0;
 }
-.steps > li {
+.bigSteps > li {
   counter-increment: my-counter;
-  font-size: 0.8rem;
+  /* font-size: 0.8rem; */
   margin-bottom: 0.5rem;
 }
 
-.steps > li::before {
+.bigSteps > li::before {
   content: counter(my-counter);
   font-weight: bold;
   font-size: 3rem;
@@ -324,10 +403,24 @@ kbd {
   font-family: 'Impact', serif;
   line-height: 1;
 }
-.steps > li:nth-child(-n+9):before {
-    content: '0'counter(my-counter);
-}
-.steps h3 {
-    display: inline-block;
+.bigSteps > li:nth-child(-n + 9):before {
+  content: '0' counter(my-counter);
 }
 
+.bigSteps ol {
+  counter-reset: sub-counter;
+  list-style: none;
+}
+.bigSteps ol > li {
+  counter-increment: sub-counter;
+}
+.bigSteps ol > li::before {
+  content: counters(sub-counter, '.') '.';
+  font-weight: bold;
+  padding-right: 0.5em;
+}
+
+.bigSteps > li > h3,
+.bigSteps > li > h2 {
+  display: inline-block;
+}
